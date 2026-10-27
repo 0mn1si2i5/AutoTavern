@@ -1,0 +1,39 @@
+{
+  "date_local": "2026-10-28",
+  "timezone": "Asia/Singapore",
+  "upstream_commit": "fb61201a557ddd36a411cf44aac51ce4d9b606ce",
+  "frozen_policy_files": {
+    "omnibob/policies.py": "bd0f0449cd11e6c22023cbd5df283764c0e62a0c198f28fca801a9d9cc31e9c9",
+    "omnibob/observation.py": "ba56b02a47df2ffa392f0907adb894add832544e50b8d84e5f0c8f5182c4014c",
+    "omnibob/contract-v1.json": "e63de05d40b2925786ac5ba4bba7e429c66377ffbf1b98bcf3909af0f1f3fc44"
+  },
+  "files_sha256": {
+    "arena-manifest.json": "95444db1c666aca5c3fd1317c5d1563b53e2edadeb348f54845da445f3a8724d",
+    "initial-build-failure.txt": "df18ff1c22f34940ea00556ea874060e7fa283d75d70d3478623ea352a13aae4",
+    "performance.json": "cf5f0bde0bf92e3ebe7fecdc21f9702b036d55bab042418761e66ebde65ebbbe",
+    "python-tests.txt": "11a3783c0cfc6b0df7c22d83175040c0b866bae10a251df14f621caf0e67e4d4",
+    "released-answer-scoring.txt": "1fb93f436ab21ef1564dbf46ac59e6e6205c25e9ece614f81f78875d3ab62dfb",
+    "rust-lib-tests.txt": "c1269b306968a0fdc5ff0dcb23b898b3a8e08a2c1fbbaf98d95c40dd1b1a6ae4",
+    "v0.1-dev-256/games.jsonl": "edea9a99452768c972cb6dff0a247f32aed6be1ddd8cdf2840b59a21be542543",
+    "v0.1-dev-256/manifest.json": "92cbe81f2a1f133fa0d2e6bb2b8075455da8221b2ad2b492e348e15351f88477",
+    "v0.1-dev-256/summary.json": "d84cf6fc41bec39df5d09ecf0ffd5cd8f4c761886dc9d8bca6c4cfa3aba3e1e4",
+    "v0.1-dev-64/games.jsonl": "74de6f01181a8c6d9bfeb070f4806e3b0340391cea94c7265c75efbeac3a8f57",
+    "v0.1-dev-64/manifest.json": "6d494dad8d3d583fbd9faf32aee6dcf03fe5935f5ad288461405a4ac21b0f2c2",
+    "v0.1-dev-64/summary.json": "2f71c776b3d46e691f028aa1b1cc38254c8ac918d77405c2fff5f1421f8ed284"
+  },
+  "arena_sources": [
+    "https://rizling.top/agent.md",
+    "https://rizling.top/protocol",
+    "https://rizling.top/api/v1/manifest"
+  ],
+  "paper_source": "https://arxiv.org/html/2610.33845v1",
+  "final_seeds_run": false,
+  "paid_resources_started": false,
+  "notes": [
+    "Initial Rust/build download race failed; serial pinned-version reinstall succeeded.",
+    "First OmniBob smoke exposed empty-vocabulary index 0 and omitted experimental_mode default; both fixed before evaluation.",
+    "Native/Python interface, rules and card data unchanged.",
+    "64 and 256 dev cohorts share identical frozen policy/observation/contract hashes.",
+    "Bench table rescored released answers, not OmniBob answers."
+  ]
+}

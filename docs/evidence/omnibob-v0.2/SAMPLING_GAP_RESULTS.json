@@ -1,0 +1,711 @@
+{
+  "generated_unix": 1793144588.273847,
+  "protocol": {
+    "created_unix": 1793144162.363791,
+    "status": "post-freeze diagnostic, ineligible for deployment selection",
+    "hypothesis": "Stochastic training versus greedy inference may contribute to repeated action loops. This is not a causal training ablation.",
+    "checkpoint_sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787",
+    "frozen_source_sha256": "6c85dddca003dab40b185212b1da16615a4c17adb2c5c5ccbd40928319c73669",
+    "driver_sha256": "ca6eab209692b1efdc1f00003ce1e0ca947cbd36dc89a0ceb0b2aa22b245a93a",
+    "split": "dev",
+    "seed_offset": 9500,
+    "games_per_policy_per_scenario": 64,
+    "policies": [
+      "raw_greedy",
+      "deployed",
+      "sample_1",
+      "sample_2",
+      "sample_3"
+    ],
+    "sample_temperature": 1.0,
+    "private_randomness": "sha256 sampling-gap/{replicate}/{game_seed}/{seat}; CPU torch.Generator, reset per game; never game RNG",
+    "scenarios": [
+      [
+        "scripted",
+        "round_robin"
+      ],
+      [
+        "heuristic",
+        "shuffled_rounds"
+      ]
+    ],
+    "deadline_unix": 1793144762.363789,
+    "constraints": "No training, final seeds, checkpoint changes, runtime export or further temperature search. Descriptive finite development diagnostic only."
+  },
+  "rows": [
+    {
+      "scenario": "scripted",
+      "metrics": {
+        "raw_greedy": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 2.5,
+          "win_rate": 0.296875,
+          "top4_rate": 0.890625,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.1875,
+            2.8125
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 2.5,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.1875,
+            2.8125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 55480,
+            "mean_ms": 1.0877419853678327,
+            "p50_ms": 1.0831248946487904,
+            "p95_ms": 1.1356659815646708,
+            "max_ms": 5.026417085900903
+          },
+          "elapsed_seconds": 62.97971966769546,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 866.875,
+          "mean_move_actions": 665.21875,
+          "mean_cancel_actions": 9.15625
+        },
+        "deployed": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 2.28125,
+          "win_rate": 0.28125,
+          "top4_rate": 0.9375,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            1.96875,
+            2.59375
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 2.28125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            1.96875,
+            2.59375
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 29265,
+            "mean_ms": 1.1508566329859398,
+            "p50_ms": 1.145874848589301,
+            "p95_ms": 1.195583026856184,
+            "max_ms": 6.690707989037037
+          },
+          "elapsed_seconds": 35.25012304680422,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 457.265625,
+          "mean_move_actions": 250.765625,
+          "mean_cancel_actions": 0.109375
+        },
+        "sample_1": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 2.53125,
+          "win_rate": 0.28125,
+          "top4_rate": 0.90625,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.015625,
+            3.03125
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 2.53125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.015625,
+            3.03125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 21123,
+            "mean_ms": 1.1076326644801953,
+            "p50_ms": 1.1040838435292244,
+            "p95_ms": 1.1539505794644354,
+            "max_ms": 4.969917004927993
+          },
+          "elapsed_seconds": 24.646756454138085,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 330.046875,
+          "mean_move_actions": 111.6875,
+          "mean_cancel_actions": 0.40625
+        },
+        "sample_2": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 2.25,
+          "win_rate": 0.40625,
+          "top4_rate": 0.921875,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            1.84375,
+            2.765625
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 2.25,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            1.84375,
+            2.765625
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 21262,
+            "mean_ms": 1.111999244038718,
+            "p50_ms": 1.1044580023735762,
+            "p95_ms": 1.1522080632857978,
+            "max_ms": 7.390167098492384
+          },
+          "elapsed_seconds": 24.9136605784297,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 332.21875,
+          "mean_move_actions": 108.359375,
+          "mean_cancel_actions": 0.328125
+        },
+        "sample_3": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 2.375,
+          "win_rate": 0.4375,
+          "top4_rate": 0.890625,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.0,
+            2.750390624999998
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 2.375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.0,
+            2.750390624999998
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 20445,
+            "mean_ms": 1.1084935197178032,
+            "p50_ms": 1.1038749944418669,
+            "p95_ms": 1.1540756095200777,
+            "max_ms": 3.67600005120039
+          },
+          "elapsed_seconds": 23.887389583978802,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 319.453125,
+          "mean_move_actions": 112.34375,
+          "mean_cancel_actions": 0.15625
+        }
+      },
+      "mean_sampled_minus_raw": -0.11458333333333329,
+      "seed_block_bootstrap_95ci": [
+        -0.3802083333333333,
+        0.12513020833333155
+      ],
+      "blocks": 8,
+      "individual_pairs": [
+        {
+          "candidate": "runs/exploration-20261028/sampling-gap-scripted-dev64",
+          "baseline": "runs/exploration-20261028/sampling-gap-scripted-dev64",
+          "candidate_policy": "sample_1",
+          "baseline_policy": "raw_greedy",
+          "split": "dev",
+          "complete_common_seed_blocks": 8,
+          "paired_games": 64,
+          "observed_common_pairs": 64,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.53125,
+          "baseline_mean": 2.5,
+          "candidate_minus_baseline": 0.03125,
+          "paired_seed_bootstrap_95ci": [
+            -0.34375,
+            0.40625
+          ],
+          "seeds": [
+            1000009500,
+            1000009501,
+            1000009502,
+            1000009503,
+            1000009504,
+            1000009505,
+            1000009506,
+            1000009507
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        },
+        {
+          "candidate": "runs/exploration-20261028/sampling-gap-scripted-dev64",
+          "baseline": "runs/exploration-20261028/sampling-gap-scripted-dev64",
+          "candidate_policy": "sample_2",
+          "baseline_policy": "raw_greedy",
+          "split": "dev",
+          "complete_common_seed_blocks": 8,
+          "paired_games": 64,
+          "observed_common_pairs": 64,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.25,
+          "baseline_mean": 2.5,
+          "candidate_minus_baseline": -0.25,
+          "paired_seed_bootstrap_95ci": [
+            -0.65625,
+            0.171875
+          ],
+          "seeds": [
+            1000009500,
+            1000009501,
+            1000009502,
+            1000009503,
+            1000009504,
+            1000009505,
+            1000009506,
+            1000009507
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        },
+        {
+          "candidate": "runs/exploration-20261028/sampling-gap-scripted-dev64",
+          "baseline": "runs/exploration-20261028/sampling-gap-scripted-dev64",
+          "candidate_policy": "sample_3",
+          "baseline_policy": "raw_greedy",
+          "split": "dev",
+          "complete_common_seed_blocks": 8,
+          "paired_games": 64,
+          "observed_common_pairs": 64,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.375,
+          "baseline_mean": 2.5,
+          "candidate_minus_baseline": -0.125,
+          "paired_seed_bootstrap_95ci": [
+            -0.390625,
+            0.20351562499999432
+          ],
+          "seeds": [
+            1000009500,
+            1000009501,
+            1000009502,
+            1000009503,
+            1000009504,
+            1000009505,
+            1000009506,
+            1000009507
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        }
+      ]
+    },
+    {
+      "scenario": "heuristic",
+      "metrics": {
+        "raw_greedy": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 3.234375,
+          "win_rate": 0.359375,
+          "top4_rate": 0.65625,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.5,
+            3.921875
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 3.234375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.5,
+            3.921875
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 48728,
+            "mean_ms": 1.0492070526004427,
+            "p50_ms": 1.0348749347031116,
+            "p95_ms": 1.129375072196126,
+            "max_ms": 7.69783416762948
+          },
+          "elapsed_seconds": 56.73693112353794,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 761.375,
+          "mean_move_actions": 554.015625,
+          "mean_cancel_actions": 3.0625
+        },
+        "deployed": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 3.28125,
+          "win_rate": 0.25,
+          "top4_rate": 0.6875,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.84375,
+            3.781640624999998
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 3.28125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.84375,
+            3.781640624999998
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 25181,
+            "mean_ms": 1.1053624654216936,
+            "p50_ms": 1.0945000685751438,
+            "p95_ms": 1.196166966110468,
+            "max_ms": 2.885666908696294
+          },
+          "elapsed_seconds": 32.57228421210311,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 393.453125,
+          "mean_move_actions": 181.046875,
+          "mean_cancel_actions": 0.40625
+        },
+        "sample_1": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 3.078125,
+          "win_rate": 0.265625,
+          "top4_rate": 0.78125,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.78125,
+            3.328125
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 3.078125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.78125,
+            3.328125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 20823,
+            "mean_ms": 1.0674834060291032,
+            "p50_ms": 1.055707922205329,
+            "p95_ms": 1.1523297289386392,
+            "max_ms": 23.10983301140368
+          },
+          "elapsed_seconds": 26.823154671583325,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 325.359375,
+          "mean_move_actions": 107.46875,
+          "mean_cancel_actions": 0.40625
+        },
+        "sample_2": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 3.1875,
+          "win_rate": 0.359375,
+          "top4_rate": 0.734375,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.625,
+            3.75
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 3.1875,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.625,
+            3.75
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 20822,
+            "mean_ms": 1.0676925761762754,
+            "p50_ms": 1.057458110153675,
+            "p95_ms": 1.153122866526246,
+            "max_ms": 6.40412513166666
+          },
+          "elapsed_seconds": 26.857826999155805,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 325.34375,
+          "mean_move_actions": 101.40625,
+          "mean_cancel_actions": 0.28125
+        },
+        "sample_3": {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 3.09375,
+          "win_rate": 0.3125,
+          "top4_rate": 0.734375,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.328125,
+            3.937890624999998
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 3.09375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.328125,
+            3.937890624999998
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 20626,
+            "mean_ms": 1.0682680048258006,
+            "p50_ms": 1.0540001094341278,
+            "p95_ms": 1.1577499099075794,
+            "max_ms": 7.333958055824041
+          },
+          "elapsed_seconds": 26.580442501232028,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          },
+          "mean_decisions": 322.28125,
+          "mean_move_actions": 107.703125,
+          "mean_cancel_actions": 0.53125
+        }
+      },
+      "mean_sampled_minus_raw": -0.11458333333333331,
+      "seed_block_bootstrap_95ci": [
+        -0.625,
+        0.39596354166666486
+      ],
+      "blocks": 8,
+      "individual_pairs": [
+        {
+          "candidate": "runs/exploration-20261028/sampling-gap-heuristic-dev64",
+          "baseline": "runs/exploration-20261028/sampling-gap-heuristic-dev64",
+          "candidate_policy": "sample_1",
+          "baseline_policy": "raw_greedy",
+          "split": "dev",
+          "complete_common_seed_blocks": 8,
+          "paired_games": 64,
+          "observed_common_pairs": 64,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 3.078125,
+          "baseline_mean": 3.234375,
+          "candidate_minus_baseline": -0.15625,
+          "paired_seed_bootstrap_95ci": [
+            -0.7816406249999999,
+            0.53125
+          ],
+          "seeds": [
+            1000009500,
+            1000009501,
+            1000009502,
+            1000009503,
+            1000009504,
+            1000009505,
+            1000009506,
+            1000009507
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        },
+        {
+          "candidate": "runs/exploration-20261028/sampling-gap-heuristic-dev64",
+          "baseline": "runs/exploration-20261028/sampling-gap-heuristic-dev64",
+          "candidate_policy": "sample_2",
+          "baseline_policy": "raw_greedy",
+          "split": "dev",
+          "complete_common_seed_blocks": 8,
+          "paired_games": 64,
+          "observed_common_pairs": 64,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 3.1875,
+          "baseline_mean": 3.234375,
+          "candidate_minus_baseline": -0.046875,
+          "paired_seed_bootstrap_95ci": [
+            -0.734375,
+            0.640625
+          ],
+          "seeds": [
+            1000009500,
+            1000009501,
+            1000009502,
+            1000009503,
+            1000009504,
+            1000009505,
+            1000009506,
+            1000009507
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        },
+        {
+          "candidate": "runs/exploration-20261028/sampling-gap-heuristic-dev64",
+          "baseline": "runs/exploration-20261028/sampling-gap-heuristic-dev64",
+          "candidate_policy": "sample_3",
+          "baseline_policy": "raw_greedy",
+          "split": "dev",
+          "complete_common_seed_blocks": 8,
+          "paired_games": 64,
+          "observed_common_pairs": 64,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 3.09375,
+          "baseline_mean": 3.234375,
+          "candidate_minus_baseline": -0.140625,
+          "paired_seed_bootstrap_95ci": [
+            -0.8125,
+            0.4375
+          ],
+          "seeds": [
+            1000009500,
+            1000009501,
+            1000009502,
+            1000009503,
+            1000009504,
+            1000009505,
+            1000009506,
+            1000009507
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        }
+      ]
+    }
+  ],
+  "scope": "Post-freeze DEVELOPMENT diagnostic; no final seed use or deployment change. Three action-RNG replicas share eight environment seed blocks, not192 independent seeds. CIs conditional on these fixed action-RNG realizations; no multiplicity correction.",
+  "interpretation": "Sampling sharply reduces move/decision counts in these runs. Placement differences do not establish a superior deployment. Investigate training/inference mismatch in a future version with new held-out seeds; keep this release frozen."
+}

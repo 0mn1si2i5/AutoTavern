@@ -1,0 +1,117 @@
+{
+  "policies": {
+    "random": {
+      "requested": 256,
+      "completed": 256,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "metric_denominator": 256,
+      "mean_placement": 7.9609375,
+      "win_rate": 0.0,
+      "top4_rate": 0.0,
+      "completed_seed_blocks": 32,
+      "mean_placement_seed_bootstrap_95ci": [
+        7.9375,
+        7.984375
+      ],
+      "illegal_actions": 0,
+      "decision_latency": {
+        "count": 20096,
+        "mean_ms": 0.008106038563756515,
+        "p50_ms": 0.006666872650384903,
+        "p95_ms": 0.012468546628952026,
+        "max_ms": 1.4902499970048666
+      },
+      "elapsed_seconds": 1.696053713792935,
+      "seats_attempted": {
+        "0": 32,
+        "1": 32,
+        "2": 32,
+        "3": 32,
+        "4": 32,
+        "5": 32,
+        "6": 32,
+        "7": 32
+      }
+    },
+    "scripted": {
+      "requested": 256,
+      "completed": 256,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "metric_denominator": 256,
+      "mean_placement": 4.5,
+      "win_rate": 0.125,
+      "top4_rate": 0.5,
+      "completed_seed_blocks": 32,
+      "mean_placement_seed_bootstrap_95ci": [
+        4.5,
+        4.5
+      ],
+      "illegal_actions": 0,
+      "decision_latency": {
+        "count": 32463,
+        "mean_ms": 0.0009670854776701108,
+        "p50_ms": 0.000833999365568161,
+        "p95_ms": 0.001250067725777626,
+        "max_ms": 0.2728330437093973
+      },
+      "elapsed_seconds": 1.5481891324743629,
+      "seats_attempted": {
+        "0": 32,
+        "1": 32,
+        "2": 32,
+        "3": 32,
+        "4": 32,
+        "5": 32,
+        "6": 32,
+        "7": 32
+      }
+    },
+    "omnibob": {
+      "requested": 256,
+      "completed": 256,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "metric_denominator": 256,
+      "mean_placement": 3.44140625,
+      "win_rate": 0.15234375,
+      "top4_rate": 0.73046875,
+      "completed_seed_blocks": 32,
+      "mean_placement_seed_bootstrap_95ci": [
+        3.24609375,
+        3.6329101562499995
+      ],
+      "illegal_actions": 0,
+      "decision_latency": {
+        "count": 49660,
+        "mean_ms": 0.03207952205723349,
+        "p50_ms": 0.030542025342583656,
+        "p95_ms": 0.06721116369590145,
+        "max_ms": 0.5533329676836729
+      },
+      "elapsed_seconds": 3.5936944098211825,
+      "seats_attempted": {
+        "0": 32,
+        "1": 32,
+        "2": 32,
+        "3": 32,
+        "4": 32,
+        "5": 32,
+        "6": 32,
+        "7": 32
+      }
+    }
+  },
+  "elapsed_seconds": 7.192325040930882,
+  "user_interrupted": false,
+  "source_sha256": "9ae3d3ce5d647e94f544d1c5d0fe02fdd15415ef14b4d1cbd7ece23dd976e28c",
+  "config_sha256": "97f1f0ef50626f102134d381818b25602720aa7e75ce4cc221c0c6b0f4015149",
+  "metrics_note": "Only non-truncated complete games enter placement metrics. Failures are retained; seed blocks, not seats, are the resampling unit. These scripted-opponent results are not paper or live-game results."
+}

@@ -1,0 +1,73 @@
+Resolved 7 packages in 1.07s
+   Building taverngym @ file:///Users/ostrovsky/Projects/Zen/omnibob
+Downloading numpy (5.2MiB)
+ Downloaded numpy
+  × Failed to build `taverngym @ file:///Users/ostrovsky/Projects/Zen/omnibob`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `maturin.build_editable` failed (exit status: 1)
+
+      [stdout]
+      Running `maturin pep517 build-wheel -i
+      /Users/ostrovsky/.cache/uv/builds-v0/.tmpL4i511/bin/python
+      --compatibility off --editable`
+
+      [stderr]
+      info: syncing channel updates for 1.98.1-aarch64-apple-darwin
+      info: latest update on 2026-09-03 for version 1.98.1 (48a229cea
+      2026-09-01)
+      info: recovering from a partially installed toolchain
+      info: removing previous version of component rustc
+      info: removing previous version of component cargo
+      info: removing previous version of component rust-std
+      info: removing previous version of component rust-docs
+      info: removing previous version of component rustfmt
+      info: removing previous version of component clippy
+      info: downloading 6 components
+      info: rolling back changes
+      error: could not rename 'component' file from
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/tmp/5bj_q85jhazv3uab_dir/bk'
+      to
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/toolchains/1.98.1-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin':
+      Directory not empty (os error 66)
+      error: could not rename 'component' file from
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/tmp/yaaeww_8hm0r44kd_dir/bk'
+      to
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/toolchains/1.98.1-aarch64-apple-darwin/share':
+      Directory not empty (os error 66)
+      error: could not rename 'component' file from
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/tmp/9tvtqlga6ymqwbh3_dir/bk'
+      to
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/toolchains/1.98.1-aarch64-apple-darwin/share/doc':
+      Directory not empty (os error 66)
+      error: could not rename 'component' file from
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/tmp/fmb4rde74y7wx0so_dir/bk'
+      to
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/toolchains/1.98.1-aarch64-apple-darwin/share/man':
+      Directory not empty (os error 66)
+      error: could not rename 'component' file from
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/tmp/_ag02xnzv3ft0qal_dir/bk'
+      to
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/toolchains/1.98.1-aarch64-apple-darwin/etc':
+      Directory not empty (os error 66)
+      error: could not rename 'component' file from
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/tmp/ixdadrwsix5k3c3g_dir/bk'
+      to
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/toolchains/1.98.1-aarch64-apple-darwin/share/zsh':
+      Directory not empty (os error 66)
+      error: component download failed for rustc-aarch64-apple-darwin:
+      could not rename 'downloaded' file from
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/downloads/738e3f60114b20550fcf4f8a57c9cea0544239f214709f45594ff3fde327f577.partial'
+      to
+      '/Users/ostrovsky/Projects/Zen/omnibob/.local-tools/rustup/downloads/738e3f60114b20550fcf4f8a57c9cea0544239f214709f45594ff3fde327f577':
+      No such file or directory (os error 2): No such file or directory (os
+      error 2)
+      💥 maturin failed
+        Caused by: Cargo metadata failed. Does your crate compile with `cargo
+      build`?
+        Caused by: `cargo metadata` exited with an error:
+      Error: command ['maturin', 'pep517', 'build-wheel', '-i',
+      '/Users/ostrovsky/.cache/uv/builds-v0/.tmpL4i511/bin/python',
+      '--compatibility', 'off', '--editable'] returned non-zero exit status 1
+
+      hint: This usually indicates a problem with the package or the build
+      environment.

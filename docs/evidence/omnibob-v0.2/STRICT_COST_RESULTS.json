@@ -1,0 +1,438 @@
+{
+  "generated_unix": 1793142854.4703622,
+  "protocol": {
+    "created_unix": 1793140585.5428631,
+    "source_sha256": "6c85dddca003dab40b185212b1da16615a4c17adb2c5c5ccbd40928319c73669",
+    "initialization": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+    "initialization_sha256": "1c3a3515114bbbb493f867d9c378a9bd3614f17a0dabcc46a1a50b3fbec6ed00",
+    "seeds": [
+      60000000,
+      61000000,
+      62000000
+    ],
+    "updates": 50,
+    "decisions_per_run": 204800,
+    "difference": "decision_cost 0 versus 0.0003 only",
+    "evaluation": {
+      "split": "dev",
+      "seed_offset": 9000,
+      "games_per_policy": 64,
+      "opponents": "scripted",
+      "scheduler": "round_robin",
+      "runtime": "raw"
+    },
+    "eligibility": "diagnostic only; not a final-model candidate",
+    "deadline_unix": 1793143201,
+    "reason": "Early 200-update exploration had source evolution between two pairs; this shorter experiment does not replace or retroactively validate it."
+  },
+  "rows": [
+    {
+      "seed": 60000000,
+      "status": "complete",
+      "runs": [
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s60000000-c0",
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s60000000-c0.0003"
+      ],
+      "training_status": [
+        "updates_completed",
+        "updates_completed"
+      ],
+      "metrics": [
+        {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 5.71875,
+          "win_rate": 0.046875,
+          "top4_rate": 0.265625,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            5.34375,
+            6.09375
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 5.71875,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            5.34375,
+            6.09375
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 59611,
+            "mean_ms": 1.2254325309046366,
+            "p50_ms": 1.202625222504139,
+            "p95_ms": 1.4073541387915611,
+            "max_ms": 6.580000044777989
+          },
+          "elapsed_seconds": 76.67532095406204,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          }
+        },
+        {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 4.15625,
+          "win_rate": 0.09375,
+          "top4_rate": 0.59375,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            3.609375,
+            4.71875
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 4.15625,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            3.609375,
+            4.71875
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 58056,
+            "mean_ms": 1.1734248401801002,
+            "p50_ms": 1.1413749307394028,
+            "p95_ms": 1.3686353340744972,
+            "max_ms": 4.908791044726968
+          },
+          "elapsed_seconds": 71.06053445790894,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          }
+        }
+      ],
+      "comparison": {
+        "candidate": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s60000000-c0.0003-raw-dev64",
+        "baseline": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s60000000-c0-raw-dev64",
+        "candidate_policy": "ppo",
+        "baseline_policy": "ppo",
+        "split": "dev",
+        "complete_common_seed_blocks": 8,
+        "paired_games": 64,
+        "observed_common_pairs": 64,
+        "excluded_common_pairs": 0,
+        "unmatched_candidate_pairs": 0,
+        "unmatched_baseline_pairs": 0,
+        "candidate_mean": 4.15625,
+        "baseline_mean": 5.71875,
+        "candidate_minus_baseline": -1.5625,
+        "paired_seed_bootstrap_95ci": [
+          -2.03125,
+          -1.15625
+        ],
+        "seeds": [
+          1000009000,
+          1000009001,
+          1000009002,
+          1000009003,
+          1000009004,
+          1000009005,
+          1000009006,
+          1000009007
+        ],
+        "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+      },
+      "mean_own_decisions_per_game": [
+        931.421875,
+        907.125
+      ]
+    },
+    {
+      "seed": 61000000,
+      "status": "complete",
+      "runs": [
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s61000000-c0",
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s61000000-c0.0003"
+      ],
+      "training_status": [
+        "updates_completed",
+        "updates_completed"
+      ],
+      "metrics": [
+        {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 4.484375,
+          "win_rate": 0.109375,
+          "top4_rate": 0.421875,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            4.1875,
+            4.828125
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 4.484375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            4.1875,
+            4.828125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 63441,
+            "mean_ms": 1.0402086673745752,
+            "p50_ms": 1.0239582043141127,
+            "p95_ms": 1.1350831482559443,
+            "max_ms": 6.541666109114885
+          },
+          "elapsed_seconds": 68.42474049981683,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          }
+        },
+        {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 5.109375,
+          "win_rate": 0.046875,
+          "top4_rate": 0.359375,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            4.530859375,
+            5.609375
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 5.109375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            4.530859375,
+            5.609375
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 56561,
+            "mean_ms": 0.9964307627637915,
+            "p50_ms": 0.9912499226629734,
+            "p95_ms": 1.0306660551577806,
+            "max_ms": 7.7975839376449585
+          },
+          "elapsed_seconds": 58.57991241244599,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          }
+        }
+      ],
+      "comparison": {
+        "candidate": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s61000000-c0.0003-raw-dev64",
+        "baseline": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s61000000-c0-raw-dev64",
+        "candidate_policy": "ppo",
+        "baseline_policy": "ppo",
+        "split": "dev",
+        "complete_common_seed_blocks": 8,
+        "paired_games": 64,
+        "observed_common_pairs": 64,
+        "excluded_common_pairs": 0,
+        "unmatched_candidate_pairs": 0,
+        "unmatched_baseline_pairs": 0,
+        "candidate_mean": 5.109375,
+        "baseline_mean": 4.484375,
+        "candidate_minus_baseline": 0.625,
+        "paired_seed_bootstrap_95ci": [
+          0.15625,
+          1.0625
+        ],
+        "seeds": [
+          1000009000,
+          1000009001,
+          1000009002,
+          1000009003,
+          1000009004,
+          1000009005,
+          1000009006,
+          1000009007
+        ],
+        "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+      },
+      "mean_own_decisions_per_game": [
+        991.265625,
+        883.765625
+      ]
+    },
+    {
+      "seed": 62000000,
+      "status": "complete",
+      "runs": [
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s62000000-c0",
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s62000000-c0.0003"
+      ],
+      "training_status": [
+        "updates_completed",
+        "updates_completed"
+      ],
+      "metrics": [
+        {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 4.3125,
+          "win_rate": 0.078125,
+          "top4_rate": 0.5625,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            3.78125,
+            4.765625
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 4.3125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            3.78125,
+            4.765625
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 65314,
+            "mean_ms": 1.0571439677335968,
+            "p50_ms": 1.0545409750193357,
+            "p95_ms": 1.107499934732914,
+            "max_ms": 11.165833100676537
+          },
+          "elapsed_seconds": 71.62807704112493,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          }
+        },
+        {
+          "requested": 64,
+          "completed": 64,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 64,
+          "mean_placement": 4.71875,
+          "win_rate": 0.078125,
+          "top4_rate": 0.4375,
+          "completed_seed_blocks": 8,
+          "mean_placement_seed_bootstrap_95ci": [
+            4.28125,
+            5.203515624999998
+          ],
+          "complete_block_metric_denominator": 64,
+          "complete_block_mean_placement": 4.71875,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            4.28125,
+            5.203515624999998
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 66869,
+            "mean_ms": 1.0495440429095355,
+            "p50_ms": 1.0408749803900719,
+            "p95_ms": 1.1383751407265663,
+            "max_ms": 6.091417046263814
+          },
+          "elapsed_seconds": 72.79982746136375,
+          "seats_attempted": {
+            "0": 8,
+            "1": 8,
+            "2": 8,
+            "3": 8,
+            "4": 8,
+            "5": 8,
+            "6": 8,
+            "7": 8
+          }
+        }
+      ],
+      "comparison": {
+        "candidate": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s62000000-c0.0003-raw-dev64",
+        "baseline": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/strict-cost-s62000000-c0-raw-dev64",
+        "candidate_policy": "ppo",
+        "baseline_policy": "ppo",
+        "split": "dev",
+        "complete_common_seed_blocks": 8,
+        "paired_games": 64,
+        "observed_common_pairs": 64,
+        "excluded_common_pairs": 0,
+        "unmatched_candidate_pairs": 0,
+        "unmatched_baseline_pairs": 0,
+        "candidate_mean": 4.71875,
+        "baseline_mean": 4.3125,
+        "candidate_minus_baseline": 0.40625,
+        "paired_seed_bootstrap_95ci": [
+          -0.125,
+          1.0
+        ],
+        "seeds": [
+          1000009000,
+          1000009001,
+          1000009002,
+          1000009003,
+          1000009004,
+          1000009005,
+          1000009006,
+          1000009007
+        ],
+        "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+      },
+      "mean_own_decisions_per_game": [
+        1020.53125,
+        1044.828125
+      ]
+    }
+  ],
+  "complete_pairs": 3,
+  "mean_cost_minus_no_cost": -0.17708333333333334,
+  "note": "Descriptive average across three planned continuation seeds; not a confidence interval over all possible training runs. This50-update control is separate from the earlier exploratory200-update runs, and never selects the final deployment."
+}

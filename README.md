@@ -27,6 +27,10 @@
 
 ## Overview
 
+**OmniBob fork:** [本机安装、训练与运行](docs/OMNIBOB_TRAINING.md) · [冻结 v0.1 基线](docs/OMNIBOB.md) ·
+[v0.2复现范围](docs/OMNIBOB_REPRODUCTION_V02.md) · [夜间实验结果](docs/OMNIBOB_EXPLORATION.md) ·
+[竞技场协议核验](docs/OMNIBOB_ARENA.md).
+
 AutoTavern brings the decisions of Battlegrounds into a reproducible environment for AI
 research: simulate complete games, connect a learning algorithm, or evaluate a model's
 judgment against a fixed set of tasks.
@@ -177,3 +181,24 @@ Blizzard's services. The AutoTavern banner and emblem are original generated ill
   <br>
   <a href="#top">Back to the tavern</a>
 </p>
+
+
+### Complete player observations (1.1)
+
+`Game.observe2(seat)` returns little-endian float32 and int32 byte arrays with
+4017 and 447 values. The unchanged v1 arrays (3227 / 124) are their prefixes.
+`obs2_blocks()` describes extension blocks; `layout()` exports their constants.
+This compact, fixed-size encoding includes attachments, counters, effects,
+powers and normally visible opponent summaries. Reserved slots are zero.
+
+`json.loads(Game.player_view(seat))` provides the full, variable-size visible
+state: own hand, shop, choices, board, dynamic card text and prices, powers,
+quests, effects and statistics, lobby races and public opponents. Opponent
+boards come only from the viewer's previously fought boards, or a legitimate
+in-game reveal ability. Opponent current hidden zones, hero picks during
+selection, internal entity allocation, seed, saves, logs and combat replays
+are excluded. This API is suitable for remote players; `view`, `debug` and
+`state_json` remain local development tools and must not be exposed remotely.
+
+`BattlegroundsEnv(observation_version=2)` selects v2 for the Gym-style wrapper;
+its `player_view()` method returns the complete visible dictionary. Default v1 remains compatible.

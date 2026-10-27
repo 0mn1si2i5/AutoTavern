@@ -1,0 +1,34 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling serde_core v1.0.229
+   Compiling zmij v1.0.23
+   Compiling serde_json v1.0.151
+   Compiling serde v1.0.229
+   Compiling memchr v2.8.3
+   Compiling syn v3.0.6
+   Compiling itoa v1.0.18
+   Compiling serde_derive v1.0.229
+   Compiling taverngym v1.0.0 (/Users/ostrovsky/Projects/Zen/omnibob/crates/taverngym)
+    Finished `release` profile [optimized + debuginfo] target(s) in 1m 03s
+     Running unittests src/lib.rs (target/release/deps/taverngym-d7fa46f0733fe008)
+
+running 15 tests
+test actions::tests::encode_decode_roundtrip ... ok
+test env::tests::placement_reward_range ... ok
+test config::tests::damage_cap_schedule ... ok
+test rng::tests::below_in_range_and_covers ... ok
+test rng::tests::deterministic ... ok
+test rng::tests::sample_distinct ... ok
+test tests::versions ... ok
+test cards::tests::loads_and_links_golden ... ok
+test cards::tests::all_races_sentinel ... ok
+test cards::tests::pool_counts_match_bundle ... ok
+test batch::tests::bad_arguments_are_errors ... ok
+test batch::tests::an_illegal_action_is_rejected_and_ignored ... ok
+test batch::tests::a_saved_game_continues_exactly ... ok
+test batch::tests::results_do_not_depend_on_the_number_of_threads ... ok
+test batch::tests::episodes_end_with_a_placement_and_a_reward_in_range ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.84s
+

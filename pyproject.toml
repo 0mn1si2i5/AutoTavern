@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "taverngym"
-version = "1.0.0"
+version = "1.1.0"
 description = "TavernGym: a Hearthstone Battlegrounds solo-mode simulator with a reinforcement-learning interface"
 readme = "README.md"
 requires-python = ">=3.10"

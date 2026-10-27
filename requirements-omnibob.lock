@@ -1,0 +1,8 @@
+# Local macOS arm64 baseline environment, Python 3.12; upstream constraints unchanged.
+numpy==2.5.4
+pytest==9.1.1
+iniconfig==2.3.1
+packaging==26.3
+pluggy==1.7.0
+pygments==2.21.0
+maturin==1.15.0

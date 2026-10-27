@@ -1,0 +1,16 @@
+{
+  "checked_unix": 1793143037.769133,
+  "status": "passed_via_loopback_http",
+  "artifact_sha256": "4a949b85596947e9097f2492b18d97277fb64dff2cd239a321485b0b64889512",
+  "browser": "Codex in-app browser",
+  "checks": [
+    "first step1/263 with Previous disabled",
+    "Next reaches2/263",
+    "slider120 reaches121/263 with round8 own board/hand/shop",
+    "slider262 reaches263/263 with Next disabled and final placement3"
+  ],
+  "screenshot": "review-screenshot.png",
+  "file_url_check": "Blocked by browser security URL policy (only http/https permitted); no workaround attempted. Direct offline opening not UI-verified.",
+  "temporary_http_server": "127.0.0.1:53835, stopped after validation",
+  "no_external_service_or_upload": true
+}

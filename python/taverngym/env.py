@@ -12,11 +12,13 @@ import json
 
 import numpy as np
 
-from taverngym._core import N_ACTIONS, OBS_CARDS, OBS_FLOATS, SoloEnv
+from taverngym._core import N_ACTIONS, OBS_CARDS, OBS_FLOATS, OBS2_CARDS, OBS2_FLOATS, SoloEnv
 
 
 class BattlegroundsEnv:
-    def __init__(self, seed=0, config=None, agent=0):
+    def __init__(self, seed=0, config=None, agent=0, observation_version=1):
+        if observation_version not in (1,2):raise ValueError("observation_version must be 1 or 2")
+        self.observation_version=observation_version
         self._config_json = json.dumps(config) if config is not None else None
         self._seed = seed
         self._agent = agent
@@ -24,7 +26,7 @@ class BattlegroundsEnv:
         self.n_actions = N_ACTIONS
 
     def _obs(self):
-        f, c = self._env.observe()
+        f, c = (self._env.observe2 if self.observation_version==2 else self._env.observe)()
         return {
             "features": np.frombuffer(f, dtype="<f4").copy(),
             "cards": np.frombuffer(c, dtype="<i4").copy(),
@@ -49,4 +51,8 @@ class BattlegroundsEnv:
 
     @property
     def observation_sizes(self):
-        return {"features": OBS_FLOATS, "cards": OBS_CARDS, "action_mask": N_ACTIONS}
+        return {"features": OBS2_FLOATS if self.observation_version==2 else OBS_FLOATS, "cards": OBS2_CARDS if self.observation_version==2 else OBS_CARDS, "action_mask": N_ACTIONS}
+
+    def player_view(self):
+        """Complete variable-size normal player view, without replays or hidden zones."""
+        return json.loads(self._env.player_view())

@@ -1,0 +1,30 @@
+{
+  "attempted": 80,
+  "total_formal_tasks": 368,
+  "unsupported": 288,
+  "errors": 0,
+  "tasks_with_different_rules": 80,
+  "scenarios": {
+    "D2": {
+      "tasks": 8,
+      "accuracy": 0.5,
+      "graded_score": 0.5
+    },
+    "D4": {
+      "tasks": 16,
+      "accuracy": 0.375,
+      "graded_score": 0.375
+    },
+    "N1": {
+      "tasks": 29,
+      "accuracy": 0.5517241379310345,
+      "graded_score": 0.5517241379310345
+    },
+    "N2": {
+      "tasks": 27,
+      "accuracy": 0.25925925925925924,
+      "graded_score": 0.25925925925925924
+    }
+  },
+  "limitations": "80 mapped single-action questions only; choices restricted to supplied options. Saved task rules may differ from arena training. No rule-text reasoning or full TavernBench score. Public diagnostic only, never independent generalization or model-selection evidence."
+}

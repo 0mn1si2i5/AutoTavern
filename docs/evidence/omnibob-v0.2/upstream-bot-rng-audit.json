@@ -1,0 +1,16 @@
+{
+  "observed_unix": 1793143940.5822022,
+  "native_reference": "unchanged upstream Game.bot_action, not an observation-only deployable policy",
+  "implementation": {
+    "binding": "crates/taverngym-py/src/lib.rs:116-121 saves RNG, calls choose_action, restores RNG",
+    "choices": "crates/taverngym/src/bot.rs:159-193 uses game RNG for hero/quest/choose-one/hero-power options"
+  },
+  "our_policy_boundary": "OmniBob heuristic, BC/PPO and deployment controllers receive player-visible observations only, no Game/RNG. Native bot is the separately labeled upstream comparison/opponent.",
+  "limitation": "Native baseline stochastic choices are coupled to engine RNG. It is not a reproduction of a remote client with independent randomness. No candidate search reads future RNG outcomes; no claim that all comparator internals use the same observation-only interface.",
+  "files": {
+    "crates/taverngym-py/src/lib.rs": "606b1da22e82c2742a2fb1b87ff39ab89b5da4769d350684f36086354f3dd8a5",
+    "crates/taverngym/src/bot.rs": "63b24e6d48a65bab585c415753b437804e6039b71d6b6fb5a5f3f497e4789855",
+    "omnibob/policies.py": "bd0f0449cd11e6c22023cbd5df283764c0e62a0c198f28fca801a9d9cc31e9c9",
+    "omnibob/evaluate.py": "e394f205a212a390d8c029839d308b455c720fa30b134beda6f39e96a252a7e9"
+  }
+}

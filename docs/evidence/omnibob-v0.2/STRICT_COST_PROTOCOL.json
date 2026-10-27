@@ -1,0 +1,25 @@
+{
+  "created_unix": 1793140585.5428631,
+  "source_sha256": "6c85dddca003dab40b185212b1da16615a4c17adb2c5c5ccbd40928319c73669",
+  "initialization": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+  "initialization_sha256": "1c3a3515114bbbb493f867d9c378a9bd3614f17a0dabcc46a1a50b3fbec6ed00",
+  "seeds": [
+    60000000,
+    61000000,
+    62000000
+  ],
+  "updates": 50,
+  "decisions_per_run": 204800,
+  "difference": "decision_cost 0 versus 0.0003 only",
+  "evaluation": {
+    "split": "dev",
+    "seed_offset": 9000,
+    "games_per_policy": 64,
+    "opponents": "scripted",
+    "scheduler": "round_robin",
+    "runtime": "raw"
+  },
+  "eligibility": "diagnostic only; not a final-model candidate",
+  "deadline_unix": 1793143201,
+  "reason": "Early 200-update exploration had source evolution between two pairs; this shorter experiment does not replace or retroactively validate it."
+}

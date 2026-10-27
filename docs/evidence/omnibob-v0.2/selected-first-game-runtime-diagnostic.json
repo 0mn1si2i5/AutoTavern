@@ -1,0 +1,97 @@
+{
+  "scope": "Descriptive diagnostics, not independent outcome evidence. Filtered options do not necessarily change the raw argmax. Play/cancel pairs are not by themselves proven mistakes.",
+  "runs": [
+    {
+      "directory": "runs/exploration-20261028/selected-first-game",
+      "verification": {
+        "verified_games": 1,
+        "observation_hashes_verified": true
+      },
+      "games": [
+        {
+          "policy": "ppo",
+          "seed": 2000050000,
+          "seat": 0,
+          "own_decisions": 263,
+          "action_families": {
+            "choose": 63,
+            "end": 15,
+            "buy": 28,
+            "play": 52,
+            "activate": 25,
+            "dark_gift": 3,
+            "magnetize": 1,
+            "sell": 14,
+            "move": 43,
+            "upgrade": 5,
+            "refresh": 14
+          },
+          "max_own_decisions_per_turn": 34,
+          "turns_with_at_least_100_own_decisions": 0,
+          "immediate_play_then_cancel_pairs": 0,
+          "decisions_with_some_actions_filtered": {
+            "repeat": 18
+          }
+        }
+      ],
+      "total_action_families": {
+        "choose": 63,
+        "end": 15,
+        "buy": 28,
+        "play": 52,
+        "activate": 25,
+        "dark_gift": 3,
+        "magnetize": 1,
+        "sell": 14,
+        "move": 43,
+        "upgrade": 5,
+        "refresh": 14
+      }
+    },
+    {
+      "directory": "runs/exploration-20261028/selected-first-game-raw",
+      "verification": {
+        "verified_games": 1,
+        "observation_hashes_verified": true
+      },
+      "games": [
+        {
+          "policy": "ppo",
+          "seed": 2000050000,
+          "seat": 0,
+          "own_decisions": 648,
+          "action_families": {
+            "choose": 40,
+            "end": 11,
+            "buy": 10,
+            "play": 130,
+            "activate": 13,
+            "dark_gift": 3,
+            "magnetize": 1,
+            "sell": 7,
+            "move": 332,
+            "upgrade": 1,
+            "cancel": 100
+          },
+          "max_own_decisions_per_turn": 102,
+          "turns_with_at_least_100_own_decisions": 6,
+          "immediate_play_then_cancel_pairs": 100,
+          "decisions_with_some_actions_filtered": {}
+        }
+      ],
+      "total_action_families": {
+        "choose": 40,
+        "end": 11,
+        "buy": 10,
+        "play": 130,
+        "activate": 13,
+        "dark_gift": 3,
+        "magnetize": 1,
+        "sell": 7,
+        "move": 332,
+        "upgrade": 1,
+        "cancel": 100
+      }
+    }
+  ]
+}

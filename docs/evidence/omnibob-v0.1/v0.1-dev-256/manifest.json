@@ -1,0 +1,1383 @@
+{
+  "omnibob_version": "0.1.0",
+  "git_commit": "fb61201a557ddd36a411cf44aac51ce4d9b606ce",
+  "git_status": "M .gitignore\n M README.md\n?? docs/OMNIBOB.md\n?? docs/OMNIBOB_ARENA.md\n?? docs/OMNIBOB_REPRODUCTION.md\n?? omnibob/\n?? requirements-omnibob-mps.lock\n?? requirements-omnibob.lock\n?? tests/test_omnibob.py\n?? tools/omnibob-env.sh\n?? tools/setup-omnibob.sh",
+  "source_files": {
+    "Cargo.lock": "5b733fbd5438688aa6a7ea463a64f8874d6bf1719b767fe877552e524f5d09a7",
+    "Cargo.toml": "8a5030b0de95453d06c044c542b462e22c4929a82328580276292185513f64a5",
+    "crates/taverngym/Cargo.toml": "f7e01e3482a70ec782cc04970a1bd7d769a08955d108a0acb10ac3af22364bed",
+    "crates/taverngym/data/cards.json": "429305fb9dd53e6c5240bf5219a747602e96d7a0e4bbd19a0d65b8b044ed6168",
+    "crates/taverngym/examples/bench.rs": "ec2b378a8005b79b8acfdfd6bc7edff9e7dcc65c9215816e5b1292afd302d22b",
+    "crates/taverngym/examples/content_report.rs": "595ec82e38f5ff22a7b72c633484fd73fed464891860cfbd642f17fa7f653e91",
+    "crates/taverngym/examples/fuzz.rs": "e9b5047b8ee9457c68529585e617ebdac855d44983fd006b0e24a6c6e9ae2635",
+    "crates/taverngym/examples/play.rs": "1abb38199865ceb6a79ab8b624ef82379caeabd298f8d3b8c5069dd30578ee74",
+    "crates/taverngym/examples/stress.rs": "a585bfe36422ddc0562e47961e9674ca0041dfd72b5882973fe3d052f47219fe",
+    "crates/taverngym/src/actions.rs": "c44915a4236a945d0a76e577953e00cad87118b8b78eae341776cd19a1aa9e1d",
+    "crates/taverngym/src/batch.rs": "946bc0f161885e53e5ae4a9afa9a67a447b7c422af430ed1fb636122e09b76d2",
+    "crates/taverngym/src/bot.rs": "63b24e6d48a65bab585c415753b437804e6039b71d6b6fb5a5f3f497e4789855",
+    "crates/taverngym/src/cards.rs": "f29c413770185a301ca98ce491ac283b4b6cf4ba05934ef4b0fcfeace8bcb1e0",
+    "crates/taverngym/src/combat.rs": "101b429ab3c8153d7f03daa634d8301612b22b36591399f3cd199ffaac29a3cd",
+    "crates/taverngym/src/config.rs": "e39d896b31d1a61edaa7962a08776a6d284f99d473165b46c0d6827861e46368",
+    "crates/taverngym/src/content/aberrations.rs": "0424bf1c9aa42bd33a2419f0e149c972aa2f8616c473305a97046ab94b704126",
+    "crates/taverngym/src/content/beasts.rs": "740a233bc3f8399ed31d5b92396fe45142667fe9682febc29dc945798a560644",
+    "crates/taverngym/src/content/buddies_a.rs": "5888c32dca61898af3fb00bc154b4147c597ff14d0a5af280518a44ec0315bf4",
+    "crates/taverngym/src/content/buddies_b.rs": "c0c21663d326236158f64e2ac074e7a133d53693303c837237522f4e71299147",
+    "crates/taverngym/src/content/buddies_c.rs": "95e2f26b7335218d2a4f1204e370767b023405fba5c2b6826594e404d0c3606b",
+    "crates/taverngym/src/content/darkmoon.rs": "f3dbc4bd103f5cc2b7e7fdbdba4cf1b6fcb9c58e788137b890677fc123bbbdb1",
+    "crates/taverngym/src/content/demons.rs": "9c835db9229a52791717bf2613450080d0add5ce2eebdf90ed4389ffc1d5f749",
+    "crates/taverngym/src/content/demons_p1.rs": "15dde14f1e18595283cf62ed4e4e9ca07bd986f71cbb65649c4879fbf5192585",
+    "crates/taverngym/src/content/dragons.rs": "f45509cf23b9ee1ba9ea68183681e35dbb587e74e4543ea615191d041db6ecab",
+    "crates/taverngym/src/content/elementals.rs": "e1265d078e2dc44fc0aee03899edf52e7f81c393687ae0dd016f308c062e79d7",
+    "crates/taverngym/src/content/gifts.rs": "07519eedb74d2cdba3141a807f5b25d6b9fc653efffdee02702d17ca24ffad51",
+    "crates/taverngym/src/content/helpful.rs": "48b7a63fefef0fb1fc81147a4601330202dc4c6f0a23489e8ebfda9010c38418",
+    "crates/taverngym/src/content/hero_powers.rs": "57375fe9ec573bd65d62e10ed8fcd0907949ffd1bc938a2f9e83f5cee531fa09",
+    "crates/taverngym/src/content/heroes.rs": "1c0a84a511f055d9679ae56495038dcc4e74cde581127d20cac441b7a8ee5a5f",
+    "crates/taverngym/src/content/heroes_active.rs": "dc06d11c5a171d7e0afeb8fd434496c773cfe6f2beb2b5ebd3c312964334e969",
+    "crates/taverngym/src/content/heroes_combat.rs": "6e62985b677deae3bda36f90eb878d09150f55c892c02dd40ca0ca0353912d9e",
+    "crates/taverngym/src/content/heroes_eco.rs": "09781798e7e1d7c2088c7cc05b58e18f598f614dee53d9a16796b5888aaaaabc",
+    "crates/taverngym/src/content/heroes_gen.rs": "f374883a95440e416c86cde38e09362db280a9e701f8717f3e9c8683174b5c7a",
+    "crates/taverngym/src/content/heroes_special.rs": "8b4afe543661e435abba89408df0d39449890e7f34069d9a7e5fdf729dceedee",
+    "crates/taverngym/src/content/mechs.rs": "e6c35513f96abd69bfcbdd09e79c36f5166a4be4c97c08e9a63b8720d87a94af",
+    "crates/taverngym/src/content/mechs_p1.rs": "9f6c6abc33572943b55915cffc434d7a22b4a3474c551066c43db868e8cbd9a5",
+    "crates/taverngym/src/content/minions.rs": "a10d81a229f76d3be32047404e2a81e8a7a4633255d1ada12f586f6374d7a761",
+    "crates/taverngym/src/content/mod.rs": "acee6d511871eee620751bdc4efd0d376b2540b84a11f6d3165ccc8a23efdd66",
+    "crates/taverngym/src/content/murlocs.rs": "3e27904fac7cc6a141f0957281b1f8183caae5542beb62ff8a5d949724100f5e",
+    "crates/taverngym/src/content/murlocs_p1.rs": "b4cf425b9e3c11bc4dc75b0d0ae87c430d721e7a71c87f1d826bf1e255bfd98c",
+    "crates/taverngym/src/content/naga.rs": "0cbffe59fe59a0f256dfa054ec22db613dc30f95d39bed1198b955aff6ae09ec",
+    "crates/taverngym/src/content/neutral.rs": "4be858d65fd3dcdc042ce508600b16c384f457fcf4486fec147c42c8f46228c0",
+    "crates/taverngym/src/content/pirates.rs": "675daba235d0d0267b44155f02edde19b32079b887ea8b4121dd13f40b354dfc",
+    "crates/taverngym/src/content/pirates_p1.rs": "d1f4210d754a91e9dc7de597a4c4c1ee436bf55a8c49361b537fc6242120e9b6",
+    "crates/taverngym/src/content/putricide.rs": "ccdf6349126c42196c37360be3f9589a3ee39f172c264d66adab15f335e10f56",
+    "crates/taverngym/src/content/quests.rs": "c590f37796c0f3cbeb2acb016623a68307cf7c0a1890b33f6b564505d480994b",
+    "crates/taverngym/src/content/quilboar.rs": "c2606ec3973cf9c3a728fc34aa7ab06c21c52a060c475af95230f025b1cfe829",
+    "crates/taverngym/src/content/quilboar_p1.rs": "f55e4e9d3f84603a3354167a50a8fc9da4fcadf09face538bab44694bd0825a7",
+    "crates/taverngym/src/content/secrets.rs": "39833ad779f4fc861d6c019ab8439a6827d077e86beb43412848a880ff938f14",
+    "crates/taverngym/src/content/spells.rs": "92988eafddf6c2705354cb60856c5c32c0c211d7b4731ae318713a6c2e9b6f8a",
+    "crates/taverngym/src/content/spells_p2.rs": "d4ad8517526442060832e326a5a07b42d42bfccb07ccec1f9a30882a9902e232",
+    "crates/taverngym/src/content/starcraft.rs": "d4719dacace45513fadae241d00bcbb27e2002a8b796db22e0c7311dbf164130",
+    "crates/taverngym/src/content/tier7.rs": "496fcbc096eaa640b7270e17b3b8a034801e1ea7211bf27be07fe4729f0765a3",
+    "crates/taverngym/src/content/timewarp.rs": "5fa9c91996fcc9061f9bbe7a451730e8515cfbba85a62b457427b68f2f05e489",
+    "crates/taverngym/src/content/trinket_offers.rs": "64d3b97a39ac00f2e64b73312304f563813c8ef9d268da2a1245b7fe0e52f1c5",
+    "crates/taverngym/src/content/trinkets.rs": "59515a98349b664e0a83753616f736499b5c5f7050e40ab605b429f36885d8a1",
+    "crates/taverngym/src/content/trinkets_p1.rs": "731d1cd90ab7dd3728fd1d5d47ca9b2778db422ea5040ea6fcb65e31daef41c2",
+    "crates/taverngym/src/content/trinkets_p2.rs": "d4ec4060f2bbb0ed593fdec59767c590ac3d6e15134b263825f77f445a08c377",
+    "crates/taverngym/src/content/trinkets_p3.rs": "2569ec9877f7776556995cdc25353261d82ddac1157d063d6a0658a7d10bf206",
+    "crates/taverngym/src/content/trinkets_p4.rs": "f2d660fbb911038bee5f710265e1fd6061a48af4869c7f65cfb714981432c167",
+    "crates/taverngym/src/content/trinkets_p5.rs": "77948d68c666a201d6a576088a7c66798962203ec115d1a44cf5c74eee3a5d88",
+    "crates/taverngym/src/content/trinkets_p6.rs": "cecdd6ce77356f379622da5ee0b259c59760d14028bcb48b962d2e833fa375b3",
+    "crates/taverngym/src/content/trinkets_p7.rs": "52a0f70e723a11396f1009eb33813c1e6ab7a18791bede1fa8f48d4d9882d948",
+    "crates/taverngym/src/content/trinkets_p8.rs": "533b84931500d16ece9f7a9676f89595813ddf8c33df01c0fce4e475284c48cf",
+    "crates/taverngym/src/content/tw_beasts.rs": "2be388806ef87b206d06746c2d862eeb95aaf7d23f941714ec7c19fb5861915a",
+    "crates/taverngym/src/content/tw_demons.rs": "516fa7c4de426d1a9f4752e389164a5f1815f25b0103c3d8188a1ee528e08006",
+    "crates/taverngym/src/content/tw_dragons_pirates.rs": "a4e777537777f61ac3089e413dc4c60ef241af28e3004d9a399c0f90d413d4ca",
+    "crates/taverngym/src/content/tw_elementals.rs": "beace9d59da8bfff7962ddaeb1d23f2919fcba4bb2a437f3a48da267798c0938",
+    "crates/taverngym/src/content/tw_murlocs_mechs.rs": "ce98772b0001ac4e1d8220ade0f424009a06f73a676a9f0bbf10c25418acd4ff",
+    "crates/taverngym/src/content/tw_quilboar_neutral.rs": "3462fa3e5a37c2529a195bd58a630916244d2b15a3d70e4266ece211f6979918",
+    "crates/taverngym/src/content/tw_spells.rs": "1fdf4dee2c6f593a8a4ff4e199dd13fa1a677337c950d10e84de8429aef7d1bd",
+    "crates/taverngym/src/content/tw_undead.rs": "fe7da8a20f99e328690c06620e50c7495589039b76ca3bb86c6eb99eacb2bc39",
+    "crates/taverngym/src/content/undead.rs": "60caf79485a5308f93895ee9bcfb3497b4dcb00e634f8b778ed1d147aac7d672",
+    "crates/taverngym/src/content/yogg.rs": "fa16ee0a9eb9c0eaf980e738398e4303aba157a13e99af3c2f783b1db68f805f",
+    "crates/taverngym/src/debug.rs": "40f98a1f0b7201f3a4c1595364b0a58969ad77744b24a0434d5dab8a896a8d9b",
+    "crates/taverngym/src/engine.rs": "1f1631b225c92d83fe41314f38cf179d5734928bae4f1a35bca499320408c023",
+    "crates/taverngym/src/env.rs": "99dfdd9dfe92cfd3fe6d7cf4f80fcbf4344fbfc9e67cb32e6f52c2e88247bf5a",
+    "crates/taverngym/src/event.rs": "89f3231bee8e390e846e8940e6bdad8a36bdd5468f709e0c18c68d4e99807809",
+    "crates/taverngym/src/experimental.rs": "3c174ea10d152d683ab52f3352f796018f3403edb9f4ad3f68b69848b8ac929b",
+    "crates/taverngym/src/flow.rs": "2646872f6924017d4bb30e65a85b5af22580d34ddfb722406ea114bd7ea410d1",
+    "crates/taverngym/src/guard.rs": "a6c2e9695bb74de54cd2adf5f5b588507c53d419481c328d5be2ec0812d7f72c",
+    "crates/taverngym/src/invariants.rs": "0b9f919ec49c1a87f9d991747ea1d49a2f22e47d242554498a4ccb758d77d872",
+    "crates/taverngym/src/lib.rs": "20237a9ba3aab67b9c912dc462ee4aaef93e11707a1a60862ec0c2bf0de79b1a",
+    "crates/taverngym/src/obs.rs": "906b2612ffc6eec44b7055f27c8fb31807f30477b0065a3df5bfd80808d7faa1",
+    "crates/taverngym/src/recruit.rs": "32b73659ff96c51c1df743d32fa17a43e5dcc538746fa24a9c8e0fb6523feac3",
+    "crates/taverngym/src/rng.rs": "cf0a954f165814f746b3eb478797b3ed39d47ff8362b289d1926764a981bcb2e",
+    "crates/taverngym/src/script.rs": "90e56e23b563952de3ee114dab9225f30845e815d06bcb038dedf574d4150385",
+    "crates/taverngym/src/state.rs": "dc0821061add3285c94ef3eafea84ad79ca223cec18a9d3b10ce38b7288203ea",
+    "crates/taverngym/src/types.rs": "1b3bb9e4dd3395b1205a1eaaab8aa2bbd8e9152ac188a97bfd91038d6165dc21",
+    "crates/taverngym/src/workers.rs": "decec43d9a3483e8e68fc35569209306f7d34bc53f2abe98776ceecc7a42457f",
+    "crates/taverngym/tests/buddies_a.rs": "0fbcc3e6b7aaf5eac2eca16ee42e0f0149aac0fa62c359fda9694413041be462",
+    "crates/taverngym/tests/buddies_b.rs": "ba83981b470f93805ac9d3c1737e92bbc11d732e7ecc1a5f3125cdf732ef3d9b",
+    "crates/taverngym/tests/buddies_c.rs": "9eb8944f079814a92cc58635ced326afb088b203957f09d838fd1316e1aef2f5",
+    "crates/taverngym/tests/cards_content.rs": "8833892bb156645febf9cc64c376f71cee3fc7940f7371c4f3086c120d630f73",
+    "crates/taverngym/tests/cards_core.rs": "9056cdb28550b0a72ce02672a5c122b73314203c1dddb6098884fcf5f22ad060",
+    "crates/taverngym/tests/cards_diagnostics.rs": "23b73e66c32fa3c82ebf4dfe1b08b9b26535bf0313b1643ed869ba5805a5b1c8",
+    "crates/taverngym/tests/cards_heroes.rs": "bfe1c81afb8b1e8a250aa86eed7ee93ef1dd564879c229b58d984123e4050869",
+    "crates/taverngym/tests/combat_analytics.rs": "798a107d01e905c1662eec2e06d23146ad4c1263bb71e3148781114232c03d94",
+    "crates/taverngym/tests/common/mod.rs": "614baca7dbfd4b481c9eb7821fe9bce5d908561baa484ee165f192948d1563b8",
+    "crates/taverngym/tests/complex_interactions.rs": "20193a62c26e62093610c41ec1efda942f4990fde612f99fdbc85c982d660827",
+    "crates/taverngym/tests/experimental_rules.rs": "42a1f65fae2968ab6e93746448987b031df037e76b3c25e62bacb016f8d034bb",
+    "crates/taverngym/tests/games.rs": "a6334d9fb2fa2eeae3b611fd11d12dd015f22aae4f7744a5e4a93281cf917b95",
+    "crates/taverngym/tests/mechanics.rs": "2287f55b257f9f9be196b654fafcd3e82f371a121566a0aa2161c58f040a7fb1",
+    "crates/taverngym/tests/persistence.rs": "a368955c5f9455ea5e1bca14b4d73606bf9cf5fa31481c465bc1f65b3330dc99",
+    "crates/taverngym/tests/recruit_batches.rs": "1059b59a94fee22f1845e0dc245c976757308f49dd366301974cc058db1cc25c",
+    "crates/taverngym/tests/s_tier_engines.rs": "ae1461f2ef512126957967d547efec1c5ff1ec21e3551237514e979becd7a4b0",
+    "crates/taverngym/tests/scoreboard.rs": "5197d65795ea444918b10e55a1733b2d8de0ea6491e1b1f5ced7ac2cc21f4961",
+    "crates/taverngym/tests/shown.rs": "9caebd09e630151d40d5c7457f5fb480c199fd1e60b3f059b6c323413334cc65",
+    "crates/taverngym/tests/shown_heroes.rs": "8e748342b50d75f89a378930edddd9be27ba056e5199c596a00b5465084e56b2",
+    "crates/taverngym/tests/shown_minions_a.rs": "7a98023521d900885a0b17dad0b7f4d29c72368ae7e6206d98ca72bc86ba4ea9",
+    "crates/taverngym/tests/shown_minions_b.rs": "f7ed1757d3323a91fa7c92716f5215fac61afdb6f4541509a2ed21e48bdd86e7",
+    "crates/taverngym/tests/shown_spells.rs": "de8406d7492de7fa5f8e207e42c247883fd6ff8bd423a0da9dd77764176ebe84",
+    "crates/taverngym/tests/shown_timewarp.rs": "95c066654311c774fbab9be008e566b9cbf69df306de0298a24241a4b4d2de86",
+    "crates/taverngym/tests/shown_trinkets_a.rs": "ffeeb759753a858b2fc426d65cad15d6652e7bdd24c1aaa773a2993e10cacb10",
+    "crates/taverngym/tests/shown_trinkets_b.rs": "554f88fcfd1dcf056eac76b108a3df44d88f3211d910afa5e8b8e930c3584335",
+    "crates/taverngym/tests/tw_beasts.rs": "a2b26c8e2b39292662a8f0d2cc71b87610c3ed0c3cce36454c2d3a541fe74241",
+    "crates/taverngym/tests/tw_demons.rs": "1502e3b277bfa5b61785b53a9193f5fe7d84ae6af81dc31aca041cdc1a88cb77",
+    "crates/taverngym/tests/tw_dragons_pirates.rs": "5a170f22200ae80e10a0e41bc18560ca45f414439791e0f6c61865c13710318e",
+    "crates/taverngym/tests/tw_elementals.rs": "ec510eecc37cfabbd334014bc2846a62366379ab6e9a4f199e0c26728c93bb71",
+    "crates/taverngym/tests/tw_engine.rs": "c101bf1f2ceed48d780f98c830f0b18f55fbbcadf3a781de7a8aac9e5bb95a61",
+    "crates/taverngym/tests/tw_murlocs_mechs.rs": "84bf28058c6039bd443a5e76048903b1d8ec77fbe03b1b503562317bdd9953ac",
+    "crates/taverngym/tests/tw_quilboar_neutral.rs": "fcfd481e62ea4d59b7acb70d2cd46dbf6c20ce6f0f07887e4a8c3de5d238373a",
+    "crates/taverngym/tests/tw_spells.rs": "4885cc0cf586e6edd10f8f9c1746855013f7e1eef929dac08a3d4a4701b036dc",
+    "crates/taverngym/tests/tw_undead.rs": "a3b50909aa54a925f8742d83ecc5eb99f4b02952ed96e60ec97553c522487eb9",
+    "crates/taverngym/tests/validation.rs": "b7110ccc1285095cae0f9411c9313b156eb516489534dbea5e5dcfdca541a2c0",
+    "crates/taverngym-py/Cargo.toml": "22b700f9005bd24a78db49c274e8b12d69be62d85912790161057bb75a6f7940",
+    "crates/taverngym-py/build.rs": "9edc566185dcce6f5659af041e4c3feff5e12e3aaa7d54909f1db4b5a22bb973",
+    "crates/taverngym-py/src/lib.rs": "f62f5e043135b81042386497fbc13be4c29b5f29ffedc06f254641b4de6f7f7b",
+    "omnibob/__init__.py": "5cfcd0579849724f290467309da51987358b5c0e54c866e28c6d4bc4178f6e2b",
+    "omnibob/__main__.py": "0e568166e0c6cdca7a88ae8173a76b3701d5c8ab98573d2192fb24ecded74f06",
+    "omnibob/benchmark.py": "83a6d10c01ab3c0c55bef9440d0ef2f8a7e8beafc9b5e652261cf654d627b683",
+    "omnibob/compat.py": "37ac97d1419dfc03b5ff4d7e6f0f2a815b8cfe125be988a869080246cf3f2063",
+    "omnibob/contract-v1.json": "e63de05d40b2925786ac5ba4bba7e429c66377ffbf1b98bcf3909af0f1f3fc44",
+    "omnibob/evaluate.py": "49a7d19ae1802fee8f08690f328fdb71dfcb35d34b11b78be909f66a72143e80",
+    "omnibob/observation.py": "ba56b02a47df2ffa392f0907adb894add832544e50b8d84e5f0c8f5182c4014c",
+    "omnibob/policies.py": "bd0f0449cd11e6c22023cbd5df283764c0e62a0c198f28fca801a9d9cc31e9c9",
+    "pyproject.toml": "afe2c4a81e53fe42c46014bb53f38670e76c88833eea373d15badd72a0fc0305",
+    "python/taverngym/__init__.py": "4de0f7c29590c2c9a62a0bfabbad44c767765bcb933f7a086a87899d42222970",
+    "python/taverngym/batch.py": "4c574338a50389510bc819921206c06e857653ac9bc9265551b75c21b8fe2b79",
+    "python/taverngym/env.py": "10e83b97aca073f006fbe31ec7f385cc1340f5c11b36cadc7d7f993b5680246b",
+    "rust-toolchain.toml": "a7a23801522d469e93021507fc88e9f5651056fce0e6aa22b3d3157c5f3dc6fe"
+  },
+  "source_sha256": "9ae3d3ce5d647e94f544d1c5d0fe02fdd15415ef14b4d1cbd7ece23dd976e28c",
+  "environment": {
+    "package_version": "1.0.0",
+    "game_version": "36.6.3.253932",
+    "server_rules_version": "36.6.3",
+    "engine_source_hash": "c807e9aa1a6746ee",
+    "layout": {
+      "MINION_F": 31,
+      "ITEM_F": 40,
+      "GLOBAL_F": 53,
+      "N_QUESTS": 3,
+      "QUEST_F": 2,
+      "N_SECRETS": 5,
+      "OPP_F": 9,
+      "N_OPP": 7,
+      "PENDING_KINDS": 9,
+      "N_SHOP": 8,
+      "N_BOARD": 7,
+      "N_HAND": 10,
+      "N_CHOICE": 16,
+      "N_POS": 8,
+      "N_POWERS": 2,
+      "A_END": 0,
+      "A_REFRESH": 1,
+      "A_FREEZE": 2,
+      "A_UPGRADE": 3,
+      "A_HERO_POWER": 4,
+      "A_DARK_GIFT": 6,
+      "A_CANCEL": 7,
+      "A_BUY": 8,
+      "A_SELL": 16,
+      "A_ACTIVATE": 23,
+      "A_CHOOSE": 30,
+      "A_PLAY": 46,
+      "A_MAGNETIZE": 126,
+      "A_MOVE": 196,
+      "N_ACTIONS": 245,
+      "OBS_FLOATS": 3227,
+      "OBS_CARDS": 124
+    },
+    "actions_sha256": "be2e97586b88025ead313ce26dc24fc5817c46cd3bf731662a92d34876e674bd",
+    "catalog_sha256": "945125e996f2de8962d10aac162f144972c724a249582dfeb2ad04b73c58f268",
+    "vocabulary_sha256": "07e8db7ff09296ded0c87c7fc7278593e1157c2157a3e8e4cbe8fe96afd5f150",
+    "n_cards": 3984
+  },
+  "native_build": {
+    "source_hash": "c807e9aa1a6746ee",
+    "profile": "release",
+    "file": "/Users/ostrovsky/Projects/Zen/omnibob/python/taverngym/_core.abi3.so"
+  },
+  "config": {
+    "num_players": 8,
+    "content": "Implemented",
+    "start_gold": 3,
+    "gold_increment": 1,
+    "gold_refill_cap": 10,
+    "buy_cost": 3,
+    "sell_value": 1,
+    "refresh_cost": 1,
+    "upgrade_costs": [
+      5,
+      7,
+      8,
+      11,
+      11,
+      10
+    ],
+    "upgrade_discount_per_turn": 1,
+    "max_regular_tier": 6,
+    "shop_minion_slots": [
+      3,
+      4,
+      4,
+      5,
+      5,
+      6,
+      6
+    ],
+    "shop_spell_slots": 1,
+    "shop_max_cards": 7,
+    "board_size": 7,
+    "hand_size": 10,
+    "pool_copies_by_tier": [
+      15,
+      15,
+      13,
+      11,
+      9,
+      7,
+      5
+    ],
+    "spell_copies_by_tier": [
+      5,
+      7,
+      9,
+      11,
+      9,
+      7
+    ],
+    "strict_pool_tag": true,
+    "excluded_cards": [],
+    "hero_power_discover_excluded": [
+      "TB_BaconShop_HP_001",
+      "BG21_HERO_000p",
+      "TB_BaconShop_HP_056"
+    ],
+    "silas_ticket_pct": 30,
+    "lobby_races": 5,
+    "aberration_forced": false,
+    "lobby_types": [],
+    "hero_choices": 2,
+    "hero_type_filter": true,
+    "guaranteed_heroes": [
+      "BG36_HERO_000",
+      "BG36_HERO_002"
+    ],
+    "hero_pool": [],
+    "damage_caps": [
+      [
+        1,
+        5
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        8,
+        15
+      ]
+    ],
+    "damage_cap_until_alive": 4,
+    "max_combat_attacks": 400,
+    "max_effect_depth": 64,
+    "lesser_trinket_turn": 6,
+    "greater_trinket_turn": 9,
+    "trinket_choices": 4,
+    "trinket_type_min": [
+      2,
+      3
+    ],
+    "trinket_pivot_discount": 2,
+    "trinket_likely_pct": 200,
+    "effect_casts_count": false,
+    "dark_gift_unlock_turn": 3,
+    "dark_gift_rare_pct": 50,
+    "harpy_rally_mult": 2,
+    "dark_gift_cost": 3,
+    "dark_gift_uses": 3,
+    "dark_gift_choices": 3,
+    "dark_gift_t9_first_t5_pct": 50,
+    "dark_gift_late_t6_pct": 50,
+    "volumizer_attached_grow": false,
+    "timewarp_enabled": false,
+    "timewarp_turns": [
+      6,
+      9
+    ],
+    "timewarp_chronum": 2,
+    "timewarp_type_min": [
+      2,
+      3
+    ],
+    "triple_copies": 3,
+    "deity_threshold": 4,
+    "max_turns": 100,
+    "max_actions_per_turn": 200,
+    "turn_action_caps": [],
+    "record_log": false
+  },
+  "config_sha256": "97f1f0ef50626f102134d381818b25602720aa7e75ce4cc221c0c6b0f4015149",
+  "python": "3.12.2",
+  "numpy": "2.5.4",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "created_at": "2026-10-27T17:40:52.471587+00:00",
+  "policies": [
+    "random",
+    "scripted",
+    "omnibob"
+  ],
+  "split": "dev",
+  "seed_offset": 100,
+  "games_per_policy": 256,
+  "schedule": [
+    {
+      "seed": 1000000100,
+      "seat": 0
+    },
+    {
+      "seed": 1000000100,
+      "seat": 1
+    },
+    {
+      "seed": 1000000100,
+      "seat": 2
+    },
+    {
+      "seed": 1000000100,
+      "seat": 3
+    },
+    {
+      "seed": 1000000100,
+      "seat": 4
+    },
+    {
+      "seed": 1000000100,
+      "seat": 5
+    },
+    {
+      "seed": 1000000100,
+      "seat": 6
+    },
+    {
+      "seed": 1000000100,
+      "seat": 7
+    },
+    {
+      "seed": 1000000101,
+      "seat": 0
+    },
+    {
+      "seed": 1000000101,
+      "seat": 1
+    },
+    {
+      "seed": 1000000101,
+      "seat": 2
+    },
+    {
+      "seed": 1000000101,
+      "seat": 3
+    },
+    {
+      "seed": 1000000101,
+      "seat": 4
+    },
+    {
+      "seed": 1000000101,
+      "seat": 5
+    },
+    {
+      "seed": 1000000101,
+      "seat": 6
+    },
+    {
+      "seed": 1000000101,
+      "seat": 7
+    },
+    {
+      "seed": 1000000102,
+      "seat": 0
+    },
+    {
+      "seed": 1000000102,
+      "seat": 1
+    },
+    {
+      "seed": 1000000102,
+      "seat": 2
+    },
+    {
+      "seed": 1000000102,
+      "seat": 3
+    },
+    {
+      "seed": 1000000102,
+      "seat": 4
+    },
+    {
+      "seed": 1000000102,
+      "seat": 5
+    },
+    {
+      "seed": 1000000102,
+      "seat": 6
+    },
+    {
+      "seed": 1000000102,
+      "seat": 7
+    },
+    {
+      "seed": 1000000103,
+      "seat": 0
+    },
+    {
+      "seed": 1000000103,
+      "seat": 1
+    },
+    {
+      "seed": 1000000103,
+      "seat": 2
+    },
+    {
+      "seed": 1000000103,
+      "seat": 3
+    },
+    {
+      "seed": 1000000103,
+      "seat": 4
+    },
+    {
+      "seed": 1000000103,
+      "seat": 5
+    },
+    {
+      "seed": 1000000103,
+      "seat": 6
+    },
+    {
+      "seed": 1000000103,
+      "seat": 7
+    },
+    {
+      "seed": 1000000104,
+      "seat": 0
+    },
+    {
+      "seed": 1000000104,
+      "seat": 1
+    },
+    {
+      "seed": 1000000104,
+      "seat": 2
+    },
+    {
+      "seed": 1000000104,
+      "seat": 3
+    },
+    {
+      "seed": 1000000104,
+      "seat": 4
+    },
+    {
+      "seed": 1000000104,
+      "seat": 5
+    },
+    {
+      "seed": 1000000104,
+      "seat": 6
+    },
+    {
+      "seed": 1000000104,
+      "seat": 7
+    },
+    {
+      "seed": 1000000105,
+      "seat": 0
+    },
+    {
+      "seed": 1000000105,
+      "seat": 1
+    },
+    {
+      "seed": 1000000105,
+      "seat": 2
+    },
+    {
+      "seed": 1000000105,
+      "seat": 3
+    },
+    {
+      "seed": 1000000105,
+      "seat": 4
+    },
+    {
+      "seed": 1000000105,
+      "seat": 5
+    },
+    {
+      "seed": 1000000105,
+      "seat": 6
+    },
+    {
+      "seed": 1000000105,
+      "seat": 7
+    },
+    {
+      "seed": 1000000106,
+      "seat": 0
+    },
+    {
+      "seed": 1000000106,
+      "seat": 1
+    },
+    {
+      "seed": 1000000106,
+      "seat": 2
+    },
+    {
+      "seed": 1000000106,
+      "seat": 3
+    },
+    {
+      "seed": 1000000106,
+      "seat": 4
+    },
+    {
+      "seed": 1000000106,
+      "seat": 5
+    },
+    {
+      "seed": 1000000106,
+      "seat": 6
+    },
+    {
+      "seed": 1000000106,
+      "seat": 7
+    },
+    {
+      "seed": 1000000107,
+      "seat": 0
+    },
+    {
+      "seed": 1000000107,
+      "seat": 1
+    },
+    {
+      "seed": 1000000107,
+      "seat": 2
+    },
+    {
+      "seed": 1000000107,
+      "seat": 3
+    },
+    {
+      "seed": 1000000107,
+      "seat": 4
+    },
+    {
+      "seed": 1000000107,
+      "seat": 5
+    },
+    {
+      "seed": 1000000107,
+      "seat": 6
+    },
+    {
+      "seed": 1000000107,
+      "seat": 7
+    },
+    {
+      "seed": 1000000108,
+      "seat": 0
+    },
+    {
+      "seed": 1000000108,
+      "seat": 1
+    },
+    {
+      "seed": 1000000108,
+      "seat": 2
+    },
+    {
+      "seed": 1000000108,
+      "seat": 3
+    },
+    {
+      "seed": 1000000108,
+      "seat": 4
+    },
+    {
+      "seed": 1000000108,
+      "seat": 5
+    },
+    {
+      "seed": 1000000108,
+      "seat": 6
+    },
+    {
+      "seed": 1000000108,
+      "seat": 7
+    },
+    {
+      "seed": 1000000109,
+      "seat": 0
+    },
+    {
+      "seed": 1000000109,
+      "seat": 1
+    },
+    {
+      "seed": 1000000109,
+      "seat": 2
+    },
+    {
+      "seed": 1000000109,
+      "seat": 3
+    },
+    {
+      "seed": 1000000109,
+      "seat": 4
+    },
+    {
+      "seed": 1000000109,
+      "seat": 5
+    },
+    {
+      "seed": 1000000109,
+      "seat": 6
+    },
+    {
+      "seed": 1000000109,
+      "seat": 7
+    },
+    {
+      "seed": 1000000110,
+      "seat": 0
+    },
+    {
+      "seed": 1000000110,
+      "seat": 1
+    },
+    {
+      "seed": 1000000110,
+      "seat": 2
+    },
+    {
+      "seed": 1000000110,
+      "seat": 3
+    },
+    {
+      "seed": 1000000110,
+      "seat": 4
+    },
+    {
+      "seed": 1000000110,
+      "seat": 5
+    },
+    {
+      "seed": 1000000110,
+      "seat": 6
+    },
+    {
+      "seed": 1000000110,
+      "seat": 7
+    },
+    {
+      "seed": 1000000111,
+      "seat": 0
+    },
+    {
+      "seed": 1000000111,
+      "seat": 1
+    },
+    {
+      "seed": 1000000111,
+      "seat": 2
+    },
+    {
+      "seed": 1000000111,
+      "seat": 3
+    },
+    {
+      "seed": 1000000111,
+      "seat": 4
+    },
+    {
+      "seed": 1000000111,
+      "seat": 5
+    },
+    {
+      "seed": 1000000111,
+      "seat": 6
+    },
+    {
+      "seed": 1000000111,
+      "seat": 7
+    },
+    {
+      "seed": 1000000112,
+      "seat": 0
+    },
+    {
+      "seed": 1000000112,
+      "seat": 1
+    },
+    {
+      "seed": 1000000112,
+      "seat": 2
+    },
+    {
+      "seed": 1000000112,
+      "seat": 3
+    },
+    {
+      "seed": 1000000112,
+      "seat": 4
+    },
+    {
+      "seed": 1000000112,
+      "seat": 5
+    },
+    {
+      "seed": 1000000112,
+      "seat": 6
+    },
+    {
+      "seed": 1000000112,
+      "seat": 7
+    },
+    {
+      "seed": 1000000113,
+      "seat": 0
+    },
+    {
+      "seed": 1000000113,
+      "seat": 1
+    },
+    {
+      "seed": 1000000113,
+      "seat": 2
+    },
+    {
+      "seed": 1000000113,
+      "seat": 3
+    },
+    {
+      "seed": 1000000113,
+      "seat": 4
+    },
+    {
+      "seed": 1000000113,
+      "seat": 5
+    },
+    {
+      "seed": 1000000113,
+      "seat": 6
+    },
+    {
+      "seed": 1000000113,
+      "seat": 7
+    },
+    {
+      "seed": 1000000114,
+      "seat": 0
+    },
+    {
+      "seed": 1000000114,
+      "seat": 1
+    },
+    {
+      "seed": 1000000114,
+      "seat": 2
+    },
+    {
+      "seed": 1000000114,
+      "seat": 3
+    },
+    {
+      "seed": 1000000114,
+      "seat": 4
+    },
+    {
+      "seed": 1000000114,
+      "seat": 5
+    },
+    {
+      "seed": 1000000114,
+      "seat": 6
+    },
+    {
+      "seed": 1000000114,
+      "seat": 7
+    },
+    {
+      "seed": 1000000115,
+      "seat": 0
+    },
+    {
+      "seed": 1000000115,
+      "seat": 1
+    },
+    {
+      "seed": 1000000115,
+      "seat": 2
+    },
+    {
+      "seed": 1000000115,
+      "seat": 3
+    },
+    {
+      "seed": 1000000115,
+      "seat": 4
+    },
+    {
+      "seed": 1000000115,
+      "seat": 5
+    },
+    {
+      "seed": 1000000115,
+      "seat": 6
+    },
+    {
+      "seed": 1000000115,
+      "seat": 7
+    },
+    {
+      "seed": 1000000116,
+      "seat": 0
+    },
+    {
+      "seed": 1000000116,
+      "seat": 1
+    },
+    {
+      "seed": 1000000116,
+      "seat": 2
+    },
+    {
+      "seed": 1000000116,
+      "seat": 3
+    },
+    {
+      "seed": 1000000116,
+      "seat": 4
+    },
+    {
+      "seed": 1000000116,
+      "seat": 5
+    },
+    {
+      "seed": 1000000116,
+      "seat": 6
+    },
+    {
+      "seed": 1000000116,
+      "seat": 7
+    },
+    {
+      "seed": 1000000117,
+      "seat": 0
+    },
+    {
+      "seed": 1000000117,
+      "seat": 1
+    },
+    {
+      "seed": 1000000117,
+      "seat": 2
+    },
+    {
+      "seed": 1000000117,
+      "seat": 3
+    },
+    {
+      "seed": 1000000117,
+      "seat": 4
+    },
+    {
+      "seed": 1000000117,
+      "seat": 5
+    },
+    {
+      "seed": 1000000117,
+      "seat": 6
+    },
+    {
+      "seed": 1000000117,
+      "seat": 7
+    },
+    {
+      "seed": 1000000118,
+      "seat": 0
+    },
+    {
+      "seed": 1000000118,
+      "seat": 1
+    },
+    {
+      "seed": 1000000118,
+      "seat": 2
+    },
+    {
+      "seed": 1000000118,
+      "seat": 3
+    },
+    {
+      "seed": 1000000118,
+      "seat": 4
+    },
+    {
+      "seed": 1000000118,
+      "seat": 5
+    },
+    {
+      "seed": 1000000118,
+      "seat": 6
+    },
+    {
+      "seed": 1000000118,
+      "seat": 7
+    },
+    {
+      "seed": 1000000119,
+      "seat": 0
+    },
+    {
+      "seed": 1000000119,
+      "seat": 1
+    },
+    {
+      "seed": 1000000119,
+      "seat": 2
+    },
+    {
+      "seed": 1000000119,
+      "seat": 3
+    },
+    {
+      "seed": 1000000119,
+      "seat": 4
+    },
+    {
+      "seed": 1000000119,
+      "seat": 5
+    },
+    {
+      "seed": 1000000119,
+      "seat": 6
+    },
+    {
+      "seed": 1000000119,
+      "seat": 7
+    },
+    {
+      "seed": 1000000120,
+      "seat": 0
+    },
+    {
+      "seed": 1000000120,
+      "seat": 1
+    },
+    {
+      "seed": 1000000120,
+      "seat": 2
+    },
+    {
+      "seed": 1000000120,
+      "seat": 3
+    },
+    {
+      "seed": 1000000120,
+      "seat": 4
+    },
+    {
+      "seed": 1000000120,
+      "seat": 5
+    },
+    {
+      "seed": 1000000120,
+      "seat": 6
+    },
+    {
+      "seed": 1000000120,
+      "seat": 7
+    },
+    {
+      "seed": 1000000121,
+      "seat": 0
+    },
+    {
+      "seed": 1000000121,
+      "seat": 1
+    },
+    {
+      "seed": 1000000121,
+      "seat": 2
+    },
+    {
+      "seed": 1000000121,
+      "seat": 3
+    },
+    {
+      "seed": 1000000121,
+      "seat": 4
+    },
+    {
+      "seed": 1000000121,
+      "seat": 5
+    },
+    {
+      "seed": 1000000121,
+      "seat": 6
+    },
+    {
+      "seed": 1000000121,
+      "seat": 7
+    },
+    {
+      "seed": 1000000122,
+      "seat": 0
+    },
+    {
+      "seed": 1000000122,
+      "seat": 1
+    },
+    {
+      "seed": 1000000122,
+      "seat": 2
+    },
+    {
+      "seed": 1000000122,
+      "seat": 3
+    },
+    {
+      "seed": 1000000122,
+      "seat": 4
+    },
+    {
+      "seed": 1000000122,
+      "seat": 5
+    },
+    {
+      "seed": 1000000122,
+      "seat": 6
+    },
+    {
+      "seed": 1000000122,
+      "seat": 7
+    },
+    {
+      "seed": 1000000123,
+      "seat": 0
+    },
+    {
+      "seed": 1000000123,
+      "seat": 1
+    },
+    {
+      "seed": 1000000123,
+      "seat": 2
+    },
+    {
+      "seed": 1000000123,
+      "seat": 3
+    },
+    {
+      "seed": 1000000123,
+      "seat": 4
+    },
+    {
+      "seed": 1000000123,
+      "seat": 5
+    },
+    {
+      "seed": 1000000123,
+      "seat": 6
+    },
+    {
+      "seed": 1000000123,
+      "seat": 7
+    },
+    {
+      "seed": 1000000124,
+      "seat": 0
+    },
+    {
+      "seed": 1000000124,
+      "seat": 1
+    },
+    {
+      "seed": 1000000124,
+      "seat": 2
+    },
+    {
+      "seed": 1000000124,
+      "seat": 3
+    },
+    {
+      "seed": 1000000124,
+      "seat": 4
+    },
+    {
+      "seed": 1000000124,
+      "seat": 5
+    },
+    {
+      "seed": 1000000124,
+      "seat": 6
+    },
+    {
+      "seed": 1000000124,
+      "seat": 7
+    },
+    {
+      "seed": 1000000125,
+      "seat": 0
+    },
+    {
+      "seed": 1000000125,
+      "seat": 1
+    },
+    {
+      "seed": 1000000125,
+      "seat": 2
+    },
+    {
+      "seed": 1000000125,
+      "seat": 3
+    },
+    {
+      "seed": 1000000125,
+      "seat": 4
+    },
+    {
+      "seed": 1000000125,
+      "seat": 5
+    },
+    {
+      "seed": 1000000125,
+      "seat": 6
+    },
+    {
+      "seed": 1000000125,
+      "seat": 7
+    },
+    {
+      "seed": 1000000126,
+      "seat": 0
+    },
+    {
+      "seed": 1000000126,
+      "seat": 1
+    },
+    {
+      "seed": 1000000126,
+      "seat": 2
+    },
+    {
+      "seed": 1000000126,
+      "seat": 3
+    },
+    {
+      "seed": 1000000126,
+      "seat": 4
+    },
+    {
+      "seed": 1000000126,
+      "seat": 5
+    },
+    {
+      "seed": 1000000126,
+      "seat": 6
+    },
+    {
+      "seed": 1000000126,
+      "seat": 7
+    },
+    {
+      "seed": 1000000127,
+      "seat": 0
+    },
+    {
+      "seed": 1000000127,
+      "seat": 1
+    },
+    {
+      "seed": 1000000127,
+      "seat": 2
+    },
+    {
+      "seed": 1000000127,
+      "seat": 3
+    },
+    {
+      "seed": 1000000127,
+      "seat": 4
+    },
+    {
+      "seed": 1000000127,
+      "seat": 5
+    },
+    {
+      "seed": 1000000127,
+      "seat": 6
+    },
+    {
+      "seed": 1000000127,
+      "seat": 7
+    },
+    {
+      "seed": 1000000128,
+      "seat": 0
+    },
+    {
+      "seed": 1000000128,
+      "seat": 1
+    },
+    {
+      "seed": 1000000128,
+      "seat": 2
+    },
+    {
+      "seed": 1000000128,
+      "seat": 3
+    },
+    {
+      "seed": 1000000128,
+      "seat": 4
+    },
+    {
+      "seed": 1000000128,
+      "seat": 5
+    },
+    {
+      "seed": 1000000128,
+      "seat": 6
+    },
+    {
+      "seed": 1000000128,
+      "seat": 7
+    },
+    {
+      "seed": 1000000129,
+      "seat": 0
+    },
+    {
+      "seed": 1000000129,
+      "seat": 1
+    },
+    {
+      "seed": 1000000129,
+      "seat": 2
+    },
+    {
+      "seed": 1000000129,
+      "seat": 3
+    },
+    {
+      "seed": 1000000129,
+      "seat": 4
+    },
+    {
+      "seed": 1000000129,
+      "seat": 5
+    },
+    {
+      "seed": 1000000129,
+      "seat": 6
+    },
+    {
+      "seed": 1000000129,
+      "seat": 7
+    },
+    {
+      "seed": 1000000130,
+      "seat": 0
+    },
+    {
+      "seed": 1000000130,
+      "seat": 1
+    },
+    {
+      "seed": 1000000130,
+      "seat": 2
+    },
+    {
+      "seed": 1000000130,
+      "seat": 3
+    },
+    {
+      "seed": 1000000130,
+      "seat": 4
+    },
+    {
+      "seed": 1000000130,
+      "seat": 5
+    },
+    {
+      "seed": 1000000130,
+      "seat": 6
+    },
+    {
+      "seed": 1000000130,
+      "seat": 7
+    },
+    {
+      "seed": 1000000131,
+      "seat": 0
+    },
+    {
+      "seed": 1000000131,
+      "seat": 1
+    },
+    {
+      "seed": 1000000131,
+      "seat": 2
+    },
+    {
+      "seed": 1000000131,
+      "seat": 3
+    },
+    {
+      "seed": 1000000131,
+      "seat": 4
+    },
+    {
+      "seed": 1000000131,
+      "seat": 5
+    },
+    {
+      "seed": 1000000131,
+      "seat": 6
+    },
+    {
+      "seed": 1000000131,
+      "seat": 7
+    }
+  ],
+  "seed_partitions": {
+    "train": [
+      0,
+      1000000000
+    ],
+    "dev": [
+      1000000000,
+      2000000000
+    ],
+    "final": [
+      2000000000,
+      3000000000
+    ]
+  },
+  "seat_balanced": true,
+  "max_steps": 100000,
+  "timeout_seconds": 30,
+  "scheduling": "one action per ready seat, ascending seat order",
+  "opponents": "seven unmodified upstream scripted bots",
+  "trace": false,
+  "policy_versions": {
+    "random": "uniform-v1",
+    "scripted": "fb61201",
+    "omnibob": "tempo-v0.1"
+  }
+}

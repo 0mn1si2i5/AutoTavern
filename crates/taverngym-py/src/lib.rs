@@ -102,6 +102,16 @@ impl PyGame {
         check_seat(&self.g, p)?;
         Ok(obs_bytes(py, &taverngym::obs::observe(&self.g, p)))
     }
+    /// Complete numeric player observation, v2. Never grants an omniscient view.
+    fn observe2<'py>(&self, py: Python<'py>, p: usize) -> PyResult<ObsBytes<'py>> {
+        check_seat(&self.g, p)?;
+        Ok(obs_bytes(py, &taverngym::obs2::observe2(&self.g, p)))
+    }
+    /// All normal player-visible information as JSON; excludes seeds and replay data.
+    fn player_view(&self, py: Python<'_>, p: usize) -> PyResult<String> {
+        check_seat(&self.g, p)?;
+        Ok(py.detach(|| taverngym::visible::player_view(&self.g, p).to_string()))
+    }
     /// The scripted bot's choice for seat `p` (the game's random stream is not moved).
     fn bot_action(&mut self, p: usize) -> PyResult<usize> {
         check_seat(&self.g, p)?;
@@ -205,6 +215,19 @@ impl PySoloEnv {
     }
     fn observe<'py>(&self, py: Python<'py>) -> ObsBytes<'py> {
         obs_bytes(py, &self.env.observe())
+    }
+    fn observe2<'py>(&self, py: Python<'py>) -> ObsBytes<'py> {
+        obs_bytes(
+            py,
+            &taverngym::obs2::observe2(&self.env.game, self.env.agent),
+        )
+    }
+    fn player_view(&self) -> PyResult<String> {
+        serde_json::to_string(&taverngym::visible::player_view(
+            &self.env.game,
+            self.env.agent,
+        ))
+        .map_err(|e| PyValueError::new_err(e.to_string()))
     }
     fn legal_mask<'py>(&self, py: Python<'py>) -> Bound<'py, PyBytes> {
         mask_bytes(py, &self.env.legal_mask())
@@ -429,6 +452,7 @@ fn run_bot_games(
 fn layout() -> Vec<(&'static str, usize)> {
     use taverngym::actions as a;
     use taverngym::obs as o;
+    use taverngym::obs2 as o2;
     vec![
         ("MINION_F", o::MINION_F),
         ("ITEM_F", o::ITEM_F),
@@ -462,6 +486,19 @@ fn layout() -> Vec<(&'static str, usize)> {
         ("N_ACTIONS", a::N_ACTIONS),
         ("OBS_FLOATS", o::OBS_FLOATS),
         ("OBS_CARDS", o::OBS_CARDS),
+        ("OBS2_FLOATS", o2::OBS2_FLOATS),
+        ("OBS2_CARDS", o2::OBS2_CARDS),
+        ("K_ATT_BOARD", o2::K_ATT_BOARD),
+        ("K_ATT_ITEM", o2::K_ATT_ITEM),
+        ("K_ATT_OPP", o2::K_ATT_OPP),
+        ("X_MINION", o2::X_MINION),
+        ("K_OPP_TRINKETS", o2::K_OPP_TRINKETS),
+        ("COND_F", o2::COND_F),
+        ("POWER_F", o2::POWER_F),
+        ("OPP_SUM_F", o2::OPP_SUM_F),
+        ("OPP_SUM_TYPES", o2::OPP_SUM_TYPES),
+        ("OPP_SUM_RESULTS", o2::OPP_SUM_RESULTS),
+        ("GOAL_K", o2::GOAL_K),
     ]
 }
 
@@ -523,6 +560,14 @@ fn card_static<'py>(py: Python<'py>) -> (usize, Bound<'py, PyBytes>) {
 }
 
 #[pyfunction]
+fn obs2_blocks() -> (Vec<(&'static str, usize)>, Vec<(&'static str, usize)>) {
+    (
+        taverngym::obs2::FLOAT_BLOCKS.to_vec(),
+        taverngym::obs2::CARD_BLOCKS.to_vec(),
+    )
+}
+
+#[pyfunction]
 fn default_config_json() -> String {
     serde_json::to_string_pretty(&RulesConfig::default()).unwrap()
 }
@@ -532,6 +577,8 @@ fn _core(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add("N_ACTIONS", N_ACTIONS)?;
     m.add("OBS_FLOATS", OBS_FLOATS)?;
     m.add("OBS_CARDS", OBS_CARDS)?;
+    m.add("OBS2_FLOATS", taverngym::obs2::OBS2_FLOATS)?;
+    m.add("OBS2_CARDS", taverngym::obs2::OBS2_CARDS)?;
     m.add("N_CARDS", db().len() + 1)?;
     m.add_class::<PyGame>()?;
     m.add_class::<PySoloEnv>()?;
@@ -545,6 +592,7 @@ fn _core(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(run_bot_games, m)?)?;
     m.add_function(wrap_pyfunction!(default_config_json, m)?)?;
     m.add_function(wrap_pyfunction!(layout, m)?)?;
+    m.add_function(wrap_pyfunction!(obs2_blocks, m)?)?;
     m.add_function(wrap_pyfunction!(card_static, m)?)?;
     m.add_function(wrap_pyfunction!(catalog_json, m)?)?;
     Ok(())

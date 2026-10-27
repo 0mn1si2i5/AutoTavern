@@ -1,0 +1,633 @@
+{
+  "scope": "Native replay only; no online game or counterfactual search. These repeat already evaluated final seeds and are not independent additional performance evidence.",
+  "native_semantics": "actions.rs apply_inner handles Choose, Cancel and EndTurn before the generic cap check; legal_mask permits pending choices and EndTurn at the cap.",
+  "public_server_documentation": "agent.md says the server completes required choices and ends the seat when100accepted operations are reached. Actual server automatic resolution and counting have NOT been verified.",
+  "consequence": "The matched100config does not prove exact server-driver boundary parity. Local placements remain local-simulator evidence. Do not invent the server auto-choice policy.",
+  "runs": [
+    {
+      "directory": "runs/exploration-20261028/selected-first-block-trace",
+      "verification": {
+        "verified_games": 8,
+        "observation_hashes_verified": true
+      },
+      "game_count": 8,
+      "own_decisions_when_engine_counter_already_at_least100": 12,
+      "affected_player_turns": 12,
+      "action_names": {
+        "EndTurn": 12
+      },
+      "observations": [
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 9,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 11,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 12,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 13,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 7,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 11,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 12,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 13,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        }
+      ]
+    },
+    {
+      "directory": "runs/exploration-20261028/raw-first-block-trace",
+      "verification": {
+        "verified_games": 8,
+        "observation_hashes_verified": true
+      },
+      "game_count": 8,
+      "own_decisions_when_engine_counter_already_at_least100": 54,
+      "affected_player_turns": 53,
+      "action_names": {
+        "EndTurn": 53,
+        "Cancel": 1
+      },
+      "observations": [
+        {
+          "seed": 2000050000,
+          "seat": 0,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 0,
+          "turn": 7,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 0,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 0,
+          "turn": 9,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 0,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 0,
+          "turn": 11,
+          "engine_actions_before": 100,
+          "action": 7,
+          "action_name": "Cancel",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 0,
+          "turn": 11,
+          "engine_actions_before": 101,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 1,
+          "turn": 4,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 1,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 1,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 7,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 11,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 2,
+          "turn": 12,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 3,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 3,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 3,
+          "turn": 7,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 3,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 3,
+          "turn": 9,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 3,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 3,
+          "turn": 12,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 7,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 9,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 11,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 4,
+          "turn": 13,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 5,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 5,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 5,
+          "turn": 7,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 5,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 5,
+          "turn": 9,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 5,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 6,
+          "turn": 9,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 4,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 5,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 6,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 7,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 8,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 9,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 10,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 11,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 12,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 13,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 14,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        },
+        {
+          "seed": 2000050000,
+          "seat": 7,
+          "turn": 15,
+          "engine_actions_before": 100,
+          "action": 0,
+          "action_name": "EndTurn",
+          "legal": true
+        }
+      ]
+    }
+  ]
+}

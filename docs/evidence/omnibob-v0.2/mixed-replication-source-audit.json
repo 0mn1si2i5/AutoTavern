@@ -1,0 +1,30 @@
+{
+  "generated_unix": 1793140768.033799,
+  "pairs": [
+    {
+      "seeds": [
+        41,
+        42
+      ],
+      "changed_core_files": [
+        "omnibob/train.py",
+        "omnibob/training_env.py",
+        "omnibob/opponents.py"
+      ],
+      "same_model_implementation": true
+    },
+    {
+      "seeds": [
+        42,
+        43
+      ],
+      "changed_core_files": [
+        "omnibob/train.py",
+        "omnibob/training_env.py",
+        "omnibob/opponents.py"
+      ],
+      "same_model_implementation": true
+    }
+  ],
+  "interpretation": "Archived diffs show added learned-opponent and mixed_learned branches, metadata and CLI options. The selected mixed profile and PPO loss/update math remain unchanged by inspection. These are shared-initialization development continuation trials across feature additions, not an identical-whole-source or from-scratch replication."
+}

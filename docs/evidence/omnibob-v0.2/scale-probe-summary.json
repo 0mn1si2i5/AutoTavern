@@ -1,0 +1,89 @@
+{
+  "limitation": "Short local probes while CPU evaluation and CPU frozen-opponent training continued. MPS trainer absent at each start; not an isolated system benchmark or model quality comparison. Same initialization, seed and hyperparameters except number of environments. End-to-end rates also depend on KL early stopping; report optimizer batches. More rollout throughput does not prove faster learning.",
+  "rows": [
+    {
+      "envs": 32,
+      "updates": 3,
+      "steps_per_second_last_two": 624.8570471268426,
+      "update_seconds": [
+        8.334,
+        7.058,
+        6.052
+      ],
+      "collection_seconds": [
+        4.645,
+        3.975,
+        3.468
+      ],
+      "rss_peak_MiB": 820.046875,
+      "mps_driver_peak_MiB": 1132.1875,
+      "rollout_decisions_per_second_last_two": 1100.6378614524497,
+      "optimizer_batches": [
+        64,
+        64,
+        64
+      ],
+      "early_kl_stop": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "envs": 64,
+      "updates": 3,
+      "steps_per_second_last_two": 1073.0796449324478,
+      "update_seconds": [
+        10.646,
+        9.406,
+        5.863
+      ],
+      "collection_seconds": [
+        4.718,
+        4.472,
+        4.56
+      ],
+      "rss_peak_MiB": 1145.5625,
+      "mps_driver_peak_MiB": 1133.40625,
+      "rollout_decisions_per_second_last_two": 1813.909491073498,
+      "optimizer_batches": [
+        128,
+        128,
+        32
+      ],
+      "early_kl_stop": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "envs": 128,
+      "updates": 3,
+      "steps_per_second_last_two": 1033.584467781032,
+      "update_seconds": [
+        9.877,
+        15.764,
+        15.939
+      ],
+      "collection_seconds": [
+        6.336,
+        6.324,
+        6.519
+      ],
+      "rss_peak_MiB": 1510.390625,
+      "mps_driver_peak_MiB": 1202.125,
+      "rollout_decisions_per_second_last_two": 2551.540165800296,
+      "optimizer_batches": [
+        74,
+        256,
+        256
+      ],
+      "early_kl_stop": [
+        true,
+        false,
+        false
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "generated_unix": 1793140625.634636,
+  "scope": "Audit of early 200-update cost comparison; preserve original data.",
+  "conclusion": "Configuration differed only in decision_cost, but two pairs crossed training source evolution and the first no-cost run lacks a recorded initialization SHA. Treat all-three aggregate as exploratory, not a strict causal A/B. A separately frozen-source 50-update protocol is planned; it cannot retroactively validate the earlier experiment.",
+  "pairs": [
+    {
+      "seed": 30000000,
+      "initialize_paths": [
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt"
+      ],
+      "recorded_parent": [
+        null,
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+          "sha256": "1c3a3515114bbbb493f867d9c378a9bd3614f17a0dabcc46a1a50b3fbec6ed00"
+        }
+      ],
+      "source_sha256": [
+        "2cce8eaeaecbdf96f91c755c74a83b10f037193e84f8c9abc6b2225b479d9b12",
+        "703eed60e57cfddbd933094b84b827d048c8adbacc1cebe113e349c69510aa47"
+      ],
+      "changed_source_files": [
+        "omnibob/diagnose_bench.py",
+        "omnibob/export.py",
+        "omnibob/imitation.py",
+        "omnibob/train.py",
+        "requirements-omnibob-mps.lock"
+      ],
+      "training_implementation_equal": false,
+      "config_differences": {
+        "decision_cost": [
+          0,
+          0.0003
+        ]
+      }
+    },
+    {
+      "seed": 31000000,
+      "initialize_paths": [
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt"
+      ],
+      "recorded_parent": [
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+          "sha256": "1c3a3515114bbbb493f867d9c378a9bd3614f17a0dabcc46a1a50b3fbec6ed00"
+        },
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+          "sha256": "1c3a3515114bbbb493f867d9c378a9bd3614f17a0dabcc46a1a50b3fbec6ed00"
+        }
+      ],
+      "source_sha256": [
+        "32d3ae1e3789dc4f7c8989c947f1feb0a3846dfcf680fad1772e60d7545991e4",
+        "2c21d181e0642d3d9eb52640d507c6f63d9300cb7603dbd26eec1c8c3d51eb87"
+      ],
+      "changed_source_files": [
+        "omnibob/__main__.py",
+        "omnibob/evaluate.py",
+        "omnibob/opponents.py",
+        "omnibob/train.py",
+        "omnibob/training_env.py",
+        "tests/test_opponents.py",
+        "tests/test_training.py"
+      ],
+      "training_implementation_equal": false,
+      "config_differences": {
+        "decision_cost": [
+          0,
+          0.0003
+        ]
+      }
+    },
+    {
+      "seed": 32000000,
+      "initialize_paths": [
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+        "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt"
+      ],
+      "recorded_parent": [
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+          "sha256": "1c3a3515114bbbb493f867d9c378a9bd3614f17a0dabcc46a1a50b3fbec6ed00"
+        },
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/ppo-warm-128/latest.pt",
+          "sha256": "1c3a3515114bbbb493f867d9c378a9bd3614f17a0dabcc46a1a50b3fbec6ed00"
+        }
+      ],
+      "source_sha256": [
+        "de5e691e899de58b788c43d9b44b2b223c434303a13fb8b7733e0e16a46b922b",
+        "613c8ce55021ea52e899ab18c8e2ae592919f13b647f151af80f51e550c0c00c"
+      ],
+      "changed_source_files": [
+        "omnibob/__main__.py",
+        "omnibob/arena.py",
+        "omnibob/evaluate.py",
+        "omnibob/export.py",
+        "omnibob/learned.py",
+        "omnibob/move_guard.py",
+        "tests/test_move_guard.py"
+      ],
+      "training_implementation_equal": true,
+      "config_differences": {
+        "decision_cost": [
+          0,
+          0.0003
+        ]
+      }
+    }
+  ]
+}

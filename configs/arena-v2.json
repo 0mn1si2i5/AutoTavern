@@ -1,0 +1,123 @@
+{
+  "num_players": 8,
+  "content": "Implemented",
+  "start_gold": 3,
+  "gold_increment": 1,
+  "gold_refill_cap": 10,
+  "buy_cost": 3,
+  "sell_value": 1,
+  "refresh_cost": 1,
+  "upgrade_costs": [
+    5,
+    7,
+    8,
+    11,
+    11,
+    10
+  ],
+  "upgrade_discount_per_turn": 1,
+  "max_regular_tier": 6,
+  "shop_minion_slots": [
+    3,
+    4,
+    4,
+    5,
+    5,
+    6,
+    6
+  ],
+  "shop_spell_slots": 1,
+  "shop_max_cards": 7,
+  "board_size": 7,
+  "hand_size": 10,
+  "pool_copies_by_tier": [
+    15,
+    15,
+    13,
+    11,
+    9,
+    7,
+    5
+  ],
+  "spell_copies_by_tier": [
+    5,
+    7,
+    9,
+    11,
+    9,
+    7
+  ],
+  "strict_pool_tag": true,
+  "excluded_cards": [],
+  "hero_power_discover_excluded": [
+    "TB_BaconShop_HP_001",
+    "BG21_HERO_000p",
+    "TB_BaconShop_HP_056"
+  ],
+  "silas_ticket_pct": 30,
+  "lobby_races": 5,
+  "aberration_forced": false,
+  "lobby_types": [],
+  "hero_choices": 2,
+  "hero_type_filter": true,
+  "guaranteed_heroes": [
+    "BG36_HERO_000",
+    "BG36_HERO_002"
+  ],
+  "hero_pool": [],
+  "damage_caps": [
+    [
+      1,
+      5
+    ],
+    [
+      4,
+      10
+    ],
+    [
+      8,
+      15
+    ]
+  ],
+  "damage_cap_until_alive": 4,
+  "max_combat_attacks": 400,
+  "max_effect_depth": 64,
+  "lesser_trinket_turn": 6,
+  "greater_trinket_turn": 9,
+  "trinket_choices": 4,
+  "trinket_type_min": [
+    2,
+    3
+  ],
+  "trinket_pivot_discount": 2,
+  "trinket_likely_pct": 200,
+  "effect_casts_count": false,
+  "dark_gift_unlock_turn": 3,
+  "dark_gift_rare_pct": 50,
+  "harpy_rally_mult": 2,
+  "dark_gift_cost": 3,
+  "dark_gift_uses": 3,
+  "dark_gift_choices": 3,
+  "dark_gift_t9_first_t5_pct": 50,
+  "dark_gift_late_t6_pct": 50,
+  "volumizer_attached_grow": false,
+  "timewarp_enabled": false,
+  "timewarp_turns": [
+    6,
+    9
+  ],
+  "timewarp_chronum": 2,
+  "timewarp_type_min": [
+    2,
+    3
+  ],
+  "triple_copies": 3,
+  "deity_threshold": 4,
+  "max_turns": 100,
+  "max_actions_per_turn": 100,
+  "turn_action_caps": [
+    100
+  ],
+  "record_log": false,
+  "experimental_mode": false
+}

@@ -31,11 +31,13 @@ pub mod flow;
 pub mod guard;
 pub mod invariants;
 pub mod obs;
+pub mod obs2;
 pub mod recruit;
 pub mod rng;
 pub mod script;
 pub mod state;
 pub mod types;
+pub mod visible;
 pub mod workers;
 
 pub use actions::{Action, N_ACTIONS};

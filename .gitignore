@@ -18,6 +18,7 @@
 venv/
 .pytest_cache/
 .ruff_cache/
+.local-tools/
 
 # credentials and private configuration
 .env

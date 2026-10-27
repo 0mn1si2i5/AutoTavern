@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "environment": "/Users/ostrovsky/Projects/Zen/omnibob/runs/install-smoke/source/.venv/bin/python",
+  "cwd": "/Users/ostrovsky/Projects/Zen/omnibob/runs/install-smoke/source",
+  "source_sha256": "6c85dddca003dab40b185212b1da16615a4c17adb2c5c5ccbd40928319c73669",
+  "input_sha256": "853ab31052b503ff94c21160c72bae35af7e11ab52c97b81df97a7a7a189a357",
+  "output_sha256": "135ad11ec4856e95c74ca59472b21aeb573ad84b3889315aa95c34e48780f9a0",
+  "from_update": 500,
+  "to_update": 501,
+  "additional_decisions": 4096,
+  "changed_model_tensors": 65,
+  "summary": {
+    "status": "updates_completed",
+    "error": null,
+    "updates": 501,
+    "steps": 2052096,
+    "completed_games_this_run": 7,
+    "seconds": 9.401292085647583,
+    "completed_episodes_this_run": 10,
+    "truncated_episodes_this_run": 0,
+    "discarded_decisions_this_run": 0,
+    "checkpoint": "/Users/ostrovsky/Projects/Zen/omnibob/runs/exploration-20261028/selected-package-resume-probe/latest.pt",
+    "device": "cpu",
+    "rss_bytes": 816742400,
+    "process_peak_rss_bytes": 818544640
+  },
+  "scope": "Actual MPS-created checkpoint resumed for one CPU update in the independent same-Mac install. Not a cross-device bitwise equivalence claim. Probe branch not eligible for selection; original deployment and resume package unchanged."
+}

@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "generated_unix": 1793139645.6427279,
+  "scope": "fresh same-Mac project-local install and native source compile; no copied venv or native binary",
+  "tests": "96 passed in 37.90s",
+  "installation_log": "fresh-setup.log",
+  "environment": {
+    "python": "/Users/ostrovsky/Projects/Zen/omnibob/runs/install-smoke/source/.venv/bin/python",
+    "architecture": "arm64",
+    "package": "/Users/ostrovsky/Projects/Zen/omnibob/runs/install-smoke/source/python/taverngym/__init__.py",
+    "native": "/Users/ostrovsky/Projects/Zen/omnibob/runs/install-smoke/source/python/taverngym/_core.abi3.so",
+    "torch": "2.14.1",
+    "mps_available": true
+  },
+  "complete_games_each_environment": 8,
+  "actions_compared": 9216,
+  "actions_visible_hashes_steps_placements_identical": true,
+  "replay": {
+    "verified_games": 8,
+    "observation_hashes_verified": true
+  },
+  "operational_notes": [
+    "An initial setup command rechecked the existing environment (separate existing-environment-recheck.log); fresh-setup.log is the clean-clone installation.",
+    "An initial metadata-only probe resolved the venv interpreter symlink and incorrectly invoked base Python; rerun through the venv executable path passed. No global packages were installed."
+  ]
+}

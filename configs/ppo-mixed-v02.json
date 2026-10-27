@@ -1,0 +1,16 @@
+{
+  "seed": 43000000,
+  "n_envs": 32,
+  "horizon": 128,
+  "epochs": 2,
+  "minibatch": 128,
+  "learning_rate": 0.0001,
+  "gae_lambda": 0.995,
+  "entropy_coef": 0.001,
+  "target_kl": 0.02,
+  "decision_cost": 0.0003,
+  "reference_kl_coef": 0.03,
+  "opponents": "mixed",
+  "scheduler": "shuffled_rounds",
+  "terminate_on_elimination": true
+}
