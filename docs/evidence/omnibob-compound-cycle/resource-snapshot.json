@@ -1,0 +1,61 @@
+{
+  "python_processes": [
+    {
+      "pid": 5588,
+      "rss_mib": 12.28125
+    },
+    {
+      "pid": 38478,
+      "rss_mib": 4.234375
+    },
+    {
+      "pid": 64941,
+      "rss_mib": 18.5625
+    },
+    {
+      "pid": 64967,
+      "rss_mib": 2.90625
+    },
+    {
+      "pid": 64968,
+      "rss_mib": 58.734375
+    },
+    {
+      "pid": 64970,
+      "rss_mib": 58.34375
+    },
+    {
+      "pid": 65812,
+      "rss_mib": 3.140625
+    },
+    {
+      "pid": 65816,
+      "rss_mib": 12.3125
+    },
+    {
+      "pid": 65817,
+      "rss_mib": 11.71875
+    },
+    {
+      "pid": 66439,
+      "rss_mib": 3.53125
+    },
+    {
+      "pid": 66994,
+      "rss_mib": 78.09375
+    },
+    {
+      "pid": 67148,
+      "rss_mib": 12.84375
+    },
+    {
+      "pid": 67155,
+      "rss_mib": 12.359375
+    }
+  ],
+  "total_python_rss_mib": 289.0625,
+  "system_free_percent": 28,
+  "max_concurrent_experiment_workers": 4,
+  "workers_per_profile": 2,
+  "reason": "Independent holdout profiles run concurrently after memory query; each predeclared run still uses two workers. No policy, seed or scoring change."
+}

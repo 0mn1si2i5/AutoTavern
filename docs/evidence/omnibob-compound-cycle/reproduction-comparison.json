@@ -1,0 +1,113 @@
+{
+  "cycle_exit": {
+    "game": {
+      "policy": "cycle_exit",
+      "seed": 1000021006,
+      "seat": 5,
+      "status": "completed",
+      "placement": 3,
+      "placements": [
+        7,
+        2,
+        1,
+        5,
+        4,
+        3,
+        8,
+        6
+      ],
+      "steps": 1647,
+      "decisions": 525,
+      "illegal_actions": 0,
+      "error": null,
+      "truncated_combats": 0,
+      "turn_limit_end": false,
+      "elapsed_seconds": 0.7266407920978963,
+      "turns": 17,
+      "decision_latency": {
+        "count": 525,
+        "mean_ms": 1.2584289629012346,
+        "p50_ms": 1.1635839473456144,
+        "p95_ms": 1.475392188876867,
+        "max_ms": 21.446583792567253
+      },
+      "observation_latency": {
+        "count": 525,
+        "mean_ms": 0.04207218021509193,
+        "p50_ms": 0.036082929000258446,
+        "p95_ms": 0.06429138593375681,
+        "max_ms": 0.9129580575972795
+      },
+      "decision_ms_total": 660.6752055231482
+    },
+    "metrics": {
+      "moves": 86,
+      "cancels": 64,
+      "hand_plays": 151,
+      "cancel_memory_masked_decisions": 0,
+      "cycle_exits": 15,
+      "voluntary_ends": 16,
+      "unspent_gold_at_end": 9,
+      "underfilled_ends": 8,
+      "gold_when_reaching_cap": 7,
+      "decisions_at_or_above_cap": 2
+    },
+    "cap_turns": [
+      12,
+      13
+    ]
+  },
+  "compound": {
+    "game": {
+      "policy": "compound",
+      "seed": 1000021006,
+      "seat": 5,
+      "status": "completed",
+      "placement": 2,
+      "placements": [
+        7,
+        3,
+        1,
+        5,
+        4,
+        2,
+        8,
+        6
+      ],
+      "steps": 1549,
+      "decisions": 493,
+      "illegal_actions": 0,
+      "error": null,
+      "truncated_combats": 0,
+      "turn_limit_end": false,
+      "elapsed_seconds": 0.7301251250319183,
+      "turns": 16,
+      "decision_latency": {
+        "count": 493,
+        "mean_ms": 1.4011662776447817,
+        "p50_ms": 1.2887080665677786,
+        "p95_ms": 2.275566617026924,
+        "max_ms": 3.8109589368104935
+      },
+      "observation_latency": {
+        "count": 493,
+        "mean_ms": 0.0488809177663336,
+        "p50_ms": 0.04024989902973175,
+        "p95_ms": 0.09033367969095707,
+        "max_ms": 0.19870814867317677
+      },
+      "decision_ms_total": 690.7749748788774
+    },
+    "metrics": {
+      "moves": 48,
+      "cancels": 53,
+      "hand_plays": 147,
+      "cancel_memory_masked_decisions": 90,
+      "cycle_exits": 27,
+      "voluntary_ends": 16,
+      "unspent_gold_at_end": 16,
+      "underfilled_ends": 8
+    },
+    "cap_turns": []
+  }
+}

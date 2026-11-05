@@ -1,0 +1,16 @@
+{
+  "omnibob/model.py": true,
+  "omnibob/learned.py": true,
+  "omnibob/move_guard.py": true,
+  "omnibob/repeat_guard.py": true,
+  "previous_reorder_exit_unchanged": true,
+  "new_policy_unchanged_since_dev": true,
+  "runs/releases/omnibob-v0.2-20261028": {
+    "files": 1924,
+    "mismatches": []
+  },
+  "runs/practice-20261028-103720": {
+    "files": 23,
+    "mismatches": []
+  }
+}

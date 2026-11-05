@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting tests/test_cancel_memory.py _________________
+ImportError while importing test module '/Users/ostrovsky/Projects/Zen/omnibob/tests/test_cancel_memory.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/anaconda3/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_cancel_memory.py:6: in <module>
+    from omnibob.cancel_memory import CancelMemoryPolicy
+E   ModuleNotFoundError: No module named 'omnibob.cancel_memory'
+=========================== short test summary info ============================
+ERROR tests/test_cancel_memory.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.26s

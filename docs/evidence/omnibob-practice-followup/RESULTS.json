@@ -1,0 +1,910 @@
+{
+  "scope": "offline practice diagnosis and bounded local simulation; no new matches or training",
+  "main_games_completed": 1792,
+  "smoke_games_completed": 24,
+  "intentional_deadline_probe": {
+    "interrupted": 8,
+    "completed": 0,
+    "exit_code": 1,
+    "excluded_from_strength_metrics": true
+  },
+  "holdout_games_per_variant": 512,
+  "holdout_moves": {
+    "baseline": 111277,
+    "cycle_exit": 13198
+  },
+  "holdout_move_reduction": 0.8813950771498154,
+  "holdout_games_reaching_cap": {
+    "baseline": 274,
+    "cycle_exit": 3
+  },
+  "strength_improvement_proven": false,
+  "noninferiority_margin_0_15_proven": false,
+  "decision": "Keep frozen v0.2 default; retain cycle_exit as explicit local efficiency candidate, not promoted strength release.",
+  "runs": {
+    "dev-scripted": {
+      "metrics": {
+        "baseline": {
+          "requested": 128,
+          "completed": 128,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 128,
+          "mean_placement": 2.28125,
+          "win_rate": 0.34375,
+          "top4_rate": 0.9296875,
+          "completed_seed_blocks": 16,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.0544921875,
+            2.5078125
+          ],
+          "complete_block_metric_denominator": 128,
+          "complete_block_mean_placement": 2.28125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.0544921875,
+            2.5078125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 0,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "max_ms": null
+          },
+          "elapsed_seconds": 94.71410428662784,
+          "seats_attempted": {
+            "0": 16,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 16,
+            "6": 16,
+            "7": 16
+          },
+          "movement_totals": {
+            "moves": 31054,
+            "cycle_exits": 0,
+            "voluntary_ends": 1865,
+            "unspent_gold_at_end": 1174,
+            "underfilled_ends": 1031,
+            "decisions_at_or_above_cap": 225,
+            "turns": 1998,
+            "cap_turns": 223
+          },
+          "mean_moves_per_game": 242.609375,
+          "games_reaching_cap": 72,
+          "weighted_decision_mean_ms": 1.492425338283928
+        },
+        "cycle_exit": {
+          "requested": 128,
+          "completed": 128,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 128,
+          "mean_placement": 2.34375,
+          "win_rate": 0.3125,
+          "top4_rate": 0.9296875,
+          "completed_seed_blocks": 16,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.0703125,
+            2.6328125
+          ],
+          "complete_block_metric_denominator": 128,
+          "complete_block_mean_placement": 2.34375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.0703125,
+            2.6328125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 0,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "max_ms": null
+          },
+          "elapsed_seconds": 58.20103612821549,
+          "seats_attempted": {
+            "0": 16,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 16,
+            "6": 16,
+            "7": 16
+          },
+          "movement_totals": {
+            "moves": 3605,
+            "cycle_exits": 1874,
+            "voluntary_ends": 1869,
+            "unspent_gold_at_end": 810,
+            "underfilled_ends": 1065,
+            "turns": 1997,
+            "cap_turns": 5,
+            "decisions_at_or_above_cap": 6
+          },
+          "mean_moves_per_game": 28.1640625,
+          "games_reaching_cap": 3,
+          "weighted_decision_mean_ms": 1.6418087226371958
+        },
+        "cap7": {
+          "requested": 128,
+          "completed": 128,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 128,
+          "mean_placement": 2.1953125,
+          "win_rate": 0.359375,
+          "top4_rate": 0.921875,
+          "completed_seed_blocks": 16,
+          "mean_placement_seed_bootstrap_95ci": [
+            1.9685546875,
+            2.421875
+          ],
+          "complete_block_metric_denominator": 128,
+          "complete_block_mean_placement": 2.1953125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            1.9685546875,
+            2.421875
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 0,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "max_ms": null
+          },
+          "elapsed_seconds": 57.28211158257909,
+          "seats_attempted": {
+            "0": 16,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 16,
+            "6": 16,
+            "7": 16
+          },
+          "movement_totals": {
+            "moves": 4832,
+            "cycle_exits": 0,
+            "voluntary_ends": 1891,
+            "unspent_gold_at_end": 893,
+            "underfilled_ends": 1049,
+            "turns": 2020,
+            "cap_turns": 0
+          },
+          "mean_moves_per_game": 37.75,
+          "games_reaching_cap": 0,
+          "weighted_decision_mean_ms": 1.5681015569280474
+        }
+      },
+      "paired": {
+        "cycle_exit": {
+          "candidate": "runs/practice-followup-20261028/dev-scripted",
+          "baseline": "runs/practice-followup-20261028/dev-scripted",
+          "candidate_policy": "cycle_exit",
+          "baseline_policy": "baseline",
+          "split": "dev",
+          "complete_common_seed_blocks": 16,
+          "paired_games": 128,
+          "observed_common_pairs": 128,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.34375,
+          "baseline_mean": 2.28125,
+          "candidate_minus_baseline": 0.0625,
+          "paired_seed_bootstrap_95ci": [
+            -0.21875,
+            0.359375
+          ],
+          "seeds": [
+            1000021000,
+            1000021001,
+            1000021002,
+            1000021003,
+            1000021004,
+            1000021005,
+            1000021006,
+            1000021007,
+            1000021008,
+            1000021009,
+            1000021010,
+            1000021011,
+            1000021012,
+            1000021013,
+            1000021014,
+            1000021015
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        },
+        "cap7": {
+          "candidate": "runs/practice-followup-20261028/dev-scripted",
+          "baseline": "runs/practice-followup-20261028/dev-scripted",
+          "candidate_policy": "cap7",
+          "baseline_policy": "baseline",
+          "split": "dev",
+          "complete_common_seed_blocks": 16,
+          "paired_games": 128,
+          "observed_common_pairs": 128,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.1953125,
+          "baseline_mean": 2.28125,
+          "candidate_minus_baseline": -0.0859375,
+          "paired_seed_bootstrap_95ci": [
+            -0.265625,
+            0.109375
+          ],
+          "seeds": [
+            1000021000,
+            1000021001,
+            1000021002,
+            1000021003,
+            1000021004,
+            1000021005,
+            1000021006,
+            1000021007,
+            1000021008,
+            1000021009,
+            1000021010,
+            1000021011,
+            1000021012,
+            1000021013,
+            1000021014,
+            1000021015
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        }
+      },
+      "elapsed_seconds": 107.85259045800194,
+      "source_sha256": "151d542df632b18b055d8605d9cbf158119f03e3f7d6adb70c35644214d1f1fc",
+      "source_archive": {
+        "path": "runs/source-snapshots/151d542df632b18b055d8605d9cbf158119f03e3f7d6adb70c35644214d1f1fc.tar.gz",
+        "sha256": "55c1432bab6cc3c1b05f1e633eda48f5e619137c5c71588afedcc552418d08a0",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      },
+      "checkpoint_sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787",
+      "games_sha256": "2311388a3d0d9b3821b4fb7842581aba69d1123538d51f17919478d08459d2ba"
+    },
+    "dev-heuristic": {
+      "metrics": {
+        "baseline": {
+          "requested": 128,
+          "completed": 128,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 128,
+          "mean_placement": 2.796875,
+          "win_rate": 0.3515625,
+          "top4_rate": 0.8046875,
+          "completed_seed_blocks": 16,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.59375,
+            3.0078125
+          ],
+          "complete_block_metric_denominator": 128,
+          "complete_block_mean_placement": 2.796875,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.59375,
+            3.0078125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 0,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "max_ms": null
+          },
+          "elapsed_seconds": 104.04290433228016,
+          "seats_attempted": {
+            "0": 16,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 16,
+            "6": 16,
+            "7": 16
+          },
+          "movement_totals": {
+            "moves": 26733,
+            "cycle_exits": 0,
+            "voluntary_ends": 1918,
+            "unspent_gold_at_end": 1075,
+            "underfilled_ends": 958,
+            "decisions_at_or_above_cap": 179,
+            "turns": 2051,
+            "cap_turns": 178
+          },
+          "mean_moves_per_game": 208.8515625,
+          "games_reaching_cap": 65,
+          "weighted_decision_mean_ms": 1.5387375253815814
+        },
+        "cycle_exit": {
+          "requested": 128,
+          "completed": 128,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 128,
+          "mean_placement": 2.75,
+          "win_rate": 0.375,
+          "top4_rate": 0.796875,
+          "completed_seed_blocks": 16,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.3982421875,
+            3.1328125
+          ],
+          "complete_block_metric_denominator": 128,
+          "complete_block_mean_placement": 2.75,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.3982421875,
+            3.1328125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 0,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "max_ms": null
+          },
+          "elapsed_seconds": 68.74051837134175,
+          "seats_attempted": {
+            "0": 16,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 16,
+            "6": 16,
+            "7": 16
+          },
+          "movement_totals": {
+            "moves": 3146,
+            "cycle_exits": 1600,
+            "voluntary_ends": 1881,
+            "unspent_gold_at_end": 968,
+            "underfilled_ends": 986,
+            "turns": 2013,
+            "cap_turns": 5,
+            "decisions_at_or_above_cap": 8
+          },
+          "mean_moves_per_game": 24.578125,
+          "games_reaching_cap": 2,
+          "weighted_decision_mean_ms": 1.666440823126179
+        },
+        "cap7": {
+          "requested": 128,
+          "completed": 128,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 128,
+          "mean_placement": 2.484375,
+          "win_rate": 0.4140625,
+          "top4_rate": 0.8359375,
+          "completed_seed_blocks": 16,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.2107421875,
+            2.750195312499999
+          ],
+          "complete_block_metric_denominator": 128,
+          "complete_block_mean_placement": 2.484375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.2107421875,
+            2.750195312499999
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 0,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "max_ms": null
+          },
+          "elapsed_seconds": 68.79312125244178,
+          "seats_attempted": {
+            "0": 16,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 16,
+            "6": 16,
+            "7": 16
+          },
+          "movement_totals": {
+            "moves": 4395,
+            "cycle_exits": 0,
+            "voluntary_ends": 1926,
+            "unspent_gold_at_end": 952,
+            "underfilled_ends": 1050,
+            "turns": 2057,
+            "cap_turns": 0
+          },
+          "mean_moves_per_game": 34.3359375,
+          "games_reaching_cap": 0,
+          "weighted_decision_mean_ms": 1.6018101606007205
+        }
+      },
+      "paired": {
+        "cycle_exit": {
+          "candidate": "runs/practice-followup-20261028/dev-heuristic",
+          "baseline": "runs/practice-followup-20261028/dev-heuristic",
+          "candidate_policy": "cycle_exit",
+          "baseline_policy": "baseline",
+          "split": "dev",
+          "complete_common_seed_blocks": 16,
+          "paired_games": 128,
+          "observed_common_pairs": 128,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.75,
+          "baseline_mean": 2.796875,
+          "candidate_minus_baseline": -0.046875,
+          "paired_seed_bootstrap_95ci": [
+            -0.4609375,
+            0.390625
+          ],
+          "seeds": [
+            1000021000,
+            1000021001,
+            1000021002,
+            1000021003,
+            1000021004,
+            1000021005,
+            1000021006,
+            1000021007,
+            1000021008,
+            1000021009,
+            1000021010,
+            1000021011,
+            1000021012,
+            1000021013,
+            1000021014,
+            1000021015
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        },
+        "cap7": {
+          "candidate": "runs/practice-followup-20261028/dev-heuristic",
+          "baseline": "runs/practice-followup-20261028/dev-heuristic",
+          "candidate_policy": "cap7",
+          "baseline_policy": "baseline",
+          "split": "dev",
+          "complete_common_seed_blocks": 16,
+          "paired_games": 128,
+          "observed_common_pairs": 128,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.484375,
+          "baseline_mean": 2.796875,
+          "candidate_minus_baseline": -0.3125,
+          "paired_seed_bootstrap_95ci": [
+            -0.5859375,
+            -0.0546875
+          ],
+          "seeds": [
+            1000021000,
+            1000021001,
+            1000021002,
+            1000021003,
+            1000021004,
+            1000021005,
+            1000021006,
+            1000021007,
+            1000021008,
+            1000021009,
+            1000021010,
+            1000021011,
+            1000021012,
+            1000021013,
+            1000021014,
+            1000021015
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        }
+      },
+      "elapsed_seconds": 123.30599516700022,
+      "source_sha256": "06843c3d0322e0e89e4faca05dc8d22b5ae181af51ae205648acfe6a21c95822",
+      "source_archive": {
+        "path": "runs/source-snapshots/06843c3d0322e0e89e4faca05dc8d22b5ae181af51ae205648acfe6a21c95822.tar.gz",
+        "sha256": "829237c48c1ee17541f6481d603856344d4d3c043b34eeb4ac68f8a3a119a18d",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      },
+      "checkpoint_sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787",
+      "games_sha256": "9bd73e87a52ebf7c629f15fbe324bb6e99a638b1e182e77ea6ba1bba955b7a68"
+    },
+    "holdout-scripted": {
+      "metrics": {
+        "baseline": {
+          "requested": 256,
+          "completed": 256,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 256,
+          "mean_placement": 2.07421875,
+          "win_rate": 0.37890625,
+          "top4_rate": 0.9609375,
+          "completed_seed_blocks": 32,
+          "mean_placement_seed_bootstrap_95ci": [
+            1.91796875,
+            2.23828125
+          ],
+          "complete_block_metric_denominator": 256,
+          "complete_block_mean_placement": 2.07421875,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            1.91796875,
+            2.23828125
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 113029,
+            "mean_ms": 1.4788719880524734,
+            "p50_ms": 1.31191685795784,
+            "p95_ms": 2.4286422878503786,
+            "max_ms": 36.38791688717902
+          },
+          "elapsed_seconds": 179.74671847140417,
+          "seats_attempted": {
+            "0": 32,
+            "1": 32,
+            "2": 32,
+            "3": 32,
+            "4": 32,
+            "6": 32,
+            "5": 32,
+            "7": 32
+          },
+          "movement_totals": {
+            "moves": 59036,
+            "cycle_exits": 0,
+            "voluntary_ends": 3804,
+            "unspent_gold_at_end": 2138,
+            "underfilled_ends": 1846,
+            "decisions_at_or_above_cap": 395,
+            "turns": 4062,
+            "cap_turns": 393
+          },
+          "mean_moves_per_game": 230.609375,
+          "games_reaching_cap": 143,
+          "weighted_decision_mean_ms": 1.4788719880524734
+        },
+        "cycle_exit": {
+          "requested": 256,
+          "completed": 256,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 256,
+          "mean_placement": 2.13671875,
+          "win_rate": 0.3828125,
+          "top4_rate": 0.9296875,
+          "completed_seed_blocks": 32,
+          "mean_placement_seed_bootstrap_95ci": [
+            1.98046875,
+            2.2969726562499995
+          ],
+          "complete_block_metric_denominator": 256,
+          "complete_block_mean_placement": 2.13671875,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            1.98046875,
+            2.2969726562499995
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 62584,
+            "mean_ms": 1.6028958322183233,
+            "p50_ms": 1.3670205371454358,
+            "p95_ms": 2.842570561915636,
+            "max_ms": 52.7920420281589
+          },
+          "elapsed_seconds": 108.5955620945897,
+          "seats_attempted": {
+            "0": 32,
+            "1": 32,
+            "2": 32,
+            "3": 32,
+            "4": 32,
+            "5": 32,
+            "6": 32,
+            "7": 32
+          },
+          "movement_totals": {
+            "moves": 6717,
+            "cycle_exits": 3605,
+            "voluntary_ends": 3831,
+            "unspent_gold_at_end": 2011,
+            "underfilled_ends": 1932,
+            "turns": 4089,
+            "cap_turns": 3,
+            "decisions_at_or_above_cap": 3
+          },
+          "mean_moves_per_game": 26.23828125,
+          "games_reaching_cap": 2,
+          "weighted_decision_mean_ms": 1.6028958322183233
+        }
+      },
+      "paired": {
+        "cycle_exit": {
+          "candidate": "runs/practice-followup-20261028/holdout-scripted",
+          "baseline": "runs/practice-followup-20261028/holdout-scripted",
+          "candidate_policy": "cycle_exit",
+          "baseline_policy": "baseline",
+          "split": "final",
+          "complete_common_seed_blocks": 32,
+          "paired_games": 256,
+          "observed_common_pairs": 256,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.13671875,
+          "baseline_mean": 2.07421875,
+          "candidate_minus_baseline": 0.0625,
+          "paired_seed_bootstrap_95ci": [
+            -0.13291015624999997,
+            0.26953125
+          ],
+          "seeds": [
+            2000070000,
+            2000070001,
+            2000070002,
+            2000070003,
+            2000070004,
+            2000070005,
+            2000070006,
+            2000070007,
+            2000070008,
+            2000070009,
+            2000070010,
+            2000070011,
+            2000070012,
+            2000070013,
+            2000070014,
+            2000070015,
+            2000070016,
+            2000070017,
+            2000070018,
+            2000070019,
+            2000070020,
+            2000070021,
+            2000070022,
+            2000070023,
+            2000070024,
+            2000070025,
+            2000070026,
+            2000070027,
+            2000070028,
+            2000070029,
+            2000070030,
+            2000070031
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        }
+      },
+      "elapsed_seconds": 146.66219670814462,
+      "source_sha256": "0664bd0e4348561f648ef33e07deee090f85a7d99f2a42875a8b8c9a2277ad40",
+      "source_archive": {
+        "path": "runs/source-snapshots/0664bd0e4348561f648ef33e07deee090f85a7d99f2a42875a8b8c9a2277ad40.tar.gz",
+        "sha256": "ba3c70093f8f1e6405751713c8514202ef93f59e9273d82cff600483db3028a4",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      },
+      "checkpoint_sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787",
+      "games_sha256": "5db560c3379ab4184fef0dba90349d56a4ac2716bdafe33ed6f0e2e249d54dec"
+    },
+    "holdout-heuristic": {
+      "metrics": {
+        "baseline": {
+          "requested": 256,
+          "completed": 256,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 256,
+          "mean_placement": 2.6953125,
+          "win_rate": 0.3828125,
+          "top4_rate": 0.8125,
+          "completed_seed_blocks": 32,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.37109375,
+            3.0196289062499995
+          ],
+          "complete_block_metric_denominator": 256,
+          "complete_block_mean_placement": 2.6953125,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.37109375,
+            3.0196289062499995
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 108678,
+            "mean_ms": 1.5282386581683782,
+            "p50_ms": 1.3500625500455499,
+            "p95_ms": 2.3936311248689885,
+            "max_ms": 60.769916977733374
+          },
+          "elapsed_seconds": 199.1208255032543,
+          "seats_attempted": {
+            "0": 32,
+            "1": 32,
+            "2": 32,
+            "3": 32,
+            "4": 32,
+            "5": 32,
+            "6": 32,
+            "7": 32
+          },
+          "movement_totals": {
+            "moves": 52241,
+            "cycle_exits": 0,
+            "voluntary_ends": 3862,
+            "unspent_gold_at_end": 2224,
+            "underfilled_ends": 1886,
+            "decisions_at_or_above_cap": 347,
+            "turns": 4122,
+            "cap_turns": 347
+          },
+          "mean_moves_per_game": 204.06640625,
+          "games_reaching_cap": 131,
+          "weighted_decision_mean_ms": 1.5282386581683782
+        },
+        "cycle_exit": {
+          "requested": 256,
+          "completed": 256,
+          "failed": 0,
+          "interrupted": 0,
+          "truncated": 0,
+          "not_started": 0,
+          "metric_denominator": 256,
+          "mean_placement": 2.5859375,
+          "win_rate": 0.421875,
+          "top4_rate": 0.8203125,
+          "completed_seed_blocks": 32,
+          "mean_placement_seed_bootstrap_95ci": [
+            2.35927734375,
+            2.8046875
+          ],
+          "complete_block_metric_denominator": 256,
+          "complete_block_mean_placement": 2.5859375,
+          "complete_block_mean_placement_seed_bootstrap_95ci": [
+            2.35927734375,
+            2.8046875
+          ],
+          "confidence_interval_scope": "The interval estimates complete_block_mean_placement using whole eight-seat blocks; mean_placement uses every normally completed game and can have a different denominator. mean_placement_seed_bootstrap_95ci is retained as a legacy alias.",
+          "illegal_actions": 0,
+          "decision_latency": {
+            "count": 63847,
+            "mean_ms": 1.652570964235907,
+            "p50_ms": 1.4151250943541527,
+            "p95_ms": 2.858608029782771,
+            "max_ms": 40.2836250141263
+          },
+          "elapsed_seconds": 134.24207271100022,
+          "seats_attempted": {
+            "0": 32,
+            "1": 32,
+            "2": 32,
+            "3": 32,
+            "4": 32,
+            "5": 32,
+            "6": 32,
+            "7": 32
+          },
+          "movement_totals": {
+            "moves": 6481,
+            "cycle_exits": 3475,
+            "voluntary_ends": 3901,
+            "unspent_gold_at_end": 1959,
+            "underfilled_ends": 1920,
+            "turns": 4169,
+            "cap_turns": 1,
+            "decisions_at_or_above_cap": 2
+          },
+          "mean_moves_per_game": 25.31640625,
+          "games_reaching_cap": 1,
+          "weighted_decision_mean_ms": 1.652570964235907
+        }
+      },
+      "paired": {
+        "cycle_exit": {
+          "candidate": "runs/practice-followup-20261028/holdout-heuristic",
+          "baseline": "runs/practice-followup-20261028/holdout-heuristic",
+          "candidate_policy": "cycle_exit",
+          "baseline_policy": "baseline",
+          "split": "final",
+          "complete_common_seed_blocks": 32,
+          "paired_games": 256,
+          "observed_common_pairs": 256,
+          "excluded_common_pairs": 0,
+          "unmatched_candidate_pairs": 0,
+          "unmatched_baseline_pairs": 0,
+          "candidate_mean": 2.5859375,
+          "baseline_mean": 2.6953125,
+          "candidate_minus_baseline": -0.109375,
+          "paired_seed_bootstrap_95ci": [
+            -0.38671875,
+            0.1640625
+          ],
+          "seeds": [
+            2000070000,
+            2000070001,
+            2000070002,
+            2000070003,
+            2000070004,
+            2000070005,
+            2000070006,
+            2000070007,
+            2000070008,
+            2000070009,
+            2000070010,
+            2000070011,
+            2000070012,
+            2000070013,
+            2000070014,
+            2000070015,
+            2000070016,
+            2000070017,
+            2000070018,
+            2000070019,
+            2000070020,
+            2000070021,
+            2000070022,
+            2000070023,
+            2000070024,
+            2000070025,
+            2000070026,
+            2000070027,
+            2000070028,
+            2000070029,
+            2000070030,
+            2000070031
+          ],
+          "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+        }
+      },
+      "elapsed_seconds": 169.64982050005347,
+      "source_sha256": "6ca600b26bb346cb202bea2764f938478a2c5bb0f84752dc5d3115513cc9700b",
+      "source_archive": {
+        "path": "runs/source-snapshots/6ca600b26bb346cb202bea2764f938478a2c5bb0f84752dc5d3115513cc9700b.tar.gz",
+        "sha256": "4e95848106b117cb3e9cc968c341cce5d571415557ed5ccf0a2ffa7ec09d1582",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      },
+      "checkpoint_sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787",
+      "games_sha256": "bb191616ef9e3167495e7ec146a8036eac1cd679bcaf04c001e57fff8fa104d8"
+    }
+  }
+}

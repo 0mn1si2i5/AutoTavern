@@ -40,3 +40,29 @@ def test_audit_preserves_failure_without_echoing_exception_secrets(tmp_path):
     assert 'sensitive test token' not in text and 'ConnectionError' in text
     unreviewed=tmp_path/'client.py';unreviewed.write_text('raise AssertionError("must not execute")')
     with pytest.raises(ValueError,match='checksum'):load_reviewed_connector(unreviewed)
+
+
+def test_live_nested_terminal_and_committed_ack_are_preserved(tmp_path):
+    # Actual practice response shape, with synthetic IDs and injected unrelated secrets.
+    terminal = dict(type='match_finished', match={
+        'id': 'practice-id', 'category': 'practice', 'status': 'finished',
+        'turns': 15, 'human_count': 1, 'bot_count': 7,
+        'participants': [{'seat': 2, 'placement': 2, 'forfeited': False,
+                          'model_version': 'frozen-v02', 'key': 'must-not-log'}],
+        'authorization': 'must-not-log'}, cursor='must-not-log')
+
+    class Connector:
+        def request(self, method, path, body=None, authenticated=True):
+            return terminal if method == 'GET' else {'ok': True, 'status': 'committed'}
+
+    module = instrument(SimpleNamespace(ArenaClient=Connector), tmp_path/'audit')
+    client = module.ArenaClient()
+    assert client.request('GET', '/api/v1/agent/state') == terminal
+    client.request('POST', '/api/v1/agent/actions', {'action': 0})
+    text = (tmp_path/'audit/requests.jsonl').read_text()
+    rows = [json.loads(line) for line in text.splitlines()]
+    match = rows[1]['response']['match']
+    assert match['id'] == 'practice-id' and match['status'] == 'finished'
+    assert match['participants'][0]['placement'] == 2
+    assert rows[3]['response'] == {'ok': True, 'status': 'committed'}
+    assert 'must-not-log' not in text

@@ -1,0 +1,10 @@
+{
+  "source_snapshot_matches_current_code": true,
+  "policy_freezes_unchanged": true,
+  "running_experiment_processes": [],
+  "formal_games_completed": 4608,
+  "promoted": false,
+  "default_policy": "frozen v0.2",
+  "new_matches": 0,
+  "new_training": 0
+}

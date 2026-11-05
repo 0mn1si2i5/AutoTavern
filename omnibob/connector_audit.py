@@ -26,6 +26,9 @@ RESPONSE_FIELDS = {"type", "match_id", "seat", "seat_revision", "decision_id", "
                    "action_layout_sha256"}
 ERROR_CODES = {"stale", "expired", "illegal", "forbidden", "match_void", "action_limit",
                "already_playing", "unauthorized", "rate_limited"}
+MATCH_FIELDS = {"id", "ruleset", "category", "status", "created", "finished", "turns",
+                "duration_seconds", "human_count", "bot_count", "lineups_available"}
+PARTICIPANT_FIELDS = {"seat", "placement", "forfeited", "model_version"}
 
 
 def selected(value, fields):
@@ -62,6 +65,14 @@ def instrument(module, output):
                       "exception_type": type(error).__name__, "elapsed_seconds": time.perf_counter()-start})
                 raise
             safe = selected(response, RESPONSE_FIELDS)
+            # The live protocol nests terminal identity/results under `match`.
+            # Preserve that linkage without admitting arbitrary response fields.
+            if safe.get("type") == "match_finished" and isinstance(response.get("match"), dict):
+                match = response["match"]
+                safe["match"] = selected(match, MATCH_FIELDS)
+                if isinstance(match.get("participants"), list):
+                    safe["match"]["participants"] = [selected(p, PARTICIPANT_FIELDS)
+                                                      for p in match["participants"]]
             if isinstance(response, dict) and "error" in response:
                 code = response["error"]
                 safe["error"] = code if isinstance(code, str) and code in ERROR_CODES else "unrecognized_error"

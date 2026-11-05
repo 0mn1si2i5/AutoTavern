@@ -1,0 +1,16 @@
+{
+  "omnibob/model.py": true,
+  "omnibob/learned.py": true,
+  "omnibob/repeat_guard.py": true,
+  "omnibob/reorder_exit.py": true,
+  "frozen_checkpoint": true,
+  "practice_archive": true,
+  "runs/releases/omnibob-v0.2-20261028": {
+    "verified_files": 1924,
+    "mismatches": []
+  },
+  "runs/practice-20261028-103720": {
+    "verified_files": 23,
+    "mismatches": []
+  }
+}

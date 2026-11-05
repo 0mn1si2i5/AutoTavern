@@ -1,0 +1,74 @@
+{
+  "main_games_completed": 4608,
+  "final_games_per_variant": 1024,
+  "promoted": false,
+  "default": "frozen v0.2",
+  "new_training_runs": 0,
+  "new_online_matches": 0,
+  "runs": {
+    "dev-scripted": {
+      "completed": 768,
+      "manifest_sha256": "bb4eca1e634f7df970755e43bcfac795adaee8afa0c4dc5892444103d924d316",
+      "games_sha256": "9167773c1f67772769799a9734a4d9e3caf44cd22d18674811568f4a66441b72",
+      "source_sha256": "f0f6488d766412f7df5e4550d55aaf7a794cc11c004e0a062d6ae5553a35001d",
+      "source_archive": {
+        "path": "runs/source-snapshots/f0f6488d766412f7df5e4550d55aaf7a794cc11c004e0a062d6ae5553a35001d.tar.gz",
+        "sha256": "0ac556c134cc87b020323ffa4ba717e168152966eb5300151fa33493977167a9",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      }
+    },
+    "dev-heuristic": {
+      "completed": 768,
+      "manifest_sha256": "2d5ffa5a91b120c67e44164cea884d1a8d0f5df2e301484edcbaaee55e3a02b5",
+      "games_sha256": "e9e0d8ce104ada370c2af20a43d69fc78b356dfc892f72944c3e050a9e0a8533",
+      "source_sha256": "811a5b2df8696b83f69833fa2021aa13e02ad29b5c448c9dad2289bd5484964f",
+      "source_archive": {
+        "path": "runs/source-snapshots/811a5b2df8696b83f69833fa2021aa13e02ad29b5c448c9dad2289bd5484964f.tar.gz",
+        "sha256": "e7e111972a7e161cc6644122c9276d2d6e0f981bd3f748c7da8d87a8ed41ed27",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      }
+    },
+    "final-scripted": {
+      "completed": 1536,
+      "manifest_sha256": "0d319e426c0bba9274c6ac490fb6ac5a03dbbf6e427ebf6ed7d02cc8496952a0",
+      "games_sha256": "c74d3986eac67691067415d9d0a438280606a259b66f4c3ac633188bc8cd3113",
+      "source_sha256": "88507a5f9e62248260930f2d5ac62b079af3e2e0d39b861bfc377dee95a62722",
+      "source_archive": {
+        "path": "runs/source-snapshots/88507a5f9e62248260930f2d5ac62b079af3e2e0d39b861bfc377dee95a62722.tar.gz",
+        "sha256": "2a1f192728f8836e496aef24cc513e329eb6a57411ce8572252e44d27d4018bf",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      }
+    },
+    "final-heuristic": {
+      "completed": 1536,
+      "manifest_sha256": "809d79a8da9493e1313768b8b364b9451ac3810569b09f44223387143dc62b2a",
+      "games_sha256": "49e916540eae33851941b251f04d8cfd39d71776dc3a99727bf21129729f6636",
+      "source_sha256": "88507a5f9e62248260930f2d5ac62b079af3e2e0d39b861bfc377dee95a62722",
+      "source_archive": {
+        "path": "runs/source-snapshots/88507a5f9e62248260930f2d5ac62b079af3e2e0d39b861bfc377dee95a62722.tar.gz",
+        "sha256": "2a1f192728f8836e496aef24cc513e329eb6a57411ce8572252e44d27d4018bf",
+        "restore": "overlay onto the recorded git base; install local dependencies separately"
+      }
+    }
+  },
+  "final_candidate_vs_cycle_exit_placements": {
+    "scripted": {
+      "better": 3,
+      "tied": 506,
+      "worse": 3
+    },
+    "heuristic": {
+      "better": 3,
+      "tied": 507,
+      "worse": 2
+    }
+  },
+  "frozen_policy_sources": {
+    "omnibob/model.py": "95bf29376d77f60135ec593bcdd7958e9c5e52fecf244eda16686f5622d5e4e6",
+    "omnibob/learned.py": "98523bf478293d08b2cbbac270f8c33b94020dc4d49217b47ae1ed0a6de99363",
+    "omnibob/move_guard.py": "4fb1647fc4d8c2e60945d64e8fa7c0ad10491c0da633cd32454002d26a9abd3f",
+    "omnibob/repeat_guard.py": "046ad1cc3e31729e9704ddacf9434cdc229ada2d33548492e2feb67a47cab1d4",
+    "omnibob/reorder_exit.py": "d87e788fbb020832e49a23b33d71fc5cd9909328fa6dc0d949b0737cf08f9962",
+    "omnibob/cancel_memory.py": "e214e49e4c497b482217e900cd45db02c161a31e527277daeb96e3a5ad380f2a"
+  }
+}

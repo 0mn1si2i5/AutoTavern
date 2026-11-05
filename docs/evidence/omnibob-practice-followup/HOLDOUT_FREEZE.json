@@ -1,0 +1,93 @@
+{
+  "time": "2026-10-28T04:04:08.686219+00:00",
+  "development_gate_passed": true,
+  "candidate_selected_before_holdout": "cycle_exit",
+  "policy_sources": {
+    "omnibob/model.py": "95bf29376d77f60135ec593bcdd7958e9c5e52fecf244eda16686f5622d5e4e6",
+    "omnibob/learned.py": "98523bf478293d08b2cbbac270f8c33b94020dc4d49217b47ae1ed0a6de99363",
+    "omnibob/repeat_guard.py": "046ad1cc3e31729e9704ddacf9434cdc229ada2d33548492e2feb67a47cab1d4",
+    "omnibob/reorder_exit.py": "d87e788fbb020832e49a23b33d71fc5cd9909328fa6dc0d949b0737cf08f9962"
+  },
+  "development_deltas": {
+    "scripted": {
+      "candidate": "runs/practice-followup-20261028/dev-scripted",
+      "baseline": "runs/practice-followup-20261028/dev-scripted",
+      "candidate_policy": "cycle_exit",
+      "baseline_policy": "baseline",
+      "split": "dev",
+      "complete_common_seed_blocks": 16,
+      "paired_games": 128,
+      "observed_common_pairs": 128,
+      "excluded_common_pairs": 0,
+      "unmatched_candidate_pairs": 0,
+      "unmatched_baseline_pairs": 0,
+      "candidate_mean": 2.34375,
+      "baseline_mean": 2.28125,
+      "candidate_minus_baseline": 0.0625,
+      "paired_seed_bootstrap_95ci": [
+        -0.21875,
+        0.359375
+      ],
+      "seeds": [
+        1000021000,
+        1000021001,
+        1000021002,
+        1000021003,
+        1000021004,
+        1000021005,
+        1000021006,
+        1000021007,
+        1000021008,
+        1000021009,
+        1000021010,
+        1000021011,
+        1000021012,
+        1000021013,
+        1000021014,
+        1000021015
+      ],
+      "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+    },
+    "heuristic": {
+      "candidate": "runs/practice-followup-20261028/dev-heuristic",
+      "baseline": "runs/practice-followup-20261028/dev-heuristic",
+      "candidate_policy": "cycle_exit",
+      "baseline_policy": "baseline",
+      "split": "dev",
+      "complete_common_seed_blocks": 16,
+      "paired_games": 128,
+      "observed_common_pairs": 128,
+      "excluded_common_pairs": 0,
+      "unmatched_candidate_pairs": 0,
+      "unmatched_baseline_pairs": 0,
+      "candidate_mean": 2.75,
+      "baseline_mean": 2.796875,
+      "candidate_minus_baseline": -0.046875,
+      "paired_seed_bootstrap_95ci": [
+        -0.4609375,
+        0.390625
+      ],
+      "seeds": [
+        1000021000,
+        1000021001,
+        1000021002,
+        1000021003,
+        1000021004,
+        1000021005,
+        1000021006,
+        1000021007,
+        1000021008,
+        1000021009,
+        1000021010,
+        1000021011,
+        1000021012,
+        1000021013,
+        1000021014,
+        1000021015
+      ],
+      "note": "Negative placement difference favors candidate. Development selection is exploratory; this interval does not correct for repeated model selection."
+    }
+  },
+  "no_training": true,
+  "no_online_matches": true
+}
