@@ -1,0 +1,65 @@
+{
+  "96000000-candidate": {
+    "policy_sha256": "973235f6ecf1ee4cdfa2536140cddba7e53991c54ebfb71cd9be2fb384dee8a5",
+    "training_lineage_verified": true,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 200,
+      "steps": 819200,
+      "completed_games_this_run": 1379,
+      "seconds": 981.6388731002808,
+      "completed_episodes_this_run": 2162,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-budget-20261028/seed96000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 407027712,
+      "process_peak_rss_bytes": 762970112,
+      "mps_allocated_bytes": 97039616,
+      "mps_driver_bytes": 1187184640
+    }
+  },
+  "97000000-candidate": {
+    "policy_sha256": "b46a77bd62517b8ba0679cac7eab163e497160c09b59805afecbe516043e506e",
+    "training_lineage_verified": true,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 200,
+      "steps": 819200,
+      "completed_games_this_run": 1298,
+      "seconds": 1127.4496612548828,
+      "completed_episodes_this_run": 2153,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-budget-20261028/seed97000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 328728576,
+      "process_peak_rss_bytes": 939540480,
+      "mps_allocated_bytes": 97039616,
+      "mps_driver_bytes": 1187184640
+    }
+  },
+  "98000000-candidate": {
+    "policy_sha256": "b6a0da1b7d257c6a4cad5a0f43b8830df7bde9717ac8ea003f4b3967ad9fff1a",
+    "training_lineage_verified": true,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 200,
+      "steps": 819200,
+      "completed_games_this_run": 1374,
+      "seconds": 1081.767394065857,
+      "completed_episodes_this_run": 2184,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-budget-20261028/seed98000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 358350848,
+      "process_peak_rss_bytes": 857767936,
+      "mps_allocated_bytes": 97039616,
+      "mps_driver_bytes": 1187184640
+    }
+  }
+}

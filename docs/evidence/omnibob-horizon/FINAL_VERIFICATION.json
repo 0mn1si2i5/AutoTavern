@@ -1,0 +1,196 @@
+{
+  "verified_utc": "2026-10-28T16:06:40.296809+00:00",
+  "raw_artifact_report_identical": true,
+  "development_attempted": 2304,
+  "final_attempted": 4608,
+  "final_completed": 4607,
+  "censored": [
+    {
+      "profile": "mixed_learned",
+      "role": "baseline",
+      "policy": "baseline",
+      "seed": 2000260027,
+      "seat": 3,
+      "status": "truncated",
+      "placement": 1,
+      "placements": [
+        7,
+        3,
+        8,
+        1,
+        4,
+        2,
+        5,
+        6
+      ],
+      "steps": 4013,
+      "decisions": 1373,
+      "illegal_actions": 0,
+      "error": null,
+      "truncated_combats": 0,
+      "turn_limit_end": true,
+      "elapsed_seconds": 3.365493749966845,
+      "turns": 100,
+      "decision_latency": {
+        "count": 1373,
+        "mean_ms": 1.4210093945525288,
+        "p50_ms": 1.3428330421447754,
+        "p95_ms": 1.8937253393232822,
+        "max_ms": 4.372959025204182
+      },
+      "observation_latency": {
+        "count": 1373,
+        "mean_ms": 0.06142196256344499,
+        "p50_ms": 0.0527920201420784,
+        "p95_ms": 0.11070813052356224,
+        "max_ms": 0.3078749869018793
+      },
+      "decision_ms_total": 1951.045898720622
+    }
+  ],
+  "resources": {
+    "scripted/baseline": {
+      "decision_latency": {
+        "count": 230556,
+        "mean_ms": 1.4195990947620807,
+        "p50_ms": 1.2843329459428787,
+        "p95_ms": 1.939374953508377,
+        "max_ms": 88.87779200449586
+      },
+      "elapsed_seconds": 349.57600746443495,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    },
+    "scripted/candidate": {
+      "decision_latency": {
+        "count": 199463,
+        "mean_ms": 1.4057782329406858,
+        "p50_ms": 1.259292010217905,
+        "p95_ms": 1.922707981429994,
+        "max_ms": 93.44816696830094
+      },
+      "elapsed_seconds": 300.61299725365825,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    },
+    "scripted/control": {
+      "decision_latency": {
+        "count": 175065,
+        "mean_ms": 1.346201600476153,
+        "p50_ms": 1.2491669040173292,
+        "p95_ms": 1.7441166564822193,
+        "max_ms": 73.70704202912748
+      },
+      "elapsed_seconds": 251.70664824801497,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    },
+    "heuristic/baseline": {
+      "decision_latency": {
+        "count": 220421,
+        "mean_ms": 1.3563170722820999,
+        "p50_ms": 1.266375184059143,
+        "p95_ms": 1.7240829765796661,
+        "max_ms": 83.25704210437834
+      },
+      "elapsed_seconds": 352.90025392500684,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    },
+    "heuristic/candidate": {
+      "decision_latency": {
+        "count": 200222,
+        "mean_ms": 1.3404248346612662,
+        "p50_ms": 1.2333749327808619,
+        "p95_ms": 1.6661249101161957,
+        "max_ms": 1115.047707920894
+      },
+      "elapsed_seconds": 319.67150221345946,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    },
+    "heuristic/control": {
+      "decision_latency": {
+        "count": 178805,
+        "mean_ms": 1.47964873531947,
+        "p50_ms": 1.2759999372065067,
+        "p95_ms": 2.413500193506477,
+        "max_ms": 1166.3901249412447
+      },
+      "elapsed_seconds": 322.2410702353809,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    },
+    "mixed_learned/baseline": {
+      "decision_latency": {
+        "count": 232175,
+        "mean_ms": 1.5972126766083006,
+        "p50_ms": 1.3442919589579105,
+        "p95_ms": 2.897220500744879,
+        "max_ms": 145.65158286131918
+      },
+      "elapsed_seconds": 848.9737740361597,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 1,
+      "illegal_actions": 0
+    },
+    "mixed_learned/candidate": {
+      "decision_latency": {
+        "count": 196237,
+        "mean_ms": 1.5772312784328633,
+        "p50_ms": 1.3478328473865986,
+        "p95_ms": 2.809807891026138,
+        "max_ms": 200.12379181571305
+      },
+      "elapsed_seconds": 777.3602706636302,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    },
+    "mixed_learned/control": {
+      "decision_latency": {
+        "count": 178091,
+        "mean_ms": 1.3282469357982918,
+        "p50_ms": 1.2153328862041235,
+        "p95_ms": 1.7579999985173345,
+        "max_ms": 199.05516714788973
+      },
+      "elapsed_seconds": 629.0911391812842,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "illegal_actions": 0
+    }
+  },
+  "gate_passed": false,
+  "failure_reasons": [
+    "Even optimistic pooled placement gain is smaller than0.10.",
+    "Pessimistic pooled95%CI includes zero."
+  ],
+  "candidate_vs_control": {
+    "mean_delta_bounds": [
+      -0.0058593749999999965,
+      -0.0058593749999999965
+    ],
+    "pessimistic_bootstrap_95ci": [
+      -0.119140625,
+      0.10677083333333333
+    ]
+  },
+  "default_upgraded": false,
+  "baseline_sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787"
+}

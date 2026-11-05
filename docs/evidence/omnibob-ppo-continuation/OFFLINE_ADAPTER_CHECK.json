@@ -1,0 +1,11 @@
+{
+  "offline_only": true,
+  "queued": false,
+  "recorded_own_frames": 482,
+  "action_mismatches": [],
+  "illegal_actions": 0,
+  "independent_context_state_verified": true,
+  "original_record_sha256": "de0494aaa8688070f81d9d4f0c307784c401e5a78a041aa75b78a74466595fa8",
+  "candidate_sha256": "1583799fd2f45efb8ad149d3c30e1b0ace24547be45e005a465ae5842b301853",
+  "limitation": "Recorded baseline trajectory; only adapter/direct inference equivalence and legality, not candidate placement or actual server validation."
+}

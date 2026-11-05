@@ -1,0 +1,7 @@
+{
+  "created_utc": "2026-10-28T09:56:52.713657+00:00",
+  "original_sha256": "f625484e3e03b0d21c0ec99e9579a12924624ca89bfff7002a8093d4e28d3eb1",
+  "corrected_sha256": "3b54fde69c650c6cc902939748576bcdf3290181cb0e17378f6882db320f819f",
+  "correction": "Removed unused training_opponent_sha256 inherited while constructing protocol; baseline is reference policy, not a training opponent in this budget experiment. Original retained.",
+  "unchanged": "All roles, weights, resume state, seeds, budgets, sources, gates and actual commands unchanged; no development results examined."
+}

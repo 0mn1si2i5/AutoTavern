@@ -1,0 +1,700 @@
+{
+  "stage": "dev",
+  "completed_games": 5376,
+  "seed_blocks": 32,
+  "seeds": [
+    1000111000,
+    1000111001,
+    1000111002,
+    1000111003,
+    1000111004,
+    1000111005,
+    1000111006,
+    1000111007,
+    1000111008,
+    1000111009,
+    1000111010,
+    1000111011,
+    1000111012,
+    1000111013,
+    1000111014,
+    1000111015,
+    1000111016,
+    1000111017,
+    1000111018,
+    1000111019,
+    1000111020,
+    1000111021,
+    1000111022,
+    1000111023,
+    1000111024,
+    1000111025,
+    1000111026,
+    1000111027,
+    1000111028,
+    1000111029,
+    1000111030,
+    1000111031
+  ],
+  "metrics": {
+    "v02": {
+      "scripted": {
+        "mean_placement": 2.0859375,
+        "win_rate": 0.44921875,
+        "top4_rate": 0.921875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 216.16286541800946,
+        "decisions": 107653,
+        "decision_mean_ms": 1.8541487734037425
+      },
+      "heuristic": {
+        "mean_placement": 2.53125,
+        "win_rate": 0.4375,
+        "top4_rate": 0.84375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 240.7456409598235,
+        "decisions": 105790,
+        "decision_mean_ms": 1.8835381257542936
+      },
+      "mixed_learned": {
+        "mean_placement": 2.67578125,
+        "win_rate": 0.39453125,
+        "top4_rate": 0.81640625,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 335.5312581297476,
+        "decisions": 103186,
+        "decision_mean_ms": 1.302691381481798
+      }
+    },
+    "96000000-control": {
+      "scripted": {
+        "mean_placement": 2.18359375,
+        "win_rate": 0.3671875,
+        "top4_rate": 0.921875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 160.41883258731104,
+        "decisions": 109483,
+        "decision_mean_ms": 1.3719974025313355
+      },
+      "heuristic": {
+        "mean_placement": 2.59375,
+        "win_rate": 0.42578125,
+        "top4_rate": 0.82421875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 163.13002858823165,
+        "decisions": 106053,
+        "decision_mean_ms": 1.2921529100167417
+      },
+      "mixed_learned": {
+        "mean_placement": 2.55078125,
+        "win_rate": 0.390625,
+        "top4_rate": 0.83984375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 366.75146675202996,
+        "decisions": 106563,
+        "decision_mean_ms": 1.40178350524129
+      }
+    },
+    "96000000-candidate": {
+      "scripted": {
+        "mean_placement": 2.12890625,
+        "win_rate": 0.375,
+        "top4_rate": 0.9375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 133.94776324927807,
+        "decisions": 92091,
+        "decision_mean_ms": 1.3554464756038862
+      },
+      "heuristic": {
+        "mean_placement": 2.26171875,
+        "win_rate": 0.5,
+        "top4_rate": 0.87890625,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 140.58959350222722,
+        "decisions": 88964,
+        "decision_mean_ms": 1.3017920614923688
+      },
+      "mixed_learned": {
+        "mean_placement": 2.70703125,
+        "win_rate": 0.33203125,
+        "top4_rate": 0.828125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 295.301280695945,
+        "decisions": 91311,
+        "decision_mean_ms": 1.2380490773263666
+      }
+    },
+    "97000000-control": {
+      "scripted": {
+        "mean_placement": 2.16015625,
+        "win_rate": 0.38671875,
+        "top4_rate": 0.9375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 114.55873057595454,
+        "decisions": 86267,
+        "decision_mean_ms": 1.2456408504986172
+      },
+      "heuristic": {
+        "mean_placement": 2.63671875,
+        "win_rate": 0.41015625,
+        "top4_rate": 0.8046875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 159.68520946567878,
+        "decisions": 83893,
+        "decision_mean_ms": 1.540865551189826
+      },
+      "mixed_learned": {
+        "mean_placement": 2.40625,
+        "win_rate": 0.41015625,
+        "top4_rate": 0.8671875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 338.3803599199746,
+        "decisions": 89881,
+        "decision_mean_ms": 1.4031049885207258
+      }
+    },
+    "97000000-candidate": {
+      "scripted": {
+        "mean_placement": 2.0546875,
+        "win_rate": 0.3828125,
+        "top4_rate": 0.953125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 190.82842516712844,
+        "decisions": 105356,
+        "decision_mean_ms": 1.6751418130142155
+      },
+      "heuristic": {
+        "mean_placement": 2.4375,
+        "win_rate": 0.453125,
+        "top4_rate": 0.85546875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 205.50402432586998,
+        "decisions": 99737,
+        "decision_mean_ms": 1.7043883979408638
+      },
+      "mixed_learned": {
+        "mean_placement": 2.61328125,
+        "win_rate": 0.33984375,
+        "top4_rate": 0.84765625,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 355.0152351327706,
+        "decisions": 96550,
+        "decision_mean_ms": 1.4232226507159471
+      }
+    },
+    "98000000-control": {
+      "scripted": {
+        "mean_placement": 2.11328125,
+        "win_rate": 0.4140625,
+        "top4_rate": 0.9296875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 126.14159816829488,
+        "decisions": 93441,
+        "decision_mean_ms": 1.2627186697042045
+      },
+      "heuristic": {
+        "mean_placement": 2.5703125,
+        "win_rate": 0.4296875,
+        "top4_rate": 0.8125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 179.57933804625645,
+        "decisions": 92782,
+        "decision_mean_ms": 1.5827011253646375
+      },
+      "mixed_learned": {
+        "mean_placement": 2.625,
+        "win_rate": 0.3203125,
+        "top4_rate": 0.8671875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 320.94285345473327,
+        "decisions": 90360,
+        "decision_mean_ms": 1.3410623540070927
+      }
+    },
+    "98000000-candidate": {
+      "scripted": {
+        "mean_placement": 2.16796875,
+        "win_rate": 0.375,
+        "top4_rate": 0.9296875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 114.27492661075667,
+        "decisions": 75345,
+        "decision_mean_ms": 1.4112712666796523
+      },
+      "heuristic": {
+        "mean_placement": 2.64453125,
+        "win_rate": 0.40625,
+        "top4_rate": 0.8203125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 126.54708579392172,
+        "decisions": 70161,
+        "decision_mean_ms": 1.4344891830628106
+      },
+      "mixed_learned": {
+        "mean_placement": 2.51171875,
+        "win_rate": 0.40234375,
+        "top4_rate": 0.8515625,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 314.90900929202326,
+        "decisions": 75594,
+        "decision_mean_ms": 1.3993690290316092
+      }
+    }
+  },
+  "comparisons": {
+    "96000000-control": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.09765625,
+          "paired_seed_bootstrap_95ci": [
+            -0.0625,
+            0.2578125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.0625,
+          "paired_seed_bootstrap_95ci": [
+            -0.2421875,
+            0.3868164062499986
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.125,
+          "paired_seed_bootstrap_95ci": [
+            -0.42578125,
+            0.16796875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.011718749999999972,
+        "paired_seed_bootstrap_95ci": [
+          -0.15755208333333331,
+          0.18229166666666669
+        ]
+      },
+      "gate_passed": false
+    },
+    "96000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.04296875,
+          "paired_seed_bootstrap_95ci": [
+            -0.12109375,
+            0.203125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.26953125,
+          "paired_seed_bootstrap_95ci": [
+            -0.57421875,
+            0.0390625
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.03125,
+          "paired_seed_bootstrap_95ci": [
+            -0.27734375,
+            0.33203125
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.06510416666666666,
+        "paired_seed_bootstrap_95ci": [
+          -0.22005208333333334,
+          0.08984375
+        ]
+      },
+      "gate_passed": true
+    },
+    "97000000-control": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.07421875,
+          "paired_seed_bootstrap_95ci": [
+            -0.08203125,
+            0.234375
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.10546875,
+          "paired_seed_bootstrap_95ci": [
+            -0.203125,
+            0.42578125
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.26953125,
+          "paired_seed_bootstrap_95ci": [
+            -0.5703125,
+            0.03515625
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.029947916666666675,
+        "paired_seed_bootstrap_95ci": [
+          -0.1796875,
+          0.1171875
+        ]
+      },
+      "gate_passed": false
+    },
+    "97000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.03125,
+          "paired_seed_bootstrap_95ci": [
+            -0.203125,
+            0.1328125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.09375,
+          "paired_seed_bootstrap_95ci": [
+            -0.38671875,
+            0.171875
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.0625,
+          "paired_seed_bootstrap_95ci": [
+            -0.3204101562499999,
+            0.1953125
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.062499999999999986,
+        "paired_seed_bootstrap_95ci": [
+          -0.2265625,
+          0.09895833333333334
+        ]
+      },
+      "gate_passed": true
+    },
+    "98000000-control": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.02734375,
+          "paired_seed_bootstrap_95ci": [
+            -0.14453125,
+            0.1953125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.0390625,
+          "paired_seed_bootstrap_95ci": [
+            -0.22265625,
+            0.30078125
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.05078125,
+          "paired_seed_bootstrap_95ci": [
+            -0.3359375,
+            0.2265625
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.005208333333333336,
+        "paired_seed_bootstrap_95ci": [
+          -0.140625,
+          0.15107421874999954
+        ]
+      },
+      "gate_passed": false
+    },
+    "98000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.08203125,
+          "paired_seed_bootstrap_95ci": [
+            -0.08984375,
+            0.25
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.11328125,
+          "paired_seed_bootstrap_95ci": [
+            -0.1328125,
+            0.36328125
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.1640625,
+          "paired_seed_bootstrap_95ci": [
+            -0.41796875,
+            0.0859375
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.010416666666666657,
+        "paired_seed_bootstrap_95ci": [
+          -0.13541666666666666,
+          0.15625
+        ]
+      },
+      "gate_passed": false
+    }
+  },
+  "candidate_minus_matched_control": {
+    "96000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.0546875,
+          "paired_seed_bootstrap_95ci": [
+            -0.2110351562499999,
+            0.09765625
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.33203125,
+          "paired_seed_bootstrap_95ci": [
+            -0.6953125,
+            0.0234375
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.15625,
+          "paired_seed_bootstrap_95ci": [
+            -0.125,
+            0.4296875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.07682291666666667,
+        "paired_seed_bootstrap_95ci": [
+          -0.21223958333333334,
+          0.06249999999999999
+        ]
+      },
+      "gate_passed": false
+    },
+    "97000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.10546875,
+          "paired_seed_bootstrap_95ci": [
+            -0.2891601562499999,
+            0.06640625
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.19921875,
+          "paired_seed_bootstrap_95ci": [
+            -0.51171875,
+            0.10546875
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.20703125,
+          "paired_seed_bootstrap_95ci": [
+            -0.0625,
+            0.46875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.032552083333333336,
+        "paired_seed_bootstrap_95ci": [
+          -0.16927083333333337,
+          0.09895833333333334
+        ]
+      },
+      "gate_passed": false
+    },
+    "98000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.0546875,
+          "paired_seed_bootstrap_95ci": [
+            -0.11328125,
+            0.21875
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.07421875,
+          "paired_seed_bootstrap_95ci": [
+            -0.28125,
+            0.41796875
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.11328125,
+          "paired_seed_bootstrap_95ci": [
+            -0.33203125,
+            0.09765625
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.005208333333333343,
+        "paired_seed_bootstrap_95ci": [
+          -0.15494791666666669,
+          0.15625
+        ]
+      },
+      "gate_passed": false
+    }
+  },
+  "selected_role": "96000000-candidate",
+  "gate_passed": true,
+  "inputs": {
+    "runs/ppo-budget-20261028/dev-scripted-v02": {
+      "manifest_sha256": "895d6828614b767d6484e249671c9293f8e7f61f34b7de3f71df642ec5482254",
+      "games_sha256": "6feb1202995f7ab01d343156c5cb86d19bdcc2b34a2320b9afea83fd2d128085"
+    },
+    "runs/ppo-budget-20261028/dev-heuristic-v02": {
+      "manifest_sha256": "28dd5e67ce6aceb53ee459a9653df91fd9971c29b8e4c3dc30446a755637aee1",
+      "games_sha256": "2204ce978c06fa56f1fd6da5eb4145db523d0d9c3417466cadd7fa357a9a8fa6"
+    },
+    "runs/ppo-budget-20261028/dev-mixed_learned-v02": {
+      "manifest_sha256": "81be24e9923264cb4030a04098960dc00a9ccdafa8e6dbaffe6411071a54b040",
+      "games_sha256": "f59672d08a24e898b72330c6c4b7cc93b2175ad648181c13e7d7050f262c77d7"
+    },
+    "runs/ppo-budget-20261028/dev-scripted-96000000-control": {
+      "manifest_sha256": "a81f72e9ba0e7528765fca128675a6704e0b9380e28afe3bc50529da6002b878",
+      "games_sha256": "920bf6f801efc522804090f46e9d156658837fcc1ed14857faea729176941c00"
+    },
+    "runs/ppo-budget-20261028/dev-heuristic-96000000-control": {
+      "manifest_sha256": "eaad595c8d1f0b5e2824820ba6c44b639193628925e4e90ca1e80e628a022aa6",
+      "games_sha256": "693da41c37aa27faf4dae7d4ec7127f4df1751d6332d71eea434284ef7c3855a"
+    },
+    "runs/ppo-budget-20261028/dev-mixed_learned-96000000-control": {
+      "manifest_sha256": "d72d6e03b4a233cbb4b69ecb35629cea8c86506960f0a8def7179ba6b839f363",
+      "games_sha256": "3f2faeddc12c3733683a5ee0f8b7c16165391a0eeb2fb34f0c6c14a88702c6b1"
+    },
+    "runs/ppo-budget-20261028/dev-scripted-96000000-candidate": {
+      "manifest_sha256": "3d21fb3b597411a7ddc180a5571da294d2c5dffdce90a8fc355c827c89f2162f",
+      "games_sha256": "b7a9d0b3474f45a081b0569eacb8c76e12c97f17dc8275e2ab97e911df8fe484"
+    },
+    "runs/ppo-budget-20261028/dev-heuristic-96000000-candidate": {
+      "manifest_sha256": "9067932acd2d9a32866db3c93f2ac563d9fe9d86da94a337aa79bd4eb571618d",
+      "games_sha256": "5b5756d9911ed04295b3c9aebef71d75676192e451c113d9dd57ffd0b9f6b211"
+    },
+    "runs/ppo-budget-20261028/dev-mixed_learned-96000000-candidate": {
+      "manifest_sha256": "1469edffdc5c8b173e74307bb456b5ef30434f61f35ef1ef374fd0235355a63a",
+      "games_sha256": "b88137ec883ee6f8af48d0bcd1bba58c00482eb446759cc6f05f60d4f5bae5b1"
+    },
+    "runs/ppo-budget-20261028/dev-scripted-97000000-control": {
+      "manifest_sha256": "91ef28c4783c21966a66d8299cc9bd23d109e196d5a51de5064ccca8b6277305",
+      "games_sha256": "5625b2f0d77c49081f208555da880e9debfa8887f5a9531b4f8122234e1b4fa9"
+    },
+    "runs/ppo-budget-20261028/dev-heuristic-97000000-control": {
+      "manifest_sha256": "6dca2fd29087e10d7f46b1a324f8ea1277883360174867f09d2f10d942d0d71f",
+      "games_sha256": "882052c125ed0d693ec6cfc57a18c89764be93b78e5bbf144363dc3582254f27"
+    },
+    "runs/ppo-budget-20261028/dev-mixed_learned-97000000-control": {
+      "manifest_sha256": "7b3116591fd897309d54a2b39d196fcf79b49ed8838e7d39b5f3f13ce1c30df6",
+      "games_sha256": "2bf84edf0191de022047a9d0b8d26f0c251faf7826d8b6e80e0a190e310299c8"
+    },
+    "runs/ppo-budget-20261028/dev-scripted-97000000-candidate": {
+      "manifest_sha256": "1ba2080dea3de861f72d44eae58d1f467ebf452f882d2ae33951e18d9f6d9eb2",
+      "games_sha256": "14451f7c6bdc79194823b6dcc1123981f6279e1596591ff91ccc64b97bfb15cf"
+    },
+    "runs/ppo-budget-20261028/dev-heuristic-97000000-candidate": {
+      "manifest_sha256": "014836ead7bf01b857d27f82621d167d3d9c720b4ae8acd6e31476c7617bc303",
+      "games_sha256": "3968dc990ac740051ae8cc1830fbc0e1e410a045c46526b29621823047c7e553"
+    },
+    "runs/ppo-budget-20261028/dev-mixed_learned-97000000-candidate": {
+      "manifest_sha256": "c9890dd1de6ff7b150212dfa1d9bbc01d76b3aa27ce287141c77818d16ab694d",
+      "games_sha256": "c0dc0f6630200151df412c5bd45df29d40750e857f1c585c082306eacbaaec05"
+    },
+    "runs/ppo-budget-20261028/dev-scripted-98000000-control": {
+      "manifest_sha256": "a4bb17a1ca73d2ae3a7ab1d03205364c6d81261d47ba59b410753a64786d147f",
+      "games_sha256": "c515efd20791fd196806ddc6941f1feeac659e49f8fc1948f318562ee054892d"
+    },
+    "runs/ppo-budget-20261028/dev-heuristic-98000000-control": {
+      "manifest_sha256": "d04eddff321a15ef5bc178ad96f7fde877913dda0eab300043ba5549829af761",
+      "games_sha256": "5c8548977c075865e682214fe4ac7174e24632c5db8691e9347bcb185066cc48"
+    },
+    "runs/ppo-budget-20261028/dev-mixed_learned-98000000-control": {
+      "manifest_sha256": "f2fccb120b1ca121de01c864b07ea85770b33fe367f774ddcfacbd60cdc5411f",
+      "games_sha256": "2fc52092aecab6f0187e699427318fe8678607dfd9549a36c29c9c47c753a7de"
+    },
+    "runs/ppo-budget-20261028/dev-scripted-98000000-candidate": {
+      "manifest_sha256": "8d94800c38fb8fb15c397dec179d42f5a459ac380b4a0c6bc761c2ec51303682",
+      "games_sha256": "a3a8c8539373d2eff1dea8e252245158379e97bdbb3e10ff8099cbeb23b8e561"
+    },
+    "runs/ppo-budget-20261028/dev-heuristic-98000000-candidate": {
+      "manifest_sha256": "a8262ecc15398538290cda7c94a5b9c326f1aadedfc24593792c76fe6bbd565f",
+      "games_sha256": "c8c53050ee37ae72394ef48ef6cbedaacfa089a8526f6ae517f19abeb9c595ba"
+    },
+    "runs/ppo-budget-20261028/dev-mixed_learned-98000000-candidate": {
+      "manifest_sha256": "25a01186bcc56849d99a93d946128728fe2e0b98b998f3a294d408874051ec2c",
+      "games_sha256": "78615e4c5a4703f3f479d7ec883d13111f54174da03ede64ac633b5c0428e415"
+    }
+  },
+  "protocol_sha256": "3b54fde69c650c6cc902939748576bcdf3290181cb0e17378f6882db320f819f",
+  "reporter_sha256": "a7bbb5e29997ea3abc707ccf48c5aa770f65c669f071db914ded90de7a0b6f60",
+  "decision": "freeze candidate for independent final",
+  "limitations": "All three 50-update prefixes reused, never eligible for reselection. Only total update budget changes. Times are not contemporaneous causal comparisons. Local synthetic opponents; no real-match calibration. Development intervals do not correct for selection among three candidates or repeated research."
+}

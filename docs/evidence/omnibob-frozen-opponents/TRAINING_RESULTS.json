@@ -1,0 +1,65 @@
+{
+  "96000000-candidate": {
+    "policy_sha256": "9fce12fec2a618a1abed9e408c04a762b9dad561b19edab048ac4c7466f43696",
+    "training_lineage_verified": true,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 50,
+      "steps": 204800,
+      "completed_games_this_run": 266,
+      "seconds": 1406.1842920780182,
+      "completed_episodes_this_run": 646,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/frozen-opponent-20261028/seed96000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 350142464,
+      "process_peak_rss_bytes": 663453696,
+      "mps_allocated_bytes": 96253184,
+      "mps_driver_bytes": 1187184640
+    }
+  },
+  "97000000-candidate": {
+    "policy_sha256": "c1372bbae34cf28000be6a5d53fcc67460e23fcf9992512a5e5163c47b424591",
+    "training_lineage_verified": true,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 50,
+      "steps": 204800,
+      "completed_games_this_run": 308,
+      "seconds": 1257.8412375450134,
+      "completed_episodes_this_run": 704,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/frozen-opponent-20261028/seed97000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 318799872,
+      "process_peak_rss_bytes": 669237248,
+      "mps_allocated_bytes": 97039616,
+      "mps_driver_bytes": 1187184640
+    }
+  },
+  "98000000-candidate": {
+    "policy_sha256": "eb41ce52c81e5cf24bdf6f6756d1013a08abbce7aaf43fd9c38af68c69c01af2",
+    "training_lineage_verified": true,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 50,
+      "steps": 204800,
+      "completed_games_this_run": 264,
+      "seconds": 1260.6059348583221,
+      "completed_episodes_this_run": 692,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/frozen-opponent-20261028/seed98000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 323141632,
+      "process_peak_rss_bytes": 617496576,
+      "mps_allocated_bytes": 97039616,
+      "mps_driver_bytes": 1187184640
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "stage": "final",
+  "protocol_sha256": "dbbc483654f7ea9c55ab206d09a33535a53300e67eeabd364983a5adb437e16d",
+  "summaries": {
+    "scripted/baseline": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.09765625,
+      "complete_case_win_rate": 0.388671875,
+      "complete_case_top4_rate": 0.9453125,
+      "illegal_actions": 0
+    },
+    "scripted/candidate": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.029296875,
+      "complete_case_win_rate": 0.40625,
+      "complete_case_top4_rate": 0.955078125,
+      "illegal_actions": 0
+    },
+    "scripted/control": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.044921875,
+      "complete_case_win_rate": 0.455078125,
+      "complete_case_top4_rate": 0.931640625,
+      "illegal_actions": 0
+    },
+    "heuristic/baseline": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.6015625,
+      "complete_case_win_rate": 0.3671875,
+      "complete_case_top4_rate": 0.841796875,
+      "illegal_actions": 0
+    },
+    "heuristic/candidate": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.525390625,
+      "complete_case_win_rate": 0.40625,
+      "complete_case_top4_rate": 0.84375,
+      "illegal_actions": 0
+    },
+    "heuristic/control": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.525390625,
+      "complete_case_win_rate": 0.41015625,
+      "complete_case_top4_rate": 0.845703125,
+      "illegal_actions": 0
+    },
+    "mixed_learned/baseline": {
+      "attempted": 512,
+      "completed": 511,
+      "censored": 1,
+      "complete_case_mean_placement": 2.6536203522504893,
+      "complete_case_win_rate": 0.36007827788649704,
+      "complete_case_top4_rate": 0.8317025440313112,
+      "illegal_actions": 0
+    },
+    "mixed_learned/candidate": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.556640625,
+      "complete_case_win_rate": 0.333984375,
+      "complete_case_top4_rate": 0.86328125,
+      "illegal_actions": 0
+    },
+    "mixed_learned/control": {
+      "attempted": 512,
+      "completed": 512,
+      "censored": 0,
+      "complete_case_mean_placement": 2.55859375,
+      "complete_case_win_rate": 0.37109375,
+      "complete_case_top4_rate": 0.84765625,
+      "illegal_actions": 0
+    }
+  },
+  "comparisons": {
+    "profiles": {
+      "scripted": {
+        "mean_delta_bounds": [
+          -0.068359375,
+          -0.068359375
+        ],
+        "pessimistic_bootstrap_95ci": [
+          -0.201171875,
+          0.0625
+        ],
+        "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1."
+      },
+      "heuristic": {
+        "mean_delta_bounds": [
+          -0.076171875,
+          -0.076171875
+        ],
+        "pessimistic_bootstrap_95ci": [
+          -0.283203125,
+          0.13671875
+        ],
+        "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1."
+      },
+      "mixed_learned": {
+        "mean_delta_bounds": [
+          -0.107421875,
+          -0.09375
+        ],
+        "pessimistic_bootstrap_95ci": [
+          -0.27734375,
+          0.09375
+        ],
+        "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1."
+      }
+    },
+    "pooled": {
+      "mean_delta_bounds": [
+        -0.083984375,
+        -0.07942708333333334
+      ],
+      "pessimistic_bootstrap_95ci": [
+        -0.18554687499999997,
+        0.028662109374999772
+      ]
+    }
+  },
+  "gate_passed": false,
+  "warning": "Synthetic opponents only. Complete-case metrics are descriptive, not promotion evidence. This interval does not correct selection across earlier research campaigns."
+}

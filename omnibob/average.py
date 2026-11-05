@@ -15,7 +15,32 @@ from .compat import ROOT, provenance
 from .train import atomic_checkpoint, load_checkpoint
 
 
-def average(checkpoints, output):
+def ancestry_to(path, initialization):
+    """Verify every recorded parent edge; a KL reference alone is not ancestry."""
+    root = Path(initialization).resolve()
+    expected = hashlib.sha256(root.read_bytes()).hexdigest()
+    chain, seen = [], set()
+    current = Path(path).resolve()
+    while True:
+        checksum = hashlib.sha256(current.read_bytes()).hexdigest()
+        if checksum in seen:
+            raise ValueError('cyclic checkpoint ancestry')
+        seen.add(checksum)
+        chain.append({'path': str(current), 'sha256': checksum})
+        state = load_checkpoint(current)
+        if state.get('error'):
+            raise ValueError('failed checkpoint in ancestry')
+        if checksum == expected:
+            return chain
+        parent = state.get('parent_checkpoint')
+        if not parent:
+            raise ValueError('requested ancestor not found in checkpoint lineage')
+        current = Path(parent['path'])
+        if not current.is_file() or hashlib.sha256(current.read_bytes()).hexdigest() != parent['sha256']:
+            raise ValueError('ancestor file missing or hash mismatch')
+
+
+def average(checkpoints, output, initialization=None):
     paths = [Path(p).resolve() for p in checkpoints]
     if len(paths) < 2 or len(set(paths)) != len(paths):
         raise ValueError("at least two distinct checkpoints required")
@@ -40,7 +65,8 @@ def average(checkpoints, output):
                         "initialization": state.get("parent_checkpoint"),
                         "truncation_handling": state.get("truncation_handling")})
     initializations = {(p["initialization"] or {}).get("sha256") for p in parents}
-    if len(initializations) != 1 or None in initializations:
+    ancestry = [ancestry_to(path, initialization) for path in paths] if initialization is not None else None
+    if ancestry is None and (len(initializations) != 1 or None in initializations):
         raise ValueError("averaging requires the same recorded initialization checkpoint")
     weights = {}
     for key, template in first["model"].items():
@@ -60,6 +86,10 @@ def average(checkpoints, output):
                   "parents": parents, "weights": [1/len(paths)]*len(paths),
                   "note": "No optimizer steps or new trajectories; parent step counts are per-stage and overlap in ancestry. "
                           "Runtime controllers are not inherited. This is a post-training experiment, not a paper reproduction."}
+    if ancestry is not None:
+        definition['ancestry'] = ancestry
+        definition['common_initialization'] = ancestry[0][-1]
+        definition['parent_metadata_note'] = 'parents.initialization preserves the immediate recorded parent; ancestry verifies the common root across resumes.'
     result = {key: first[key] for key in ("environment", "model_config", "config")}
     identity = provenance(first["config"])
     result.update(format="omnibob-policy-v1", model=weights, error=None, training_method="ppo",
@@ -82,8 +112,10 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("checkpoints", nargs="+", type=Path)
     p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--initialization", type=Path,
+                   help="explicit common ancestor for resumed branches; verify all parent files and hashes")
     args = p.parse_args()
-    print(json.dumps(average(args.checkpoints, args.output), indent=2))
+    print(json.dumps(average(args.checkpoints, args.output, args.initialization), indent=2))
 
 
 if __name__ == "__main__":

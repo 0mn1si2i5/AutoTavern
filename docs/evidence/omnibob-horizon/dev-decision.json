@@ -1,0 +1,136 @@
+{
+  "stage": "dev",
+  "protocol_sha256": "dbbc483654f7ea9c55ab206d09a33535a53300e67eeabd364983a5adb437e16d",
+  "summaries": {
+    "scripted/baseline": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.05078125,
+      "complete_case_win_rate": 0.43359375,
+      "complete_case_top4_rate": 0.9453125,
+      "illegal_actions": 0
+    },
+    "scripted/candidate": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.06640625,
+      "complete_case_win_rate": 0.41015625,
+      "complete_case_top4_rate": 0.94921875,
+      "illegal_actions": 0
+    },
+    "scripted/control": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.1015625,
+      "complete_case_win_rate": 0.41015625,
+      "complete_case_top4_rate": 0.9375,
+      "illegal_actions": 0
+    },
+    "heuristic/baseline": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.55859375,
+      "complete_case_win_rate": 0.38671875,
+      "complete_case_top4_rate": 0.83984375,
+      "illegal_actions": 0
+    },
+    "heuristic/candidate": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.19140625,
+      "complete_case_win_rate": 0.51171875,
+      "complete_case_top4_rate": 0.90234375,
+      "illegal_actions": 0
+    },
+    "heuristic/control": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.23046875,
+      "complete_case_win_rate": 0.4765625,
+      "complete_case_top4_rate": 0.88671875,
+      "illegal_actions": 0
+    },
+    "mixed_learned/baseline": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.63671875,
+      "complete_case_win_rate": 0.359375,
+      "complete_case_top4_rate": 0.84375,
+      "illegal_actions": 0
+    },
+    "mixed_learned/candidate": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.53125,
+      "complete_case_win_rate": 0.38671875,
+      "complete_case_top4_rate": 0.84375,
+      "illegal_actions": 0
+    },
+    "mixed_learned/control": {
+      "attempted": 256,
+      "completed": 256,
+      "censored": 0,
+      "complete_case_mean_placement": 2.37890625,
+      "complete_case_win_rate": 0.4140625,
+      "complete_case_top4_rate": 0.87109375,
+      "illegal_actions": 0
+    }
+  },
+  "comparisons": {
+    "profiles": {
+      "scripted": {
+        "mean_delta_bounds": [
+          0.015625,
+          0.015625
+        ],
+        "pessimistic_bootstrap_95ci": [
+          -0.171875,
+          0.19921875
+        ],
+        "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1."
+      },
+      "heuristic": {
+        "mean_delta_bounds": [
+          -0.3671875,
+          -0.3671875
+        ],
+        "pessimistic_bootstrap_95ci": [
+          -0.59765625,
+          -0.12890625
+        ],
+        "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1."
+      },
+      "mixed_learned": {
+        "mean_delta_bounds": [
+          -0.10546875,
+          -0.10546875
+        ],
+        "pessimistic_bootstrap_95ci": [
+          -0.39453125,
+          0.18369140624999858
+        ],
+        "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1."
+      }
+    },
+    "pooled": {
+      "mean_delta_bounds": [
+        -0.15234375,
+        -0.15234375
+      ],
+      "pessimistic_bootstrap_95ci": [
+        -0.3033854166666667,
+        -0.0013020833333333398
+      ]
+    }
+  },
+  "gate_passed": true,
+  "warning": "Synthetic opponents only. Complete-case metrics are descriptive, not promotion evidence. This interval does not correct selection across earlier research campaigns."
+}

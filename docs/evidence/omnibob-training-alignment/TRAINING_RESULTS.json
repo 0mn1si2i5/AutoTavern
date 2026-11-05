@@ -1,0 +1,94 @@
+{
+  "time": "2026-10-28T08:02:39.290332+00:00",
+  "roles": [
+    {
+      "role": "96000000-arm0",
+      "policy_sha256": "7c1fb7116307306d1681d60f668a8ad67c18b8492d79ad285b93691ce39a2766",
+      "updates": 50,
+      "decisions": 204800,
+      "seconds_total": 472.39342737197876,
+      "peak_process_rss_bytes": 1112621056,
+      "mps_driver_bytes": 1187184640,
+      "completed_episodes": 675,
+      "truncated_episodes": 0,
+      "discarded_decisions": 0
+    },
+    {
+      "role": "96000000-arm1",
+      "policy_sha256": "a43552c91aea7073440dbe6c8ea2b87fccbb5e6c6581e20eb112786369556d94",
+      "updates": 50,
+      "decisions": 204800,
+      "seconds_total": 605.1440846920013,
+      "peak_process_rss_bytes": 1234780160,
+      "mps_driver_bytes": 1187184640,
+      "completed_episodes": 669,
+      "truncated_episodes": 0,
+      "discarded_decisions": 0,
+      "learner_mask_stats": {
+        "decisions": 204800,
+        "filtered_decisions": 6609,
+        "blocked_actions": 7454
+      }
+    },
+    {
+      "role": "97000000-arm0",
+      "policy_sha256": "2435243d15f3e04f4a95f182d0aaf8ad656ce7f267a0def059b032fa202c599d",
+      "updates": 50,
+      "decisions": 204800,
+      "seconds_total": 573.694540977478,
+      "peak_process_rss_bytes": 500596736,
+      "mps_driver_bytes": 1187184640,
+      "completed_episodes": 629,
+      "truncated_episodes": 0,
+      "discarded_decisions": 0
+    },
+    {
+      "role": "97000000-arm1",
+      "policy_sha256": "0ed0e83245e67726b47b9c997d8713394c93d35de2d3411741fe7a649a239f20",
+      "updates": 50,
+      "decisions": 204800,
+      "seconds_total": 637.2130320072174,
+      "peak_process_rss_bytes": 613416960,
+      "mps_driver_bytes": 1187184640,
+      "completed_episodes": 634,
+      "truncated_episodes": 0,
+      "discarded_decisions": 0,
+      "learner_mask_stats": {
+        "decisions": 204800,
+        "filtered_decisions": 6937,
+        "blocked_actions": 7806
+      }
+    },
+    {
+      "role": "98000000-arm0",
+      "policy_sha256": "b7acbe3c7668df483b9e90e5b556f2902dede8ff74f6ffcd991694f87195d76e",
+      "updates": 50,
+      "decisions": 204800,
+      "seconds_total": 524.3908560276031,
+      "peak_process_rss_bytes": 698171392,
+      "mps_driver_bytes": 1187184640,
+      "completed_episodes": 644,
+      "truncated_episodes": 0,
+      "discarded_decisions": 0
+    },
+    {
+      "role": "98000000-arm1",
+      "policy_sha256": "6d74ff184d9e1d63b94f245b66e54cfe3be25fd42aa88f0c46f9428c7b474316",
+      "updates": 50,
+      "decisions": 204800,
+      "seconds_total": 605.2080600261688,
+      "peak_process_rss_bytes": 486309888,
+      "mps_driver_bytes": 1187184640,
+      "completed_episodes": 607,
+      "truncated_episodes": 0,
+      "discarded_decisions": 0,
+      "learner_mask_stats": {
+        "decisions": 204800,
+        "filtered_decisions": 7733,
+        "blocked_actions": 8749
+      }
+    }
+  ],
+  "total_decisions": 1228800,
+  "scope": "Fixed50 training completed. Training returns and filtered-mask counts do not establish placement superiority. Development and final evaluation still required."
+}

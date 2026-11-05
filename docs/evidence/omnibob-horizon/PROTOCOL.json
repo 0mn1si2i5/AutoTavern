@@ -1,0 +1,369 @@
+{
+  "created_utc": "2026-10-28T14:49:29.318736+00:00",
+  "hypothesis": "Longer on-policy trajectories improve credit from terminal placement while retaining4096 decisions and the same optimizer budget per update. This is unproven; value bootstrapping is valid and is not classified as an implementation bug.",
+  "single_factor": "collection geometry only: n_envs32,horizon128 to n_envs8,horizon512",
+  "roles": {
+    "baseline": {
+      "checkpoint": "runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+      "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787",
+      "runtime": {
+        "repeat_guard": {
+          "version": "visible-repeat-guard-v1",
+          "limit": 1,
+          "source_sha256": "046ad1cc3e31729e9704ddacf9434cdc229ada2d33548492e2feb67a47cab1d4"
+        }
+      }
+    },
+    "candidate": {
+      "checkpoint": "runs/ppo-horizon-20261028/policy/policy.pt",
+      "sha256": "d5d5417e680ee50696fae769555c688f3c29f799f2d537f87620192ad36ecd2b",
+      "runtime": {
+        "repeat_guard": {
+          "version": "visible-repeat-guard-v1",
+          "limit": 1,
+          "source_sha256": "046ad1cc3e31729e9704ddacf9434cdc229ada2d33548492e2feb67a47cab1d4"
+        }
+      }
+    },
+    "control": {
+      "checkpoint": "runs/ppo-average200-20261028/policy/policy.pt",
+      "sha256": "65f1a30c165e104824e523caa9be0e234a1c02b1d2086461b05f2fc536b73857",
+      "runtime": {
+        "repeat_guard": {
+          "version": "visible-repeat-guard-v1",
+          "limit": 1,
+          "source_sha256": "046ad1cc3e31729e9704ddacf9434cdc229ada2d33548492e2feb67a47cab1d4"
+        }
+      }
+    }
+  },
+  "opponent": {
+    "checkpoint": "runs/releases/omnibob-v0.2-20261028/opponents/heldout-bc300/policy.pt",
+    "sha256": "a1120d5939cd9af5954c1b03357ccb89482587d5ffb451893efb18de197546a0"
+  },
+  "profiles": [
+    "scripted",
+    "heuristic",
+    "mixed_learned"
+  ],
+  "bootstrap_seed": 20261037,
+  "bootstrap_replicates": 10000,
+  "dev": {
+    "offset": 141000,
+    "games_per_role_profile": 256,
+    "gate": {
+      "pooled_delta_max": -0.05,
+      "require_superiority_ci": false,
+      "profile_use_ci": false,
+      "profile_delta_max": 0.15,
+      "max_censored_rate": 0.01
+    },
+    "existing_seed_collisions": []
+  },
+  "final": {
+    "offset": 260000,
+    "games_per_role_profile": 512,
+    "gate": {
+      "pooled_delta_max": -0.1,
+      "require_superiority_ci": true,
+      "profile_use_ci": true,
+      "profile_delta_max": 0.15,
+      "max_censored_rate": 0.01
+    },
+    "existing_seed_collisions": []
+  },
+  "reporter_sha256": "0cd868324374ce6276008c2bb9d545639659fac6d20c39faace2a162ae8570ef",
+  "source_hashes": {
+    "omnibob/__init__.py": "e13f1d3aaad34b5b82fa026013dbdab2a9ee613c29169f88dfc7c2d0808691ed",
+    "omnibob/__main__.py": "beabbc4d7fd2010b8995b5c726c32288b660bd625d816147398f31448c91e3f6",
+    "omnibob/arena.py": "8e6597ef0f4288c832d1ce6d2894ba0bc8d7b12950a0377019e7cebbef513d7c",
+    "omnibob/average.py": "0d18881387bf54a51d5a7d9fb6352547677790373f0c0d86e31947f4f33f1ab7",
+    "omnibob/benchmark.py": "6b1954ccc1028cea5ac287858bf7458496af31c30ff8a904843667e28785063f",
+    "omnibob/bounded_report.py": "0cd868324374ce6276008c2bb9d545639659fac6d20c39faace2a162ae8570ef",
+    "omnibob/budget_report.py": "a7bbb5e29997ea3abc707ccf48c5aa770f65c669f071db914ded90de7a0b6f60",
+    "omnibob/cancel_memory.py": "e214e49e4c497b482217e900cd45db02c161a31e527277daeb96e3a5ad380f2a",
+    "omnibob/compare.py": "60c435b906479d1e8815b1dc23ef44ee0b8bc6b5a8f9d40eaf94c0af24262608",
+    "omnibob/compat.py": "9c7e37a522e9eff8f69bf27a461e412ce3dd765349a3e8cca7fa4b6db3705b97",
+    "omnibob/compound_report.py": "54e80a7c8f0b7a8b6aa84b55797720d474c8540042e4ae00bb3f1553e748e808",
+    "omnibob/connector_audit.py": "3ccc0430ad9975134e1affe0d4bc2af0ea7c9cffd239e578adfec8efd0d062cd",
+    "omnibob/continuation_report.py": "c924d57c7ab3463105d1019ae348f323cada85fbcb4ee70db3be698856204b25",
+    "omnibob/contract-arena-v2.json": "7409b0a8cea6f7ca9cca6fd6dc1762cc6ed1e88474596c9e462f79c51a950fcf",
+    "omnibob/contract-v1.json": "e63de05d40b2925786ac5ba4bba7e429c66377ffbf1b98bcf3909af0f1f3fc44",
+    "omnibob/diagnose_bench.py": "3dfc269a57a92e31ea4c7753f8d8c2c70b6f0a7b9f6a06807a9e20522c996a58",
+    "omnibob/economy_audit.py": "3edd02c59cf50ff58f7056417d958dc984e9af6972a591cc42bc3eadd535f9e5",
+    "omnibob/end_trade.py": "6ee1ebe9d52212d757e15e001b624b43fa784fefc28ae2501c371f67f2033602",
+    "omnibob/end_trade_report.py": "6e859cb2a9d946804131994b7fa4ffb40be9fc4ef72e0fcd7200869a7d8790cd",
+    "omnibob/evaluate.py": "e394f205a212a390d8c029839d308b455c720fa30b134beda6f39e96a252a7e9",
+    "omnibob/experiment_reorder.py": "aa851c12298dad7112fe3962aaf6c7704993ab8bee824ee6c96d0755d525a731",
+    "omnibob/export.py": "e555bddea931265c07cc676618023401a63cac99c516a5e4ae4fe183d86b21ee",
+    "omnibob/guard_audit.py": "68d3c5e8ba8d45bd1f3583d9b6cfec5a0c66dbef72b916afd480018ea22a64ef",
+    "omnibob/guarded_report.py": "4f072afaeded79d57a4734cd738142dbfe957675249e3040e1a8f0bad3280132",
+    "omnibob/imitation.py": "909e4f74987a3214e374f01ce963150661793c80198a36131bdbb7b965cd821a",
+    "omnibob/learned.py": "98523bf478293d08b2cbbac270f8c33b94020dc4d49217b47ae1ed0a6de99363",
+    "omnibob/manual.py": "e1d74b43df30f2a09fee5429b6a77e4eb30b08cbeec0968e5b6856199bedad16",
+    "omnibob/model.py": "95bf29376d77f60135ec593bcdd7958e9c5e52fecf244eda16686f5622d5e4e6",
+    "omnibob/move_guard.py": "4fb1647fc4d8c2e60945d64e8fa7c0ad10491c0da633cd32454002d26a9abd3f",
+    "omnibob/observation.py": "ba56b02a47df2ffa392f0907adb894add832544e50b8d84e5f0c8f5182c4014c",
+    "omnibob/observation_v2.py": "691b86c3f5b24d13872d698e42f20422eb531dd730cceab8a542318e83b58bb0",
+    "omnibob/offline_check.py": "8b9bcf066dd9afce41cddb77e58a3a881fd5473c3f3e5293599bf2adf8d315ef",
+    "omnibob/opponent_report.py": "c2f2a176b2b993d8477f10ad32d756074a85ddb74937e5c17a693f2611f4f2d7",
+    "omnibob/opponents.py": "dc264d42a193eceddc2e8072975c144747490103f6295f9160865e8cfdfbe42e",
+    "omnibob/policies.py": "bd0f0449cd11e6c22023cbd5df283764c0e62a0c198f28fca801a9d9cc31e9c9",
+    "omnibob/practice_review.py": "736534758aab35a05d9f6265d38660ee9794f73b5a7eecb1fc3f4b7a2c3fbbe5",
+    "omnibob/reorder_exit.py": "d87e788fbb020832e49a23b33d71fc5cd9909328fa6dc0d949b0737cf08f9962",
+    "omnibob/repeat_guard.py": "046ad1cc3e31729e9704ddacf9434cdc229ada2d33548492e2feb67a47cab1d4",
+    "omnibob/review.py": "0980ae8adc4b2b2dbb2e962c137274b19c754459c9897f7e098bc39328cf9a35",
+    "omnibob/runtime_state.py": "29fbb0bd946efb9debccbfba421e8c6f4fb9ccf7c258478f24b023881e4738ba",
+    "omnibob/train.py": "f9bd90ce500b66f23d4dca9a0d27e5fed40c00910edca9b48eba8d81e718794a",
+    "omnibob/training_env.py": "476a2dadf8fdb2c1a7f6acc6e507a3528765125d3133761c6e93e3b2689a6e5f",
+    "omnibob/training_repeat.py": "993fba89674aaacb088f069d3f1d7759688dfbbd6fdb7801f7b811a3d1d3c24e"
+  },
+  "environment": {
+    "package_version": "1.1.0",
+    "game_version": "36.6.3.253932",
+    "server_rules_version": "36.6.3",
+    "engine_source_hash": "6d8712c93022ba11",
+    "layout": {
+      "MINION_F": 31,
+      "ITEM_F": 40,
+      "GLOBAL_F": 53,
+      "N_QUESTS": 3,
+      "QUEST_F": 2,
+      "N_SECRETS": 5,
+      "OPP_F": 9,
+      "N_OPP": 7,
+      "PENDING_KINDS": 9,
+      "N_SHOP": 8,
+      "N_BOARD": 7,
+      "N_HAND": 10,
+      "N_CHOICE": 16,
+      "N_POS": 8,
+      "N_POWERS": 2,
+      "A_END": 0,
+      "A_REFRESH": 1,
+      "A_FREEZE": 2,
+      "A_UPGRADE": 3,
+      "A_HERO_POWER": 4,
+      "A_DARK_GIFT": 6,
+      "A_CANCEL": 7,
+      "A_BUY": 8,
+      "A_SELL": 16,
+      "A_ACTIVATE": 23,
+      "A_CHOOSE": 30,
+      "A_PLAY": 46,
+      "A_MAGNETIZE": 126,
+      "A_MOVE": 196,
+      "N_ACTIONS": 245,
+      "OBS_FLOATS": 3227,
+      "OBS_CARDS": 124,
+      "OBS2_FLOATS": 4017,
+      "OBS2_CARDS": 447,
+      "K_ATT_BOARD": 6,
+      "K_ATT_ITEM": 2,
+      "K_ATT_OPP": 3,
+      "X_MINION": 9,
+      "K_OPP_TRINKETS": 4,
+      "COND_F": 32,
+      "POWER_F": 7,
+      "OPP_SUM_F": 35,
+      "OPP_SUM_TYPES": 25,
+      "OPP_SUM_RESULTS": 31,
+      "GOAL_K": 8
+    },
+    "actions_sha256": "be2e97586b88025ead313ce26dc24fc5817c46cd3bf731662a92d34876e674bd",
+    "catalog_sha256": "945125e996f2de8962d10aac162f144972c724a249582dfeb2ad04b73c58f268",
+    "vocabulary_sha256": "07e8db7ff09296ded0c87c7fc7278593e1157c2157a3e8e4cbe8fe96afd5f150",
+    "n_cards": 3984
+  },
+  "config_sha256": "87781041e82669c718d852e3f8ce4cc6682cc4db1f3a9d01504f002eee5c09e4",
+  "source_archive": {
+    "path": "runs/source-snapshots/9c429f41cd7a25d71843527cf001ff729695d44da38c6e810628efae7c846610.tar.gz",
+    "sha256": "a28e99597fff925592aa49e3e461b2d2b497efc1a7475d901da6d0a838e64b8c",
+    "restore": "overlay onto the recorded git base; install local dependencies separately"
+  },
+  "censoring": "Only no-error turn_limit_end with zero combat truncations: unknown rank [1,8]. Worst-case candidate8/baseline1 used for ALL gates and intervals; complete-case rates descriptive only. Missing, duplicate, failed, interrupted or illegal games invalidate stage. Max1% censored per role/profile.",
+  "historical_protocol": "Fixed training geometry and all3 uniform average, no model selection. Original failed studies remain failed.",
+  "resources": {
+    "workers": 2,
+    "cpu_threads_per_worker": 1,
+    "max_seconds_per_evaluation": 3600,
+    "paid": false,
+    "online": false
+  },
+  "freeze_baseline": true,
+  "averaging": {
+    "method": "uniform arithmetic mean of compatible parameters, float64 accumulation",
+    "implementation_sha256": "0d18881387bf54a51d5a7d9fb6352547677790373f0c0d86e31947f4f33f1ab7",
+    "parents": [
+      {
+        "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/policy96000000/policy.pt",
+        "sha256": "f9535a3779f8ea2b3e755d7501584df055bddb8a21e80af59a356ecaa3328a87",
+        "steps": 819200,
+        "update": 200,
+        "source_sha256": "9c429f41cd7a25d71843527cf001ff729695d44da38c6e810628efae7c846610",
+        "ppo_config": {
+          "seed": 96000000,
+          "n_envs": 8,
+          "workers": 1,
+          "horizon": 512,
+          "epochs": 2,
+          "minibatch": 128,
+          "learning_rate": 3e-05,
+          "gamma": 1.0,
+          "gae_lambda": 0.995,
+          "clip": 0.2,
+          "target_kl": 0.02,
+          "entropy_coef": 0.001,
+          "value_coef": 0.5,
+          "max_grad_norm": 1.0,
+          "cpu_threads": 1,
+          "decision_cost": 0.0003,
+          "reference_kl_coef": 0.03,
+          "learner_repeat_limit": 0,
+          "opponents": "mixed",
+          "opponent_checkpoint": null,
+          "scheduler": "shuffled_rounds",
+          "terminate_on_elimination": true
+        },
+        "initialization": {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/probe96000000/latest.pt",
+          "sha256": "cfa117df0c338784fb4411f4076a0d9445e89fad3f7b9fcc7563b19e282e6c4e"
+        },
+        "truncation_handling": {
+          "max_truncated_episodes": 0,
+          "policy": "stop",
+          "limitation": "Earlier bootstrapped updates cannot be retroactively removed; no forced placement becomes a reward."
+        }
+      },
+      {
+        "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/policy97000000/policy.pt",
+        "sha256": "ca8eb11cee1e6aefccb16f3f52ec519047ce5d460e1944aedc572166e262fbd7",
+        "steps": 819200,
+        "update": 200,
+        "source_sha256": "9c429f41cd7a25d71843527cf001ff729695d44da38c6e810628efae7c846610",
+        "ppo_config": {
+          "seed": 97000000,
+          "n_envs": 8,
+          "workers": 1,
+          "horizon": 512,
+          "epochs": 2,
+          "minibatch": 128,
+          "learning_rate": 3e-05,
+          "gamma": 1.0,
+          "gae_lambda": 0.995,
+          "clip": 0.2,
+          "target_kl": 0.02,
+          "entropy_coef": 0.001,
+          "value_coef": 0.5,
+          "max_grad_norm": 1.0,
+          "cpu_threads": 1,
+          "decision_cost": 0.0003,
+          "reference_kl_coef": 0.03,
+          "learner_repeat_limit": 0,
+          "opponents": "mixed",
+          "opponent_checkpoint": null,
+          "scheduler": "shuffled_rounds",
+          "terminate_on_elimination": true
+        },
+        "initialization": {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+          "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787"
+        },
+        "truncation_handling": {
+          "max_truncated_episodes": 0,
+          "policy": "stop",
+          "limitation": "Earlier bootstrapped updates cannot be retroactively removed; no forced placement becomes a reward."
+        }
+      },
+      {
+        "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/policy98000000/policy.pt",
+        "sha256": "0fc317a5da60a61e9c5a37178f4f10a891240c9c86475f4e269fad140be9e954",
+        "steps": 819200,
+        "update": 200,
+        "source_sha256": "9c429f41cd7a25d71843527cf001ff729695d44da38c6e810628efae7c846610",
+        "ppo_config": {
+          "seed": 98000000,
+          "n_envs": 8,
+          "workers": 1,
+          "horizon": 512,
+          "epochs": 2,
+          "minibatch": 128,
+          "learning_rate": 3e-05,
+          "gamma": 1.0,
+          "gae_lambda": 0.995,
+          "clip": 0.2,
+          "target_kl": 0.02,
+          "entropy_coef": 0.001,
+          "value_coef": 0.5,
+          "max_grad_norm": 1.0,
+          "cpu_threads": 1,
+          "decision_cost": 0.0003,
+          "reference_kl_coef": 0.03,
+          "learner_repeat_limit": 0,
+          "opponents": "mixed",
+          "opponent_checkpoint": null,
+          "scheduler": "shuffled_rounds",
+          "terminate_on_elimination": true
+        },
+        "initialization": {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+          "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787"
+        },
+        "truncation_handling": {
+          "max_truncated_episodes": 0,
+          "policy": "stop",
+          "limitation": "Earlier bootstrapped updates cannot be retroactively removed; no forced placement becomes a reward."
+        }
+      }
+    ],
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "note": "No optimizer steps or new trajectories; parent step counts are per-stage and overlap in ancestry. Runtime controllers are not inherited. This is a post-training experiment, not a paper reproduction.",
+    "ancestry": [
+      [
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/policy96000000/policy.pt",
+          "sha256": "f9535a3779f8ea2b3e755d7501584df055bddb8a21e80af59a356ecaa3328a87"
+        },
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/probe96000000/latest.pt",
+          "sha256": "cfa117df0c338784fb4411f4076a0d9445e89fad3f7b9fcc7563b19e282e6c4e"
+        },
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+          "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787"
+        }
+      ],
+      [
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/policy97000000/policy.pt",
+          "sha256": "ca8eb11cee1e6aefccb16f3f52ec519047ce5d460e1944aedc572166e262fbd7"
+        },
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+          "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787"
+        }
+      ],
+      [
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/ppo-horizon-20261028/policy98000000/policy.pt",
+          "sha256": "0fc317a5da60a61e9c5a37178f4f10a891240c9c86475f4e269fad140be9e954"
+        },
+        {
+          "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+          "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787"
+        }
+      ]
+    ],
+    "common_initialization": {
+      "path": "/Users/ostrovsky/Projects/Zen/omnibob/runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+      "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787"
+    },
+    "parent_metadata_note": "parents.initialization preserves the immediate recorded parent; ancestry verifies the common root across resumes."
+  },
+  "training_protocol_sha256": "608b54b9a558584b00e95f9c0b92b4c93a9993b58ea6a09d4aefa92766cc5cd9",
+  "training_results_sha256": "8ae43cf55070c48549ea65e946cf47223b2f2dde2cbcae05885f8b8c2195997d"
+}

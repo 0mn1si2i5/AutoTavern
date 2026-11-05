@@ -1,0 +1,10 @@
+{
+  "frozen-release-checksums.log": {
+    "passed": 1924,
+    "failed": 0
+  },
+  "original-practice-checksums.log": {
+    "passed": 23,
+    "failed": 0
+  }
+}

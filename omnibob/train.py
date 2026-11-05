@@ -38,6 +38,7 @@ class TrainConfig:
     cpu_threads: int = 4
     decision_cost: float = 0.0
     reference_kl_coef: float = 0.0
+    learner_repeat_limit: int = 0
     opponents: str = "scripted"
     opponent_checkpoint: str | None = None
     scheduler: str = "round_robin"
@@ -144,6 +145,8 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
         raise ValueError("decision cost must be finite and nonnegative")
     if not np.isfinite(config.reference_kl_coef) or config.reference_kl_coef < 0:
         raise ValueError("reference KL coefficient must be finite and nonnegative")
+    from .repeat_guard import runtime_config as repeat_runtime_config
+    repeat_runtime_config(config.learner_repeat_limit)
     torch.set_num_threads(config.cpu_threads)
     torch.manual_seed(config.seed)
     rng = torch.Generator(device="cpu").manual_seed(config.seed+1)
@@ -201,12 +204,19 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
     identity["reference_checkpoint"] = ((prior.get("reference_checkpoint") if prior else identity["parent_checkpoint"])
                                         if reference is not None else None)
     identity["reference_regularizer"] = "KL(frozen initialization policy || current policy), legal actions only"
+    identity["learner_runtime"] = repeat_runtime_config(config.learner_repeat_limit)
     (output/"manifest.json").write_text(json.dumps(identity, indent=2)+"\n")
-    env = VectorGames(config.n_envs, config.seed, cfg, config.workers,
+    environment_type, learner_options = VectorGames, {}
+    if config.learner_repeat_limit:
+        from .training_repeat import GuardedVectorGames
+        environment_type = GuardedVectorGames
+        learner_options = {"learner_repeat_limit": config.learner_repeat_limit}
+    env = environment_type(config.n_envs, config.seed, cfg, config.workers,
                       state=prior["environments"] if prior else None,
                       opponents=config.opponents, scheduler=config.scheduler,
                       terminate_on_elimination=config.terminate_on_elimination,
-                      allow_truncated=max_truncated_episodes > 0, opponent_checkpoint=config.opponent_checkpoint)
+                      allow_truncated=max_truncated_episodes > 0, opponent_checkpoint=config.opponent_checkpoint,
+                      **learner_options)
     obs = env.observe()
     target_update = update+updates
     stop_reason, error, completed_games, completed_episodes = "updates_completed", None, 0, 0
@@ -239,6 +249,7 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
             "reference_model": reference.state_dict() if reference is not None else None,
             "reference_checkpoint": identity["reference_checkpoint"],
             "objective": identity["objective"],
+            "runtime_config": repeat_runtime_config(config.learner_repeat_limit),
             "truncation_handling": identity["truncation_handling"],
             "update": update, "steps": steps, "sampling_rng": rng.get_state(),
             "torch_rng": torch.get_rng_state(), "environments": env.save(),
@@ -365,6 +376,8 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
                        "reward_sum": float(samples["rewards"].sum()), "early_kl_stop": early_stop,
                        "optimizer_batches": len(training_metrics), **resource,
                        **dict(zip(("actor_loss", "value_loss", "entropy", "approx_kl", "grad_norm", "clip_fraction", "reference_kl"), mean))}
+                if config.learner_repeat_limit:
+                    row["learner_mask_stats_cumulative"] = dict(env.learner_mask_stats)
                 emit(metrics, row)
                 print(json.dumps({k: row[k] for k in ("update", "steps", "seconds", "completed_episodes", "completed_games", "mean_placement", "approx_kl")}), flush=True)
                 if max(resource["rss_bytes"], resource.get("mps_driver_bytes", 0)) > max_rss_gib*1024**3:

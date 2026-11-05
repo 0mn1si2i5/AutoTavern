@@ -242,3 +242,5 @@ HEAD 返回 405 不代表 GET 不可用。网络错误要记录，不能据缓�
 
 更多有界训练命令、三种子配方和复现边界见[实验配方](OMNIBOB_EXPERIMENT_RECIPES.md)；
 论文缺失材料与本机主动简化见[v0.2复现范围](OMNIBOB_REPRODUCTION_V02.md)。
+
+对多次恢复的同源分支，可显式传入 `omnibob.average --initialization <共同起点>`，逐级验证所有父文件和SHA256，不改写立即父记录。详见 [200更新平均实验](OMNIBOB_AVERAGE200.md)。

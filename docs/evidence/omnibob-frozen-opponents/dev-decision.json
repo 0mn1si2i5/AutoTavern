@@ -1,0 +1,700 @@
+{
+  "stage": "dev",
+  "completed_games": 5376,
+  "seed_blocks": 32,
+  "seeds": [
+    1000101000,
+    1000101001,
+    1000101002,
+    1000101003,
+    1000101004,
+    1000101005,
+    1000101006,
+    1000101007,
+    1000101008,
+    1000101009,
+    1000101010,
+    1000101011,
+    1000101012,
+    1000101013,
+    1000101014,
+    1000101015,
+    1000101016,
+    1000101017,
+    1000101018,
+    1000101019,
+    1000101020,
+    1000101021,
+    1000101022,
+    1000101023,
+    1000101024,
+    1000101025,
+    1000101026,
+    1000101027,
+    1000101028,
+    1000101029,
+    1000101030,
+    1000101031
+  ],
+  "metrics": {
+    "v02": {
+      "scripted": {
+        "mean_placement": 2.0390625,
+        "win_rate": 0.4609375,
+        "top4_rate": 0.93359375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 186.81405408494174,
+        "decisions": 110941,
+        "decision_mean_ms": 1.5627722393756869
+      },
+      "heuristic": {
+        "mean_placement": 2.5,
+        "win_rate": 0.41015625,
+        "top4_rate": 0.86328125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 227.96250349935144,
+        "decisions": 113882,
+        "decision_mean_ms": 1.6783257817348338
+      },
+      "mixed_learned": {
+        "mean_placement": 2.49609375,
+        "win_rate": 0.39453125,
+        "top4_rate": 0.8671875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 455.61099561932497,
+        "decisions": 109670,
+        "decision_mean_ms": 1.762709096608254
+      }
+    },
+    "96000000-control": {
+      "scripted": {
+        "mean_placement": 2.140625,
+        "win_rate": 0.41796875,
+        "top4_rate": 0.92578125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 195.8334140519146,
+        "decisions": 106968,
+        "decision_mean_ms": 1.6939103291106863
+      },
+      "heuristic": {
+        "mean_placement": 2.6171875,
+        "win_rate": 0.39453125,
+        "top4_rate": 0.81640625,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 237.70029287063517,
+        "decisions": 104344,
+        "decision_mean_ms": 1.8881092587609654
+      },
+      "mixed_learned": {
+        "mean_placement": 2.4609375,
+        "win_rate": 0.390625,
+        "top4_rate": 0.875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 412.1876541227102,
+        "decisions": 105574,
+        "decision_mean_ms": 1.6144622506098034
+      }
+    },
+    "96000000-candidate": {
+      "scripted": {
+        "mean_placement": 2.04296875,
+        "win_rate": 0.4765625,
+        "top4_rate": 0.9296875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 184.62648904579692,
+        "decisions": 110274,
+        "decision_mean_ms": 1.5505634396353307
+      },
+      "heuristic": {
+        "mean_placement": 2.5390625,
+        "win_rate": 0.41796875,
+        "top4_rate": 0.8515625,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 188.8540438383352,
+        "decisions": 110190,
+        "decision_mean_ms": 1.438410201941028
+      },
+      "mixed_learned": {
+        "mean_placement": 2.5078125,
+        "win_rate": 0.3671875,
+        "top4_rate": 0.87109375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 354.4965241290629,
+        "decisions": 115733,
+        "decision_mean_ms": 1.3563622183455668
+      }
+    },
+    "97000000-control": {
+      "scripted": {
+        "mean_placement": 2.06640625,
+        "win_rate": 0.4296875,
+        "top4_rate": 0.9375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 159.51742558553815,
+        "decisions": 83736,
+        "decision_mean_ms": 1.7477644902878526
+      },
+      "heuristic": {
+        "mean_placement": 2.52734375,
+        "win_rate": 0.41796875,
+        "top4_rate": 0.8125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 173.6561598740518,
+        "decisions": 87415,
+        "decision_mean_ms": 1.6153965176699003
+      },
+      "mixed_learned": {
+        "mean_placement": 2.4921875,
+        "win_rate": 0.3515625,
+        "top4_rate": 0.859375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 389.13526282366365,
+        "decisions": 87372,
+        "decision_mean_ms": 1.683271475482195
+      }
+    },
+    "97000000-candidate": {
+      "scripted": {
+        "mean_placement": 2.02734375,
+        "win_rate": 0.4453125,
+        "top4_rate": 0.953125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 137.02689780434594,
+        "decisions": 82351,
+        "decision_mean_ms": 1.5401429266970776
+      },
+      "heuristic": {
+        "mean_placement": 2.703125,
+        "win_rate": 0.375,
+        "top4_rate": 0.8046875,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 162.92055033473298,
+        "decisions": 86294,
+        "decision_mean_ms": 1.5288783405953708
+      },
+      "mixed_learned": {
+        "mean_placement": 2.58203125,
+        "win_rate": 0.3671875,
+        "top4_rate": 0.83203125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 333.7056056277361,
+        "decisions": 83950,
+        "decision_mean_ms": 1.4491863133903857
+      }
+    },
+    "98000000-control": {
+      "scripted": {
+        "mean_placement": 2.16796875,
+        "win_rate": 0.390625,
+        "top4_rate": 0.94140625,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 165.59420398902148,
+        "decisions": 93632,
+        "decision_mean_ms": 1.6315814109208153
+      },
+      "heuristic": {
+        "mean_placement": 2.66015625,
+        "win_rate": 0.37109375,
+        "top4_rate": 0.8359375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 197.9413316580467,
+        "decisions": 92262,
+        "decision_mean_ms": 1.7486939077325299
+      },
+      "mixed_learned": {
+        "mean_placement": 2.609375,
+        "win_rate": 0.33203125,
+        "top4_rate": 0.83984375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 358.4452106100507,
+        "decisions": 92825,
+        "decision_mean_ms": 1.509826782914749
+      }
+    },
+    "98000000-candidate": {
+      "scripted": {
+        "mean_placement": 2.0078125,
+        "win_rate": 0.42578125,
+        "top4_rate": 0.95703125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 147.79636382544413,
+        "decisions": 100903,
+        "decision_mean_ms": 1.3698329303066807
+      },
+      "heuristic": {
+        "mean_placement": 2.4375,
+        "win_rate": 0.46484375,
+        "top4_rate": 0.83984375,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 156.5918075896334,
+        "decisions": 94440,
+        "decision_mean_ms": 1.3698108675585936
+      },
+      "mixed_learned": {
+        "mean_placement": 2.62890625,
+        "win_rate": 0.3203125,
+        "top4_rate": 0.828125,
+        "completed": 256,
+        "failed": 0,
+        "interrupted": 0,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 296.6250479591545,
+        "decisions": 96252,
+        "decision_mean_ms": 1.2397244382435901
+      }
+    }
+  },
+  "comparisons": {
+    "96000000-control": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.1015625,
+          "paired_seed_bootstrap_95ci": [
+            -0.14453125,
+            0.359375
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.1171875,
+          "paired_seed_bootstrap_95ci": [
+            -0.140625,
+            0.37890625
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.03515625,
+          "paired_seed_bootstrap_95ci": [
+            -0.2890625,
+            0.23046875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.06119791666666666,
+        "paired_seed_bootstrap_95ci": [
+          -0.06510416666666667,
+          0.20052083333333331
+        ]
+      },
+      "gate_passed": false
+    },
+    "96000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.00390625,
+          "paired_seed_bootstrap_95ci": [
+            -0.22265625,
+            0.23828125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.0390625,
+          "paired_seed_bootstrap_95ci": [
+            -0.28515625,
+            0.359375
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.01171875,
+          "paired_seed_bootstrap_95ci": [
+            -0.24609375,
+            0.28125
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.018229166666666664,
+        "paired_seed_bootstrap_95ci": [
+          -0.13020833333333334,
+          0.17317708333333337
+        ]
+      },
+      "gate_passed": false
+    },
+    "97000000-control": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.02734375,
+          "paired_seed_bootstrap_95ci": [
+            -0.17578125,
+            0.22265625
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.02734375,
+          "paired_seed_bootstrap_95ci": [
+            -0.27734375,
+            0.328125
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.00390625,
+          "paired_seed_bootstrap_95ci": [
+            -0.23828125,
+            0.234375
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.016927083333333343,
+        "paired_seed_bootstrap_95ci": [
+          -0.13151041666666663,
+          0.171875
+        ]
+      },
+      "gate_passed": false
+    },
+    "97000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.01171875,
+          "paired_seed_bootstrap_95ci": [
+            -0.22265625,
+            0.20712890624999858
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.203125,
+          "paired_seed_bootstrap_95ci": [
+            -0.07421875,
+            0.4727539062499986
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.0859375,
+          "paired_seed_bootstrap_95ci": [
+            -0.25390625,
+            0.421875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.09244791666666667,
+        "paired_seed_bootstrap_95ci": [
+          -0.07942708333333333,
+          0.26953125
+        ]
+      },
+      "gate_passed": false
+    },
+    "98000000-control": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.12890625,
+          "paired_seed_bootstrap_95ci": [
+            -0.0625,
+            0.33203125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.16015625,
+          "paired_seed_bootstrap_95ci": [
+            -0.109375,
+            0.421875
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.11328125,
+          "paired_seed_bootstrap_95ci": [
+            -0.1484375,
+            0.3671875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.13411458333333331,
+        "paired_seed_bootstrap_95ci": [
+          -0.005208333333333336,
+          0.27213541666666663
+        ]
+      },
+      "gate_passed": false
+    },
+    "98000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.03125,
+          "paired_seed_bootstrap_95ci": [
+            -0.2109375,
+            0.15625
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.0625,
+          "paired_seed_bootstrap_95ci": [
+            -0.3515625,
+            0.23046875
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.1328125,
+          "paired_seed_bootstrap_95ci": [
+            -0.19140625,
+            0.4453125
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.013020833333333339,
+        "paired_seed_bootstrap_95ci": [
+          -0.13932291666666666,
+          0.16536458333333331
+        ]
+      },
+      "gate_passed": false
+    }
+  },
+  "candidate_minus_matched_control": {
+    "96000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.09765625,
+          "paired_seed_bootstrap_95ci": [
+            -0.2969726562499999,
+            0.1015625
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.078125,
+          "paired_seed_bootstrap_95ci": [
+            -0.37109375,
+            0.203125
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.046875,
+          "paired_seed_bootstrap_95ci": [
+            -0.1796875,
+            0.2696289062499986
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.04296875,
+        "paired_seed_bootstrap_95ci": [
+          -0.16669921875,
+          0.08203125
+        ]
+      },
+      "gate_passed": false
+    },
+    "97000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.0390625,
+          "paired_seed_bootstrap_95ci": [
+            -0.19140625,
+            0.12109375
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.17578125,
+          "paired_seed_bootstrap_95ci": [
+            -0.1171875,
+            0.46484375
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.08984375,
+          "paired_seed_bootstrap_95ci": [
+            -0.17578125,
+            0.3515625
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.07552083333333333,
+        "paired_seed_bootstrap_95ci": [
+          -0.07812499999999999,
+          0.22916666666666666
+        ]
+      },
+      "gate_passed": false
+    },
+    "98000000-candidate": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.16015625,
+          "paired_seed_bootstrap_95ci": [
+            -0.3125,
+            0.00390625
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.22265625,
+          "paired_seed_bootstrap_95ci": [
+            -0.4609375,
+            0.02734375
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": 0.01953125,
+          "paired_seed_bootstrap_95ci": [
+            -0.2265625,
+            0.24609375
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.12109375,
+        "paired_seed_bootstrap_95ci": [
+          -0.265625,
+          0.01953125
+        ]
+      },
+      "gate_passed": true
+    }
+  },
+  "selected_role": null,
+  "gate_passed": false,
+  "inputs": {
+    "runs/frozen-opponent-20261028/dev-scripted-v02": {
+      "manifest_sha256": "76c6b1d65ba95c8a1438a36197d62f47d53bc0ec8f21a0e37d909910ebb3b3e8",
+      "games_sha256": "6a1525e0b55b059e97222fccc2fa0fa4e026ed34dacbfd11fcff66a14c97a2a8"
+    },
+    "runs/frozen-opponent-20261028/dev-heuristic-v02": {
+      "manifest_sha256": "9f310ed4263a69c0d64664fc43f25a3f548c7a80cb6d108b7aa60e7d1ba2f2f7",
+      "games_sha256": "03778a55255a9933b133d9c145a74d74097c66a90ba2984e884be4539a33d583"
+    },
+    "runs/frozen-opponent-20261028/dev-mixed_learned-v02": {
+      "manifest_sha256": "45f4a191a650dde325e17660a3196732b2d8babc395fb0a812016d9a32c0c876",
+      "games_sha256": "fa4447ed568eb5fd50d9e678b9ba72d36ad6d748895de091bdf7e5ea6b398b27"
+    },
+    "runs/frozen-opponent-20261028/dev-scripted-96000000-control": {
+      "manifest_sha256": "bd56abee1822da224e28b8fc22f841f14a0d845dbeebf754ade27c54f75328d8",
+      "games_sha256": "515f8b7486070e8ab737a295c4a50c7e5e7b91da733c18a8671106168af997d3"
+    },
+    "runs/frozen-opponent-20261028/dev-heuristic-96000000-control": {
+      "manifest_sha256": "03a10bcbfc24be88b9b5c16bb23a0dcc6d87abd8c84bc3f7b79a1b75514bad78",
+      "games_sha256": "aa93b7dbec02b051d7853a3b6d38195f42fed80d26d19c2f1a6e4c08e89a7799"
+    },
+    "runs/frozen-opponent-20261028/dev-mixed_learned-96000000-control": {
+      "manifest_sha256": "1d131b7307ddaf299b6a570ad3b58e5c8e6d9b5f1724de7f3c2dd54f504b04ca",
+      "games_sha256": "86ba05e290fc1eba5e9bb88daffcbb80ed739ac9b37047df7297db1b68beae0d"
+    },
+    "runs/frozen-opponent-20261028/dev-scripted-96000000-candidate": {
+      "manifest_sha256": "4c8e27d60bff780cd8c721bce6d0eaf4be8968a145d5648660f00e0201e65bda",
+      "games_sha256": "fc393be3a2baec57bde10f129f49fd8a5f3d251505392624fdc58373f01db375"
+    },
+    "runs/frozen-opponent-20261028/dev-heuristic-96000000-candidate": {
+      "manifest_sha256": "069ddffde9181031c2d54fa22510fc4f79d8af2b12061368a31f23927b08f307",
+      "games_sha256": "939f08d7fa905a837a424fd1526a5f7c25060edf56b91a65e776ebde6b45dabe"
+    },
+    "runs/frozen-opponent-20261028/dev-mixed_learned-96000000-candidate": {
+      "manifest_sha256": "bba0eca66b25fe7def7d3a88f7a8390564c74717b0ce12165ee759926dbee919",
+      "games_sha256": "a5ae9ad5f771def3c8af4ccd754e7e8fe7d13bc85074c5cc547372c3b539b2af"
+    },
+    "runs/frozen-opponent-20261028/dev-scripted-97000000-control": {
+      "manifest_sha256": "f5b5a98162a6808b36f6e5a2731da1f94b0a25382633522ce0bd5a656da42426",
+      "games_sha256": "83425b9ef126539d2a23a4221ea82726ab5ba9c911eb961be9524b208d312c3c"
+    },
+    "runs/frozen-opponent-20261028/dev-heuristic-97000000-control": {
+      "manifest_sha256": "6ac4f6bed559fd854ead0f34e8c45261e3435c483082be114ee5211f18447dd2",
+      "games_sha256": "ddcc899765552452a9d81f723ce085694f93266b6cd7916305225c9c85689176"
+    },
+    "runs/frozen-opponent-20261028/dev-mixed_learned-97000000-control": {
+      "manifest_sha256": "e70a8cfb39caf315d837370ea3c15f58106aaa1467f9cec0f72d3a0ca18df545",
+      "games_sha256": "9f85558fefeecf7226e54462aa067a20d34ff828b774405cbe440ef92bf82435"
+    },
+    "runs/frozen-opponent-20261028/dev-scripted-97000000-candidate": {
+      "manifest_sha256": "06827a4c834e49f4e90e1b4e6dfe86ff03de39006b4feed7279c7191459bd18d",
+      "games_sha256": "4e050bc4e0519ee01263a155569f01443aaa281584ffd2642ac8f4716d134491"
+    },
+    "runs/frozen-opponent-20261028/dev-heuristic-97000000-candidate": {
+      "manifest_sha256": "f4cfcbaa5fb7eb8942c7ed7b652fd5b01f1c9ae6ca91c54db3df048e3d0fd324",
+      "games_sha256": "010eff261d95275ce0155a370695a1660831ce53bdbf84b95a78738ce1be8f29"
+    },
+    "runs/frozen-opponent-20261028/dev-mixed_learned-97000000-candidate": {
+      "manifest_sha256": "3a53c83a26b1c57d12289e0a638a27316489a9f2323fb6b4fd4e093f76509162",
+      "games_sha256": "17e010c0661bf61a784725af20c71f879e3828fa30500752d7594d5b25cde596"
+    },
+    "runs/frozen-opponent-20261028/dev-scripted-98000000-control": {
+      "manifest_sha256": "646d4c80aaa44b87fdfc8906863046464798572b19105765aadfc8c40166148d",
+      "games_sha256": "587d39968449500863d60c3450e4dc0c8d7cdb1ca9f330d13a7351da440ff398"
+    },
+    "runs/frozen-opponent-20261028/dev-heuristic-98000000-control": {
+      "manifest_sha256": "31e1b99f5cd75d4988dd29738f4dd4e5a5f81a535b6cdaee8f98af1556ef69f2",
+      "games_sha256": "ec041cbd42ec4b7ea62d1857f85d5bd064e701912cd14f252ebe8639ad3b5601"
+    },
+    "runs/frozen-opponent-20261028/dev-mixed_learned-98000000-control": {
+      "manifest_sha256": "6d06fe0eea74672c1fdab31ab18da652bba6c6c13d5288beef270a78d1103aed",
+      "games_sha256": "2727b744f8df3226b94c65302db41195185da5a17f300ee54856e087e47dc460"
+    },
+    "runs/frozen-opponent-20261028/dev-scripted-98000000-candidate": {
+      "manifest_sha256": "fd0727e34a930562e7ac36ca5e3c3de52fc9a114f90e2323dcb81912e348ab23",
+      "games_sha256": "ab5502358fcc4d55e7f044cae6b4215f62c95fcd21070c6352886fb25adfad85"
+    },
+    "runs/frozen-opponent-20261028/dev-heuristic-98000000-candidate": {
+      "manifest_sha256": "ddeaa573579e815dd54cd2499e41783285e63bacdd76ee80d6ba948f80b0a9cb",
+      "games_sha256": "8a937c8b45323330b86eeae5b4358d8b761966efd71bf54d1668d2215a9ea364"
+    },
+    "runs/frozen-opponent-20261028/dev-mixed_learned-98000000-candidate": {
+      "manifest_sha256": "5f3e44bf772896d4cc7e4083c7adc2bb4326cdd4db89734fe832e82a5831adee",
+      "games_sha256": "f45f2f4b4c80bf6a97e9a5857389eba1a29716b04d69d92b3821c222fbe8a7c6"
+    }
+  },
+  "protocol_sha256": "34f2d3f1289fec61a96653789990aa64905c519d9d22c76fc4766eb84c943b1b",
+  "reporter_sha256": "c2f2a176b2b993d8477f10ad32d756074a85ddb74937e5c17a693f2611f4f2d7",
+  "decision": "no promotion; keep frozen v0.2",
+  "limitations": "All three predefined controls reused, never eligible for reselection. Training times are not contemporaneous causal comparisons. Local synthetic opponents; no real-match calibration. Development intervals do not correct for selection among three candidates or repeated research."
+}

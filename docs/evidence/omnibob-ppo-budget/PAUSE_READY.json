@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-10-28T10:54:42.995089+00:00",
+  "completed_development_games": 5376,
+  "development_passed": true,
+  "selected_role": "96000000-candidate",
+  "final_started": false,
+  "development_decision_sha256": "411e259f280588290508d1431d4e33708b55b6181e3e6af7361ff6a80112cbe4",
+  "protocol_sha256": "3b54fde69c650c6cc902939748576bcdf3290181cb0e17378f6882db320f819f",
+  "reporter_sha256": "a7bbb5e29997ea3abc707ccf48c5aa770f65c669f071db914ded90de7a0b6f60",
+  "next": "User requested pause. Retain v0.2 and all evidence. Wait for explicit resumption before any final200000 or new experiment."
+}

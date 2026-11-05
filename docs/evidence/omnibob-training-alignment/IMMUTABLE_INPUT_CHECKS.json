@@ -1,0 +1,15 @@
+{
+  "time": "2026-10-28T08:00:39.506635+00:00",
+  "checks": {
+    "frozen-release": {
+      "checksum_entries": 1924,
+      "all_ok": true,
+      "log": "frozen-release-checksums.log"
+    },
+    "original-practice": {
+      "checksum_entries": 23,
+      "all_ok": true,
+      "log": "original-practice-checksums.log"
+    }
+  }
+}

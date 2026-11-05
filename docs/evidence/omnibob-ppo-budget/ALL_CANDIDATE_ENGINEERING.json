@@ -1,0 +1,28 @@
+{
+  "full_tests_passed": 148,
+  "all_actual_candidate_lineages_verified": true,
+  "offline_checks": {
+    "96000000-candidate": {
+      "status": "passed",
+      "checked_frames": 482,
+      "action_mismatches": [],
+      "illegal_actions": 0,
+      "policy_sha256": "973235f6ecf1ee4cdfa2536140cddba7e53991c54ebfb71cd9be2fb384dee8a5"
+    },
+    "97000000-candidate": {
+      "status": "passed",
+      "checked_frames": 482,
+      "action_mismatches": [],
+      "illegal_actions": 0,
+      "policy_sha256": "b46a77bd62517b8ba0679cac7eab163e497160c09b59805afecbe516043e506e"
+    },
+    "98000000-candidate": {
+      "status": "passed",
+      "checked_frames": 482,
+      "action_mismatches": [],
+      "illegal_actions": 0,
+      "policy_sha256": "b6a0da1b7d257c6a4cad5a0f43b8830df7bde9717ac8ea003f4b3967ad9fff1a"
+    }
+  },
+  "scope": "Compatibility/lineage/recorded-input legality checks, not placement or online validation."
+}

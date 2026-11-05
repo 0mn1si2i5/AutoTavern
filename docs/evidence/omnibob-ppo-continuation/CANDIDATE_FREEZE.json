@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-28T05:55:17.174044+00:00",
+  "training_seed": "91000000",
+  "update": 50,
+  "policy_sha256": "1583799fd2f45efb8ad149d3c30e1b0ace24547be45e005a465ae5842b301853",
+  "runtime_config": {
+    "repeat_guard": {
+      "version": "visible-repeat-guard-v1",
+      "limit": 1,
+      "source_sha256": "046ad1cc3e31729e9704ddacf9434cdc229ada2d33548492e2feb67a47cab1d4"
+    }
+  },
+  "development_decision_sha256": "3983c3743f683e3eb2d01de18318563cf49ea932c0b33c7e78ea3f6b33360edf",
+  "protocol_sha256": "0cae64577c8ce80bde7dfd233133c22d5b9b3677f059fd7de2b57d59058d7421",
+  "reporter_sha256": "c924d57c7ab3463105d1019ae348f323cada85fbcb4ee70db3be698856204b25",
+  "final_seed_audit": {
+    "offset": 140000,
+    "existing_manifest_collisions": []
+  },
+  "status": "candidate frozen for final; default v0.2 unchanged"
+}

@@ -1,0 +1,52 @@
+{
+  "scope": "Predeclared short-window control attribution, not an alternate promotion test or candidate selection.",
+  "profiles": {
+    "scripted": {
+      "mean_delta_bounds": [
+        -0.015625,
+        -0.015625
+      ],
+      "pessimistic_bootstrap_95ci": [
+        -0.162109375,
+        0.12890625
+      ],
+      "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1.",
+      "same_placement_games": 171
+    },
+    "heuristic": {
+      "mean_delta_bounds": [
+        0.0,
+        0.0
+      ],
+      "pessimistic_bootstrap_95ci": [
+        -0.205078125,
+        0.203125
+      ],
+      "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1.",
+      "same_placement_games": 132
+    },
+    "mixed_learned": {
+      "mean_delta_bounds": [
+        -0.001953125,
+        -0.001953125
+      ],
+      "pessimistic_bootstrap_95ci": [
+        -0.162109375,
+        0.158203125
+      ],
+      "interval_scope": "Whole eight-seat blocks; every censored candidate rank is 8 and every censored baseline rank is 1.",
+      "same_placement_games": 124
+    }
+  },
+  "pooled": {
+    "mean_delta_bounds": [
+      -0.0058593749999999965,
+      -0.0058593749999999965
+    ],
+    "pessimistic_bootstrap_95ci": [
+      -0.119140625,
+      0.10677083333333333
+    ]
+  },
+  "interpretation": "Long-window terminal-credit coverage increased, but no established placement superiority over the matched short-window averaged control."
+}

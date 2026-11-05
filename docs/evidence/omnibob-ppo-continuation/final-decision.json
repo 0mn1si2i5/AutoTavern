@@ -1,0 +1,175 @@
+{
+  "stage": "final",
+  "completed_games": 3072,
+  "seed_blocks": 64,
+  "seeds": [
+    2000140000,
+    2000140001,
+    2000140002,
+    2000140003,
+    2000140004,
+    2000140005,
+    2000140006,
+    2000140007,
+    2000140008,
+    2000140009,
+    2000140010,
+    2000140011,
+    2000140012,
+    2000140013,
+    2000140014,
+    2000140015,
+    2000140016,
+    2000140017,
+    2000140018,
+    2000140019,
+    2000140020,
+    2000140021,
+    2000140022,
+    2000140023,
+    2000140024,
+    2000140025,
+    2000140026,
+    2000140027,
+    2000140028,
+    2000140029,
+    2000140030,
+    2000140031,
+    2000140032,
+    2000140033,
+    2000140034,
+    2000140035,
+    2000140036,
+    2000140037,
+    2000140038,
+    2000140039,
+    2000140040,
+    2000140041,
+    2000140042,
+    2000140043,
+    2000140044,
+    2000140045,
+    2000140046,
+    2000140047,
+    2000140048,
+    2000140049,
+    2000140050,
+    2000140051,
+    2000140052,
+    2000140053,
+    2000140054,
+    2000140055,
+    2000140056,
+    2000140057,
+    2000140058,
+    2000140059,
+    2000140060,
+    2000140061,
+    2000140062,
+    2000140063
+  ],
+  "metrics": {
+    "v02": {
+      "scripted": {
+        "mean_placement": 2.10546875,
+        "win_rate": 0.388671875,
+        "top4_rate": 0.9375,
+        "completed": 512,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 327.35568746807985,
+        "decision_count": 225593,
+        "decision_mean_ms": 1.3626755626652942
+      },
+      "heuristic": {
+        "mean_placement": 2.494140625,
+        "win_rate": 0.4296875,
+        "top4_rate": 0.841796875,
+        "completed": 512,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 326.8104632953182,
+        "decision_count": 215088,
+        "decision_mean_ms": 1.285584897326022
+      },
+      "mixed_learned": {
+        "mean_placement": 2.611328125,
+        "win_rate": 0.359375,
+        "top4_rate": 0.837890625,
+        "completed": 512,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 631.5957324970514,
+        "decision_count": 220064,
+        "decision_mean_ms": 1.2316789170793239
+      }
+    },
+    "91000000": {
+      "scripted": {
+        "mean_placement": 1.994140625,
+        "win_rate": 0.423828125,
+        "top4_rate": 0.96875,
+        "completed": 512,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 260.30280724633485,
+        "decision_count": 178585,
+        "decision_mean_ms": 1.361798060572199
+      },
+      "heuristic": {
+        "mean_placement": 2.4921875,
+        "win_rate": 0.466796875,
+        "top4_rate": 0.84765625,
+        "completed": 512,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 280.1453682335559,
+        "decision_count": 175685,
+        "decision_mean_ms": 1.3131354317001942
+      },
+      "mixed_learned": {
+        "mean_placement": 2.6015625,
+        "win_rate": 0.3671875,
+        "top4_rate": 0.845703125,
+        "completed": 512,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 591.0888491335791,
+        "decision_count": 179326,
+        "decision_mean_ms": 1.2491165854468862
+      }
+    }
+  },
+  "comparisons": {
+    "91000000": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": -0.111328125,
+          "paired_seed_bootstrap_95ci": [
+            -0.251953125,
+            0.033203125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.001953125,
+          "paired_seed_bootstrap_95ci": [
+            -0.23442382812499996,
+            0.224609375
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.009765625,
+          "paired_seed_bootstrap_95ci": [
+            -0.23828125,
+            0.216796875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.041015625,
+        "paired_seed_bootstrap_95ci": [
+          -0.166015625,
+          0.08074544270833313
+        ]
+      },
+      "gate_passed": false
+    }
+  },
+  "selected_training_seed": null,
+  "decision": "no promotion; keep frozen v0.2",
+  "limitations": "Three seeds share one parent. Development intervals do not correct for model selection. Local synthetic opponents only."
+}

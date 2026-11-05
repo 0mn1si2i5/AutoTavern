@@ -1,0 +1,46 @@
+{
+  "verified_utc": "2026-10-28T15:05:45.344900+00:00",
+  "source_hashes_unchanged": true,
+  "training": {
+    "96000000": {
+      "updates": 200,
+      "decisions": 819200,
+      "seconds_including_probe": 2218.1132822036743,
+      "own_decisions_p50_p90_p99": [
+        290.0,
+        426.5999999999999,
+        575.7200000000003
+      ],
+      "terminal_reward_in_same_rollout_fraction": 0.678470458984375,
+      "peak_process_rss": 738246656,
+      "max_mps_driver_bytes": 1184415744
+    },
+    "97000000": {
+      "updates": 200,
+      "decisions": 819200,
+      "seconds_including_probe": 1886.4380779266357,
+      "own_decisions_p50_p90_p99": [
+        292.0,
+        417.0,
+        549.9099999999994
+      ],
+      "terminal_reward_in_same_rollout_fraction": 0.681954345703125,
+      "peak_process_rss": 693993472,
+      "max_mps_driver_bytes": 1184415744
+    },
+    "98000000": {
+      "updates": 200,
+      "decisions": 819200,
+      "seconds_including_probe": 1884.4895770549774,
+      "own_decisions_p50_p90_p99": [
+        292.0,
+        433.0,
+        583.039999999999
+      ],
+      "terminal_reward_in_same_rollout_fraction": 0.679295654296875,
+      "peak_process_rss": 851558400,
+      "max_mps_driver_bytes": 1184415744
+    }
+  },
+  "interpretation": "Longer window increases direct terminal reward coverage; this is a mechanism check, not proof of placement gain."
+}

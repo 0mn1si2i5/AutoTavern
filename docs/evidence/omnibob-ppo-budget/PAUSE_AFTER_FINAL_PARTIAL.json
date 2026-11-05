@@ -1,0 +1,133 @@
+{
+  "paused_utc": "2026-10-28T12:20:15.800880+00:00",
+  "reason": "User requested graceful pause after the two development branches. Both are complete.",
+  "boundary": "Stopped independent final at whole-game boundary via existing STOP file; queued tasks not started.",
+  "active_experiment_processes": [],
+  "runner_exit_code": 1,
+  "runner_error": {
+    "error": "RuntimeError('final evaluation stopped: v02/heuristic, exit1')",
+    "time": 1793189972.8754802
+  },
+  "final_summaries": [
+    {
+      "directory": "runs/ppo-budget-20261028/final-heuristic-96000000-candidate",
+      "requested": 512,
+      "completed": 512,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "illegal_actions": 0,
+      "mean_placement": 2.4765625
+    },
+    {
+      "directory": "runs/ppo-budget-20261028/final-heuristic-96000000-control",
+      "requested": 512,
+      "completed": 512,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "illegal_actions": 0,
+      "mean_placement": 2.697265625
+    },
+    {
+      "directory": "runs/ppo-budget-20261028/final-heuristic-v02",
+      "requested": 512,
+      "completed": 511,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 1,
+      "not_started": 0,
+      "illegal_actions": 0,
+      "mean_placement": 2.583170254403131
+    },
+    {
+      "directory": "runs/ppo-budget-20261028/final-mixed_learned-96000000-candidate",
+      "requested": 512,
+      "completed": 121,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 391,
+      "illegal_actions": 0,
+      "mean_placement": 2.7107438016528924
+    },
+    {
+      "directory": "runs/ppo-budget-20261028/final-mixed_learned-v02",
+      "requested": 512,
+      "completed": 228,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 284,
+      "illegal_actions": 0,
+      "mean_placement": 2.8508771929824563
+    },
+    {
+      "directory": "runs/ppo-budget-20261028/final-scripted-96000000-candidate",
+      "requested": 512,
+      "completed": 512,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "illegal_actions": 0,
+      "mean_placement": 2.130859375
+    },
+    {
+      "directory": "runs/ppo-budget-20261028/final-scripted-96000000-control",
+      "requested": 512,
+      "completed": 512,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "illegal_actions": 0,
+      "mean_placement": 2.2578125
+    },
+    {
+      "directory": "runs/ppo-budget-20261028/final-scripted-v02",
+      "requested": 512,
+      "completed": 512,
+      "failed": 0,
+      "interrupted": 0,
+      "truncated": 0,
+      "not_started": 0,
+      "illegal_actions": 0,
+      "mean_placement": 2.201171875
+    }
+  ],
+  "completed_games": 3420,
+  "truncated_games": 1,
+  "planned_final_games": 4608,
+  "unattempted_games": 1187,
+  "hash_checks": {
+    "baseline": {
+      "path": "runs/releases/omnibob-v0.2-20261028/policy/policy.pt",
+      "sha256": "3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787",
+      "unchanged": true
+    },
+    "candidate": {
+      "path": "runs/ppo-budget-20261028/policy96000000/policy.pt",
+      "sha256": "973235f6ecf1ee4cdfa2536140cddba7e53991c54ebfb71cd9be2fb384dee8a5",
+      "unchanged": true
+    },
+    "protocol": {
+      "path": "runs/ppo-budget-20261028/PROTOCOL.json",
+      "sha256": "3b54fde69c650c6cc902939748576bcdf3290181cb0e17378f6882db320f819f",
+      "unchanged": true
+    },
+    "reporter": {
+      "path": "omnibob/budget_report.py",
+      "sha256": "a7bbb5e29997ea3abc707ccf48c5aa770f65c669f071db914ded90de7a0b6f60",
+      "unchanged": true
+    }
+  },
+  "v02_upgraded": false,
+  "promotion_status": "Not eligible: original all-complete gate fails, final also stopped by user. No alternate candidate selection.",
+  "next_step_after_explicit_resume": "Diagnose turn-cap seed2000200061 seat0 from retained artifact. Do not overwrite failed results, silently raise turn cap, or reuse final200000 as fresh acceptance seeds. Decide a new protocol before additional strength evaluation.",
+  "stop_file": "runs/iteration-current/STOP",
+  "resume_requires_explicit_user_request": true,
+  "automatic_resume": false
+}

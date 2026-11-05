@@ -1,0 +1,257 @@
+{
+  "stage": "dev",
+  "completed_games": 1536,
+  "seed_blocks": 16,
+  "seeds": [
+    1000081000,
+    1000081001,
+    1000081002,
+    1000081003,
+    1000081004,
+    1000081005,
+    1000081006,
+    1000081007,
+    1000081008,
+    1000081009,
+    1000081010,
+    1000081011,
+    1000081012,
+    1000081013,
+    1000081014,
+    1000081015
+  ],
+  "metrics": {
+    "v02": {
+      "scripted": {
+        "mean_placement": 1.9296875,
+        "win_rate": 0.4921875,
+        "top4_rate": 0.9375,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 77.56635570991784,
+        "decision_count": 53369,
+        "decision_mean_ms": 1.3592592753042683
+      },
+      "heuristic": {
+        "mean_placement": 2.5859375,
+        "win_rate": 0.375,
+        "top4_rate": 0.84375,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 86.93165841302834,
+        "decision_count": 51763,
+        "decision_mean_ms": 1.4186787760312358
+      },
+      "mixed_learned": {
+        "mean_placement": 2.765625,
+        "win_rate": 0.359375,
+        "top4_rate": 0.7890625,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 163.9707905354444,
+        "decision_count": 52761,
+        "decision_mean_ms": 1.2905843488691862
+      }
+    },
+    "90000000": {
+      "scripted": {
+        "mean_placement": 2.21875,
+        "win_rate": 0.359375,
+        "top4_rate": 0.9296875,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 60.51112458831631,
+        "decision_count": 40454,
+        "decision_mean_ms": 1.3852102440945024
+      },
+      "heuristic": {
+        "mean_placement": 2.2421875,
+        "win_rate": 0.515625,
+        "top4_rate": 0.875,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 63.90464670653455,
+        "decision_count": 38635,
+        "decision_mean_ms": 1.340301346868591
+      },
+      "mixed_learned": {
+        "mean_placement": 2.2578125,
+        "win_rate": 0.4453125,
+        "top4_rate": 0.890625,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 144.2427690809127,
+        "decision_count": 37683,
+        "decision_mean_ms": 1.2923011119769752
+      }
+    },
+    "91000000": {
+      "scripted": {
+        "mean_placement": 1.9453125,
+        "win_rate": 0.4921875,
+        "top4_rate": 0.9296875,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 63.621796956053004,
+        "decision_count": 44237,
+        "decision_mean_ms": 1.345663225457588
+      },
+      "heuristic": {
+        "mean_placement": 2.4453125,
+        "win_rate": 0.4453125,
+        "top4_rate": 0.8046875,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 72.161676784046,
+        "decision_count": 42116,
+        "decision_mean_ms": 1.4110988315570505
+      },
+      "mixed_learned": {
+        "mean_placement": 2.3671875,
+        "win_rate": 0.4140625,
+        "top4_rate": 0.875,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 151.10142003628425,
+        "decision_count": 44670,
+        "decision_mean_ms": 1.272101105964935
+      }
+    },
+    "92000000": {
+      "scripted": {
+        "mean_placement": 2.125,
+        "win_rate": 0.46875,
+        "top4_rate": 0.890625,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 70.61497720633633,
+        "decision_count": 36794,
+        "decision_mean_ms": 1.761614558177466
+      },
+      "heuristic": {
+        "mean_placement": 2.6328125,
+        "win_rate": 0.421875,
+        "top4_rate": 0.828125,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 69.49798612529412,
+        "decision_count": 40414,
+        "decision_mean_ms": 1.4004984039750783
+      },
+      "mixed_learned": {
+        "mean_placement": 2.6796875,
+        "win_rate": 0.3515625,
+        "top4_rate": 0.8203125,
+        "completed": 128,
+        "illegal_actions": 0,
+        "elapsed_seconds_sum": 152.52038578200154,
+        "decision_count": 39829,
+        "decision_mean_ms": 1.3454928469171363
+      }
+    }
+  },
+  "comparisons": {
+    "90000000": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.2890625,
+          "paired_seed_bootstrap_95ci": [
+            -0.046875,
+            0.6328125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.34375,
+          "paired_seed_bootstrap_95ci": [
+            -0.6484375,
+            -0.0390625
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.5078125,
+          "paired_seed_bootstrap_95ci": [
+            -0.796875,
+            -0.21875
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.1875,
+        "paired_seed_bootstrap_95ci": [
+          -0.34375,
+          -0.028645833333333336
+        ]
+      },
+      "gate_passed": false
+    },
+    "91000000": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.015625,
+          "paired_seed_bootstrap_95ci": [
+            -0.3203125,
+            0.3828125
+          ]
+        },
+        "heuristic": {
+          "mean_delta": -0.140625,
+          "paired_seed_bootstrap_95ci": [
+            -0.5078125,
+            0.25
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.3984375,
+          "paired_seed_bootstrap_95ci": [
+            -0.6875,
+            -0.15625
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": -0.17447916666666669,
+        "paired_seed_bootstrap_95ci": [
+          -0.34895833333333337,
+          0.015625
+        ]
+      },
+      "gate_passed": true
+    },
+    "92000000": {
+      "profiles": {
+        "scripted": {
+          "mean_delta": 0.1953125,
+          "paired_seed_bootstrap_95ci": [
+            -0.10957031249999982,
+            0.4765625
+          ]
+        },
+        "heuristic": {
+          "mean_delta": 0.046875,
+          "paired_seed_bootstrap_95ci": [
+            -0.234375,
+            0.34375
+          ]
+        },
+        "mixed_learned": {
+          "mean_delta": -0.0859375,
+          "paired_seed_bootstrap_95ci": [
+            -0.4140625,
+            0.25
+          ]
+        }
+      },
+      "pooled": {
+        "mean_delta": 0.05208333333333333,
+        "paired_seed_bootstrap_95ci": [
+          -0.12506510416666664,
+          0.23697916666666666
+        ]
+      },
+      "gate_passed": false
+    }
+  },
+  "selected_training_seed": "91000000",
+  "decision": "freeze selected candidate for independent final",
+  "limitations": "Three seeds share one parent. Development intervals do not correct for model selection. Local synthetic opponents only."
+}

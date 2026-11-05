@@ -1,0 +1,14 @@
+{
+  "tests": 23,
+  "new_budget_tests": 8,
+  "log": "runs/ppo-budget-20261028/report-regression-tests.log",
+  "all_three_actual_control_prefixes_verified": true,
+  "first_actual_resume_manifest_verified": true,
+  "reporter_sha256": "a7bbb5e29997ea3abc707ccf48c5aa770f65c669f071db914ded90de7a0b6f60",
+  "full_tests": {
+    "command": ".venv/bin/python -m pytest tests -q",
+    "passed": 148,
+    "seconds": 35.09,
+    "log": "runs/ppo-budget-20261028/full-tests.log"
+  }
+}

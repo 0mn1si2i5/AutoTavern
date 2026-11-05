@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-28T08:47:17.722114+00:00",
+  "source": "runs/guarded-ppo-20261028",
+  "status": "completed; no candidate passed development; no final run",
+  "files": {
+    "DEVELOPMENT_RESULTS.json": "56ae70c6c83d29a2ce61a728334f68d6f193f9270399085b2c64265092093b57",
+    "offline-arena-integration-tests.log": "f89896885cebd0d4eaa6cad7e62f9a4363f9d7e821be594a063be04a88dff4d3",
+    "IMMUTABLE_INPUT_CHECKS.json": "0d1391289d7af289c1831a08be225d3048316fa1023a95fb9751544f0d204607",
+    "full-tests.log": "99ecf4f6b1eb6adc4b44603d571aca2dfcc8ff72e58f170716140fb8fc77372c",
+    "PROBE_RESULTS.json": "9853ecaa0a7a92c01064029933b5c7182458435b6bba4364c9e432c743be1a60",
+    "PROTOCOL.json": "bfe8383f060144276207e2ea6d9700f6bea4ae1f22e3ecfbc2f6ba17a949ecc1",
+    "TRAINING_RESULTS.json": "73777b51b1454cb4999f7d622eb71e6829ff4d2b65727c337a6488e8141482cc"
+  }
+}

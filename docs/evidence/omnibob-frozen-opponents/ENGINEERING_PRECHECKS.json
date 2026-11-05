@@ -1,0 +1,19 @@
+{
+  "time": "2026-10-28T08:48:59.676939+00:00",
+  "tests": {
+    "command": ".venv/bin/python -m pytest tests -q",
+    "passed": 140,
+    "log": "runs/frozen-opponent-20261028/full-tests.log"
+  },
+  "report_checks": {
+    "tests": 6,
+    "log": "runs/frozen-opponent-20261028/report-tests.log",
+    "all_three_real_controls_verified": true,
+    "actual_first_pair_config_differences": [
+      "opponents",
+      "opponent_checkpoint"
+    ],
+    "toolchain_rules_model_pair_match": true
+  },
+  "scope": "Local code/report and reused-control validation; new candidate placements and final acceptance still pending."
+}

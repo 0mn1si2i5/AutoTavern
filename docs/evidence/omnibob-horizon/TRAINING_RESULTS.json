@@ -1,0 +1,71 @@
+[
+  {
+    "seed": 96000000,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 200,
+      "steps": 819200,
+      "completed_games_this_run": 1658,
+      "seconds": 2181.6981179714203,
+      "completed_episodes_this_run": 2681,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-horizon-20261028/seed96000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 420577280,
+      "process_peak_rss_bytes": 721846272,
+      "mps_allocated_bytes": 96206080,
+      "mps_driver_bytes": 1184415744
+    },
+    "checkpoint_sha256": "aff8839dfa338ee01a3952b67bbd236db838e745e8369368aac02d6dcfd225bf",
+    "policy_sha256": "f9535a3779f8ea2b3e755d7501584df055bddb8a21e80af59a356ecaa3328a87",
+    "verified_updates": 200
+  },
+  {
+    "seed": 97000000,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 200,
+      "steps": 819200,
+      "completed_games_this_run": 1689,
+      "seconds": 1886.4380779266357,
+      "completed_episodes_this_run": 2704,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-horizon-20261028/seed97000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 538116096,
+      "process_peak_rss_bytes": 693993472,
+      "mps_allocated_bytes": 96992512,
+      "mps_driver_bytes": 1184415744
+    },
+    "checkpoint_sha256": "eed5b4c55ccdd5eb977cf13e20b23417a94139700e6afbbd7cdf4e13060f0b24",
+    "policy_sha256": "ca8eb11cee1e6aefccb16f3f52ec519047ce5d460e1944aedc572166e262fbd7",
+    "verified_updates": 200
+  },
+  {
+    "seed": 98000000,
+    "summary": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 200,
+      "steps": 819200,
+      "completed_games_this_run": 1645,
+      "seconds": 1884.4895770549774,
+      "completed_episodes_this_run": 2675,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-horizon-20261028/seed98000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 258244608,
+      "process_peak_rss_bytes": 851558400,
+      "mps_allocated_bytes": 96992512,
+      "mps_driver_bytes": 1184415744
+    },
+    "checkpoint_sha256": "1f8864f05bc0a4f10784748c3f391a106504895c632192a4fb2fb6bcafb1e734",
+    "policy_sha256": "0fc317a5da60a61e9c5a37178f4f10a891240c9c86475f4e269fad140be9e954",
+    "verified_updates": 200
+  }
+]

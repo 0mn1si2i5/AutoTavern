@@ -1,0 +1,71 @@
+{
+  "90000000": {
+    "summary_including_probe": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 50,
+      "steps": 204800,
+      "completed_games_this_run": 437,
+      "seconds": 424.24690103530884,
+      "completed_episodes_this_run": 681,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-continue-20261028/seed90000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 365559808,
+      "process_peak_rss_bytes": 658554880,
+      "mps_allocated_bytes": 96253184,
+      "mps_driver_bytes": 1187184640
+    },
+    "policy_sha256": "a91398ecd7b0a8b46142af2abdc76f680c77e1c99a79f2a104ef34daa91e13a4",
+    "max_process_peak_rss_gib": 0.6133270263671875,
+    "max_mps_driver_gib": 1.10565185546875,
+    "optimizer_batches": 3200
+  },
+  "91000000": {
+    "summary_including_probe": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 50,
+      "steps": 204800,
+      "completed_games_this_run": 446,
+      "seconds": 405.91987466812134,
+      "completed_episodes_this_run": 710,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-continue-20261028/seed91000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 315162624,
+      "process_peak_rss_bytes": 814596096,
+      "mps_allocated_bytes": 97039616,
+      "mps_driver_bytes": 1187184640
+    },
+    "policy_sha256": "1583799fd2f45efb8ad149d3c30e1b0ace24547be45e005a465ae5842b301853",
+    "max_process_peak_rss_gib": 0.7586517333984375,
+    "max_mps_driver_gib": 1.10565185546875,
+    "optimizer_batches": 3200
+  },
+  "92000000": {
+    "summary_including_probe": {
+      "status": "updates_completed",
+      "error": null,
+      "updates": 50,
+      "steps": 204800,
+      "completed_games_this_run": 425,
+      "seconds": 408.192195892334,
+      "completed_episodes_this_run": 698,
+      "truncated_episodes_this_run": 0,
+      "discarded_decisions_this_run": 0,
+      "checkpoint": "runs/ppo-continue-20261028/seed92000000/latest.pt",
+      "device": "mps",
+      "rss_bytes": 309428224,
+      "process_peak_rss_bytes": 646430720,
+      "mps_allocated_bytes": 97039616,
+      "mps_driver_bytes": 1187184640
+    },
+    "policy_sha256": "2b5a4dc70bc6a529371dc9d52e055b567d8a57750785ef8cc50e5dc605770c7d",
+    "max_process_peak_rss_gib": 0.6020355224609375,
+    "max_mps_driver_gib": 1.10565185546875,
+    "optimizer_batches": 3200
+  }
+}
