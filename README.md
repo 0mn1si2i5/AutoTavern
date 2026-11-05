@@ -27,9 +27,16 @@
 
 ## Overview
 
+**当前本地默认：OmniBob v0.3**（2026-11-01）。固定候选通过21,888局正式确认；
+冻结v0.2仍可一条命令回退。[运行、回退及验证记录](docs/OMNIBOB_LOCAL_RELEASE.md)。
+`python -m omnibob play --output runs/my-game` 使用已激活的本地模型；
+`--policy omnibob` 仍明确选择历史启发式。没有参赛或真实游戏强度结论。
+
 **OmniBob fork:** [本机安装、训练与运行](docs/OMNIBOB_TRAINING.md) · [冻结 v0.1 基线](docs/OMNIBOB.md) ·
 [v0.2复现范围](docs/OMNIBOB_REPRODUCTION_V02.md) · [夜间实验结果](docs/OMNIBOB_EXPLORATION.md) ·
-[竞技场协议核验](docs/OMNIBOB_ARENA.md).
+[竞技场协议核验](docs/OMNIBOB_ARENA.md) · [首场 practice 复盘与当前优先级](docs/OMNIBOB_PRACTICE_REVIEW.md) ·
+[复合循环单变量实验](docs/OMNIBOB_COMPOUND_CYCLE.md) · [腾位替换实验](docs/OMNIBOB_END_TRADE.md) · [有界 PPO 续训](docs/OMNIBOB_PPO_CONTINUATION.md) ·
+[训练与部署掩码对齐](docs/OMNIBOB_TRAINING_ALIGNMENT.md) · [冻结学习对手实验](docs/OMNIBOB_FROZEN_OPPONENTS.md) · [续训预算对照](docs/OMNIBOB_PPO_BUDGET.md).
 
 AutoTavern brings the decisions of Battlegrounds into a reproducible environment for AI
 research: simulate complete games, connect a learning algorithm, or evaluate a model's
@@ -202,3 +209,7 @@ are excluded. This API is suitable for remote players; `view`, `debug` and
 
 `BattlegroundsEnv(observation_version=2)` selects v2 for the Gym-style wrapper;
 its `player_view()` method returns the complete visible dictionary. Default v1 remains compatible.
+
+OmniBob 当前本地迭代：[固定移位预算与截断诊断](docs/OMNIBOB_MOVE_BUDGET.md)。
+
+续训分支等权平均与当前对照：[说明](docs/OMNIBOB_AVERAGE200.md)。
