@@ -25,7 +25,6 @@ import time
 
 from . import run_control
 from .compat import ROOT
-from .train import TrainConfig
 
 FORMAT = "omnibob-campaign-v1"
 RESTARTABLE = ("time budget reached", "RSS or MPS driver memory budget reached")
@@ -80,6 +79,7 @@ def load(directory):
 def init(directory, updates, config, initialize=None, rules=None, device="cpu", checkpoint_every=10,
          archive_every=250, max_rss_gib=4.0, segment_hours=24.0):
     """Freeze the run's inputs into ``directory`` and check that they load together."""
+    from .train import TrainConfig  # here, so that status and mode start without loading torch
     directory = Path(directory)
     if (directory/"campaign.json").exists():
         raise FileExistsError(f"{directory} already holds a campaign; use run or status")
