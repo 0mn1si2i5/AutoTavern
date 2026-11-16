@@ -54,6 +54,9 @@ open runs/my-v02-review.html
 更新计数和保存的训练配置；`--updates` 是额外更新数。不要用 `--resume` 加载模仿权重。
 CPU 更新边界恢复已测试与连续训练逐参数相同；MPS 不承诺跨设备或跨版本逐比特相同。
 
+跑几天的训练用 `python -m omnibob.campaign`：自动分段续跑，运行中可切换低功耗、暂停和停止，
+关窗口或断电后再运行同一命令即可继续。Windows 上的完整步骤见 [OMNIBOB_WINDOWS_TRAINING.md](OMNIBOB_WINDOWS_TRAINING.md)。
+
 不同运行之间可计算完整八席种子块上的配对差值；负值表示候选平均名次更好：
 
 ```bash
