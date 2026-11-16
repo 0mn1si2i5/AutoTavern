@@ -1,64 +1,73 @@
-# OmniBob 真实客户端只读探针
+# OmniBob 实时建议面板
 
-这是实机开发的第一个可运行入口：检查已安装客户端和权限、仅截取炉石窗口、用Apple Vision本地OCR生成带框查看页，并输出带证据的大厅阶段判断。它还不能生成ObservationV2、推理游戏动作或操作鼠标。
+本地冻结模型给建议，人操作游戏。工具只读已有 Power.log，显示当前玩家可见的阵容、手牌、商店、资源和选择。按 **Ctrl + Option + Space** 刷新建议；不会向游戏发送快捷键、点击、拖动或匹配请求。无需保持聊天连接。
 
-不安装Python依赖，不修改系统配置。首次运行通过本机Swift编译器构建原生工具，缓存和所有记录在被Git忽略的`runs/`目录。使用macOS14及以上的ScreenCaptureKit与Vision公开API；当前实测主机为macOS27.2/arm64。
+## 启动
 
-## 命令
-
-从仓库根目录执行：
+双击 `tools/real_client/advisor.command`，或在仓库根目录执行：
 
 ```sh
-cd /Users/ostrovsky/Projects/Zen/omnibob
-.venv/bin/python tools/real_client/cli.py doctor
+.venv/bin/python -m tools.real_client.advisor live --panel
 ```
 
-打开炉石并停在待检查页面。无需切换前台或移动窗口；不会接管鼠标键盘、点击按钮或开始匹配：
+首次启动编译本机 Swift 浮动面板，其后使用校验过的缓存。打开炉石后自动发现 `/Applications/Hearthstone/Logs/Hearthstone_*/Power.log`，不激活或控制炉石。未发现日志或客户端未运行时显示等待，不从旧日志继续给建议。
+
+1. 在游戏中进入可操作局面。
+2. 按 Ctrl + Option + Space，或点击面板“刷新建议”。
+3. 核对面板中的场面，人工执行所示卡牌、位置和目标。
+4. 操作后再按快捷键。状态变化会撤下旧建议；没有变化时刷新保留同一建议。
+5. 可以在面板标注自己的不同选择及原因。标注不训练模型。
+
+浮动面板不抢游戏焦点。全局快捷键冲突时会提示；在面板内也可以按 Cmd + Enter。关闭面板、终端 Ctrl-C 或创建会话目录内的 `STOP` 都会停止工具。没有自动下一局。
+
+省略 `--panel` 可用浏览器打开终端给出的本机 URL；浏览器模式的键盘快捷键仅在页面获焦时有效。可用 `--log /absolute/path/Power.log` 指定日志、`--catalog /absolute/path/catalog.sqlite` 指定已有卡表。
+
+## 用示范局逐步查看
 
 ```sh
-.venv/bin/python tools/real_client/cli.py capture \
-  --frames 3 --seconds 60 --interval 2 --delay 0 \
-  --output runs/real-client-capture-001
+.venv/bin/python -m tools.real_client.advisor replay \
+  --log runs/raw-client-logs-20261106/Hearthstone_2026_11_05_23_31_31/Power.log \
+  --panel
 ```
 
-如果有多个炉石窗口，从`doctor`输出选择`--window-id`。只接受真实炉石bundle的可见窗口，使用独立窗口捕获；不激活窗口、不移动鼠标，不回退到全桌面截图。输出目录必须不存在，防止覆盖。
+“下一步”读取下一次记录动作**之前**的字节前缀，然后生成建议。“上一步”可重看。第一个边界可能仍在等待选英雄动画，不会用服务器提前提供而尚未展示的选项猜测。
 
-对已有PNG运行离线OCR，不需要屏幕录制权限：
+导出整份示范的逐操作建议，不运行模拟对局、不计算策略强度：
 
 ```sh
-.venv/bin/python tools/real_client/cli.py inspect /absolute/path/frame.png \
-  --timeout 60 --output runs/real-client-inspect-001
+.venv/bin/python -m tools.real_client.advisor replay \
+  --log runs/raw-client-logs-20261106/Hearthstone_2026_11_05_23_31_31/Power.log \
+  --export --output runs/advisor-demo-new
 ```
 
-产物：`SESSION.json`、`frame-*.png/json`、`RESULT.json`和`index.html`。打开`index.html`查看截图与OCR框；置信度仅代表OCR模型的文字置信度，不等于游戏状态正确率。
+输出目录必须不存在。每次会话保存 `SESSION.json`、`MODEL.json`、`STATE.json`、`events.jsonl`，每次刷新保存可见状态、输入数组、缺失字段、建议或失败原因。推理期间状态变化会保存 `DISCARDED.json` 并撤销旧建议。观察到的客户端动作与回执、人工标注分开记录，刷新本身不算执行成功。
 
-## 停止与失败
+## 输入与模型边界
 
-- 每次最多120帧、60秒，默认1帧；时间预算包括切回窗口的等待，不包括首次编译。
-- `Ctrl-C`、SIGTERM或在输出目录创建`STOP`阻止下一帧。正在进行的原生只读调用有超时上限，不会发送操作事件。
-- 没有窗口、权限缺失、OCR故障或超时会留下失败报告并退出，不自动重试。
-- 需要屏幕录制权限时，在macOS系统设置的隐私与安全性中允许启动本命令的应用，再使用新输出目录重试。工具不会自行授予权限。
-- 本机首轮Vision默认OCR和首次CPU配置调用均超过20秒；堆栈显示模型初始化/编译。本机一次60秒有界初始化在42.44秒完成，之后同一测试图约0.49秒。当前显式请求CPU计算设备，但这不代表已测得所有系统模型编译都只用CPU。原始失败和堆栈保存在`runs/real-client-validation-20261105/`。
-- 离线OCR默认允许最多60秒冷启动；实时采集仍受整次最多60秒的预算约束。截图与OCR分别执行，识别失败时保留原图和失败原因。
+状态来源改为已展示的实体区域和动态标签；旧选项文字中的区域注释不再决定卡牌位置。已修复后期误报空场、选择提前泄露、关键词撤销、血量归一化、英雄选择编码、消费计数混淆和发动/目标等映射。
 
-## 本次真实验证
+**当前是冻结模型的实验性实机迁移建议，不是全部输入等价或强度验收。** 对手历史、部分附加效果和引擎计数仍不能完整恢复。未知数值和卡牌槽位逐项记录，仍以零占位输入没有缺失通道的旧模型；面板持续提示这一限制。未知卡牌、关键状态缺失或卡表与日志 build 不匹配时不输出建议。自动下载新卡表不等于模型学会新机制。
 
-7项边界测试通过；真实命令的STOP验证在采集前停止，0帧、0操作。已捕获到真实炉石菜单的系统缩略图（258×266像素），约0.72秒完成单帧截图和OCR，但文字不可用，报告标记`low_resolution_frames: 1`。这证明单窗口管线可运行，不代表完整游戏画面识别通过。
+目标/分支建议只使用操作前可见状态，不预测战吼后的新局面；实际出现新选择时应再次刷新。面板不会把模型概率解释为“建议正确率”，也不会编造策略理由。
 
-使用时让炉石保持展开可见即可，不需要抢占鼠标键盘。工具不会自行展开、移动或激活窗口。若系统只提供缩略图，原图仍会留档并标记低分辨率；`completed`仅表示采集流程完成。完整记录见`runs/real-client-validation-20261105/VALIDATION.json`，原失败均保留。
+使用默认冻结发行，保持 `runs/releases/current.json` 不变；可用 `--release v0.2` 或 `--release v0.3` 为单次会话选择已保存发行，不改指针、不训练。
 
-## 真实缺口
+## 旧入口和回退
 
-本机炉石build37.0.255790，模型规则36.6.3.253932；`doctor`如实报告版本不匹配，即使以后build相同也不会仅凭版本号认定语义兼容。具体输入缺口见[INPUT_COVERAGE.md](INPUT_COVERAGE.md)。
+自动代打、单次点击、拖动工具及其启动器已移出当前源码路径。旧源码（含此前未提交修改）、原始记录、冻结权重均保留。
 
-官方客户端实战、完整状态识别、合法动作重建、鼠标执行、当前版本卡表适配都未验收。OCR测试图只能证明文字管线，不能冒充真实对局识别。
+本次迁移备份：`runs/advisor-migration-20261112T072104Z/SOURCE_BEFORE.tar.gz`。`BEFORE.json` 是源码、冻结发行、原始日志的哈希清单；`RETIRED.json` 列出移除路径。需要检查旧实现时解包到一个新目录，不覆盖当前工作区：
 
-API依据：[ScreenCaptureKit单窗口截图](https://developer.apple.com/documentation/ScreenCaptureKit/SCScreenshotManager/captureImage%28contentFilter%3Aconfiguration%3AcompletionHandler%3A%29)、[Vision文字识别](https://developer.apple.com/documentation/vision/vnrecognizetextrequest)。
+```sh
+mkdir -p runs/advisor-rollback-inspection
+tar -xzf runs/advisor-migration-20261112T072104Z/SOURCE_BEFORE.tar.gz \
+  -C runs/advisor-rollback-inspection
+```
 
-## 大厅识别（2026-11-05增量）
+旧运行记录中的自动操作源码仅作追溯和显式回退，不属于当前建议器依赖。
 
-在同一张真实中文大厅截图上修正OCR语言配置：中文优先并启用自动语言检测，原先误读为拉丁字母的“酒馆战棋、商店、收藏、开始”已正确识别。原图与旧识别均保留。新中文模型首次调用约22秒，后续3帧实际截图及识别分别约1.41、0.87、0.89秒。
+## 只读辅助工具
 
-现有`capture`和`inspect`命令自动生成`interpretation`：阶段、引用的OCR行号、各菜单文字位置，以及明确为空的局内字段。大厅判断需要顶部标题及三个菜单标签同时满足条件；低分辨率、关键标签缺失/歧义或低置信度返回`unknown`。金币等字段不会从大厅账号货币推断。
+原有 `cli.py doctor/capture/inspect` 单窗口采集与 OCR、`catalog.py` 本地卡表、`data_sync.py` 公开数据同步和 `offline_replay` 账本保留。建议面板不依赖截图、不移动鼠标、不调用付费 API、不读取 `.env`。
 
-连续3张真实新画面均判断为`battlegrounds_lobby`，14项边界测试通过。仅验证当前中文大厅布局；其他语言和布局尚未实机验证。文字框不是已验证的按钮点击区域，当前没有执行器。记录：`runs/real-client-validation-20261105/LOBBY_VALIDATION.json`；查看页：`runs/real-client-validation-20261105/lobby-live/index.html`。
+若无日志，先检查客户端现有日志是否开启；本工具不替你修改游戏配置。若新版本卡牌不受冻结词表支持，面板会保留局面和具体原因，让人自行判断，不以简单规则冒充模型。

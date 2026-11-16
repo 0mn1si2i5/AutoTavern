@@ -36,27 +36,27 @@ def write_new(path, data):
         stream.write('\n')
 
 
-def build():
+def build(source=SOURCE, name='screen-probe'):
     if platform.system() != 'Darwin':
         raise RuntimeError('This screen probe requires macOS14 or newer')
     version = subprocess.run(['xcrun', 'swiftc', '--version'], capture_output=True, text=True, check=True, timeout=15).stdout
-    key = hashlib.sha256((sha(SOURCE) + version + platform.machine()).encode()).hexdigest()[:20]
+    key = hashlib.sha256((sha(source) + version + platform.machine()).encode()).hexdigest()[:20]
     out = ROOT / 'runs/real-client-tools' / key
     out.mkdir(parents=True, exist_ok=True)
-    binary = out / 'screen-probe'
+    binary = out / name
     receipt = out / 'BUILD.json'
     if binary.exists() and receipt.exists():
         if json.loads(receipt.read_text())['binary_sha256'] == sha(binary):
             return binary
         raise RuntimeError('Cached helper changed; preserve it and inspect BUILD.json')
-    command = ['xcrun', 'swiftc', '-parse-as-library', '-O', str(SOURCE), '-o', str(binary),
+    command = ['xcrun', 'swiftc', '-parse-as-library', '-O', str(source), '-o', str(binary),
                '-module-cache-path', str(ROOT / 'runs/real-client-tools/module-cache')]
     result = subprocess.run(command, capture_output=True, text=True, timeout=120)
     (out / 'build.stdout').write_text(result.stdout)
     (out / 'build.stderr').write_text(result.stderr)
     if result.returncode:
         raise RuntimeError(f'Native build failed; see {out / "build.stderr"}')
-    write_new(receipt, {'source_sha256': sha(SOURCE), 'binary_sha256': sha(binary), 'compiler': version,
+    write_new(receipt, {'source_sha256': sha(source), 'binary_sha256': sha(binary), 'compiler': version,
                         'utc': now(), 'command': command})
     return binary
 
@@ -110,7 +110,7 @@ def interpret_frame(data):
     result = {'phase': 'unknown', 'evidence': [], 'ui_labels': {},
               'game_fields': {k: None for k in ('gold', 'tavern_tier', 'hand_count', 'board_count')},
               'game_fields_reason': 'not_observed', 'inference_ready': False,
-              'recognizer_version': 'lobby-1'}
+              'recognizer_version': 'lobby-collection-1'}
     if data.get('width', 0) < 640 or data.get('height', 0) < 400:
         result['reason'] = 'low_resolution'
         return result
@@ -123,6 +123,9 @@ def interpret_frame(data):
         'collection': ({'收藏', 'collection'}, .8, (.2, .4, .7, .85)),
         'start': ({'开始', '開始', 'play'}, .8, (.65, .5, 1, .95)),
         'season_rewards': ({'赛季奖励', '賽季獎勵', 'seasonrewards'}, .5, (.65, .25, 1, .75)),
+        'heroes': ({'英雄', 'heroes'}, .8, (.2, .05, .6, .25)),
+        'search': ({'查找', '搜索', 'search'}, .8, (.35, .82, .7, .95)),
+        'page_one': ({'第1页', '第1頁', 'page1'}, .8, (.2, .78, .6, .9)),
     }
     for index, item in enumerate(data.get('text', [])):
         text = ''.join(unicodedata.normalize('NFKC', item['text']).casefold().split())
@@ -139,6 +142,10 @@ def interpret_frame(data):
         result.update(phase='battlegrounds_lobby', reason='title_and_three_menu_labels',
                       evidence=[found[name][0]['ocr_index'] for name in required],
                       game_fields_reason='not_applicable_in_lobby')
+    elif all(len(found.get(name, [])) == 1 for name in ('heroes', 'search', 'page_one')):
+        result.update(phase='battlegrounds_collection', reason='heroes_search_and_page_labels',
+                      evidence=[found[name][0]['ocr_index'] for name in ('heroes', 'search', 'page_one')],
+                      game_fields_reason='not_applicable_in_collection')
     else:
         result['reason'] = 'missing_or_ambiguous_lobby_labels'
     return result
@@ -164,7 +171,7 @@ def render_report(directory, rows, result):
                '<style>body{font:16px system-ui;max-width:1100px;margin:32px auto;background:#181b22;color:#eee}'
                '.frame{position:relative}.frame img{width:100%;display:block}svg{position:absolute;inset:0;width:100%;height:100%}'
                'rect{fill:none;stroke:#70ffc1;stroke-width:1.5}small{color:#aaa}pre{white-space:pre-wrap}</style>'
-               '<h1>OmniBob 只读画面记录</h1><p>绿色框是OCR文字位置。阶段判断仅支持大厅；文字框不是已验证的可点击区域。没有生成模型输入或发送游戏操作。</p>'
+               '<h1>OmniBob 只读画面记录</h1><p>绿色框是OCR文字位置。阶段判断仅支持大厅与英雄收藏第一页；文字框不直接构成点击指令。没有生成模型输入或发送游戏操作。</p>'
                f'<pre>{html.escape(json.dumps(result, ensure_ascii=False, indent=2))}</pre>' + ''.join(cards))
     (directory / 'index.html').write_text(content)
 
@@ -303,7 +310,7 @@ def main():
               'error': error, 'actions_sent': 0, 'inference_ready': False,
               'low_resolution_frames': sum(r['observation_quality'] == 'low_resolution' for r in rows),
               'phases': [r['interpretation']['phase'] for r in rows],
-              'scope': 'Window pixels, OCR and lobby-only phase interpretation. No model observation or policy execution.'}
+              'scope': 'Window pixels, OCR and menu phase interpretation. No model observation or policy execution.'}
     write_new(out/'RESULT.json', result); render_report(out, rows, result)
     print(json.dumps({**result, 'report': str((out/'index.html').resolve())}, ensure_ascii=False, indent=2))
     if error: raise SystemExit(2)

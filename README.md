@@ -32,6 +32,10 @@
 `python -m omnibob play --output runs/my-game` 使用已激活的本地模型；
 `--policy omnibob` 仍明确选择历史启发式。没有参赛或真实游戏强度结论。
 
+**实机入口：只读建议面板**（2026-11-12）。双击 `tools/real_client/advisor.command`，
+按 Ctrl + Option + Space 更新本地模型建议，由人执行；自动点击、拖动和代打入口已移除。
+[启动、示范局回放与输入限制](tools/real_client/README.md)。
+
 **OmniBob fork:** [本机安装、训练与运行](docs/OMNIBOB_TRAINING.md) · [冻结 v0.1 基线](docs/OMNIBOB.md) ·
 [v0.2复现范围](docs/OMNIBOB_REPRODUCTION_V02.md) · [夜间实验结果](docs/OMNIBOB_EXPLORATION.md) ·
 [竞技场协议核验](docs/OMNIBOB_ARENA.md) · [首场 practice 复盘与当前优先级](docs/OMNIBOB_PRACTICE_REVIEW.md) ·

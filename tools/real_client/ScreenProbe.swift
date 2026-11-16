@@ -82,21 +82,81 @@ struct ScreenProbe {
                 let apps = NSRunningApplication.runningApplications(withBundleIdentifier: hearthstoneBundle)
                 var result: [String: Any] = ["screen_recording_permission": granted,
                     "accessibility_permission": AXIsProcessTrusted(), "readonly": true,
-                    "running_game_pids": apps.map { $0.processIdentifier }, "windows": []]
+                    "running_game_pids": apps.map { $0.processIdentifier },
+                    "frontmost_pid": NSWorkspace.shared.frontmostApplication?.processIdentifier ?? -1, "windows": []]
                 if granted {
                     do { result["windows"] = try await windows().map(windowInfo) }
                     catch { result["window_enumeration_error"] = String(describing: error) }
                 }
                 try emit(result)
+            } else if command == "scan" {
+                guard args.count == 2,
+                      let src = CGImageSourceCreateWithURL(URL(fileURLWithPath: args[1]) as CFURL, nil),
+                      let img = CGImageSourceCreateImageAtIndex(src, 0, nil) else { throw ProbeError("scan_image_required") }
+                let w = img.width, h = img.height
+                var bytes = [UInt8](repeating: 0, count: w*h*4)
+                let result = bytes.withUnsafeMutableBytes { raw -> [String: Any] in
+                    let ctx = CGContext(data: raw.baseAddress, width: w, height: h, bitsPerComponent: 8,
+                                        bytesPerRow: w*4, space: CGColorSpaceCreateDeviceRGB(),
+                                        bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+                    ctx.draw(img, in: CGRect(x: 0, y: 0, width: w, height: h))
+                    let b = raw.bindMemory(to: UInt8.self)
+                    var bands: [String: [Int]] = [:]
+                    for (name, lo, hi) in [("shop", 0.42, 0.46), ("board", 0.59, 0.63), ("hand", 0.88, 0.965)] {
+                        var columns = [Int](repeating: 0, count: w)
+                        for y in Int(lo*Double(h))..<Int(hi*Double(h)) {
+                            for x in Int(0.22*Double(w))..<Int(0.72*Double(w)) {
+                                let i = (y*w+x)*4
+                                let r = Int(b[i]), g = Int(b[i+1]), blue = Int(b[i+2])
+                                let hit = name == "hand" ? (g > 180 && r < 110 && blue < 150) :
+                                    (r > 145 && r > g*2 && r > blue*2)
+                                if hit { columns[x] += 1 }
+                            }
+                        }
+                        bands[name] = columns
+                    }
+                    var upgradeGreenPixels = 0
+                    for y in Int(0.18*Double(h))..<Int(0.27*Double(h)) {
+                        for x in Int(0.37*Double(w))..<Int(0.435*Double(w)) {
+                            let i = (y*w+x)*4
+                            if b[i+1] > 180 && b[i] < 110 && b[i+2] < 150 { upgradeGreenPixels += 1 }
+                        }
+                    }
+                    return ["width": w, "height": h, "bands": bands,
+                            "upgrade_green_pixels": upgradeGreenPixels]
+                }
+                try emit(result)
             } else if command == "ocr" {
-                guard args.count == 2 else { throw ProbeError("ocr requires one image") }
+                guard args.count == 2 || args.count == 6 else { throw ProbeError("ocr requires image and optional normalized x y width height") }
                 let url = URL(fileURLWithPath: args[1])
                 guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
                       let image = CGImageSourceCreateImageAtIndex(source, 0, nil) else {
                     throw ProbeError("image_decode_failed")
                 }
                 guard image.width <= 16384 && image.height <= 16384 else { throw ProbeError("image_too_large") }
-                try emit(["width": image.width, "height": image.height, "text": try textRows(image),
+                var region = CGRect(x: 0, y: 0, width: 1, height: 1)
+                if args.count == 6 {
+                    let values = args[2...5].compactMap(Double.init)
+                    guard values.count == 4, values.allSatisfy({ $0.isFinite }),
+                          values[0] >= 0, values[1] >= 0, values[2] > 0, values[3] > 0,
+                          values[0]+values[2] <= 1, values[1]+values[3] <= 1 else {
+                        throw ProbeError("invalid_ocr_region")
+                    }
+                    region = CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
+                }
+                let pixelRegion = CGRect(x: region.minX*Double(image.width), y: region.minY*Double(image.height),
+                                         width: region.width*Double(image.width), height: region.height*Double(image.height)).integral
+                guard let cropped = image.cropping(to: pixelRegion) else { throw ProbeError("crop_failed") }
+                let rows = try textRows(cropped).map { item -> [String: Any] in
+                    var mapped = item
+                    let box = item["box"] as! [String: CGFloat]
+                    mapped["box"] = ["x": (pixelRegion.minX+box["x"]!*pixelRegion.width)/Double(image.width),
+                                     "y": (pixelRegion.minY+box["y"]!*pixelRegion.height)/Double(image.height),
+                                     "width": box["width"]!*pixelRegion.width/Double(image.width),
+                                     "height": box["height"]!*pixelRegion.height/Double(image.height)]
+                    return mapped
+                }
+                try emit(["width": image.width, "height": image.height, "text": rows,
                           "ocr_only": true, "ocr_compute_requested": "cpu", "coordinate_system": "normalized_top_left"])
             } else if command == "capture" {
                 guard args.count == 3, let id = UInt32(args[1]) else { throw ProbeError("capture requires WINDOW_ID OUTPUT.png") }

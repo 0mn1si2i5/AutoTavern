@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniBob · 对局建议</title>
+  <style>
+    :root{color-scheme:dark;--bg:#151c20;--surface:#1e282e;--line:#35434a;--ink:#eff2ed;--muted:#a7b7bb;--accent:#b8d9c1;--amber:#f1ca84;--red:#f0a39d}
+    *{box-sizing:border-box}body{margin:0;padding:22px;font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;background:var(--bg);color:var(--ink)}
+    header{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-bottom:20px}h1{font-size:22px;letter-spacing:.03em;margin:0}h2{font-size:14px;margin:0 0 8px;font-weight:600}.eyebrow{font-size:11px;letter-spacing:.1em;color:var(--accent)}.muted,small{color:var(--muted)}.badge{font-size:12px;border:1px solid var(--line);border-radius:20px;padding:4px 9px;white-space:nowrap}.badge.ready{color:var(--accent);border-color:#60796a}.badge.blocked,.badge.error{color:var(--red)}.badge.stale{color:var(--amber)}
+    .stats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.stat{background:var(--surface);padding:7px 12px;border-radius:8px}.stat b{font-variant-numeric:tabular-nums;font-size:17px;margin-left:5px}.advice{border:1px solid #6e8877;background:#202e28;padding:17px;border-radius:12px;margin-bottom:14px}.advice.idle{border-color:var(--line);background:var(--surface)}#adviceText{font-size:20px;line-height:1.5;font-weight:600;margin:7px 0}#adviceDetails{white-space:pre-wrap;color:#d1ddd5;overflow-wrap:anywhere}#message{margin:10px 0;color:var(--muted)}
+    button{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 13px;font:inherit;border-radius:8px;cursor:pointer}button:hover{border-color:var(--accent)}button:disabled{opacity:.45;cursor:wait}button.primary{background:var(--accent);color:#19251d;border-color:var(--accent);font-weight:600}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.hotkey{font:12px ui-monospace,monospace;color:var(--muted)}#nativeHotkey{font-size:12px;color:var(--amber);margin-top:7px;display:none}
+    section{margin-top:19px}.sectionHead{display:flex;justify-content:space-between;gap:8px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:7px}.card{border:1px solid var(--line);border-radius:8px;min-height:76px;padding:8px 9px;background:var(--surface);overflow-wrap:anywhere}.card .slot{font-size:11px;color:var(--muted)}.card .name{font-size:13px;font-weight:600}.card .numbers{font-size:12px;font-variant-numeric:tabular-nums;color:var(--accent)}.card.locked{opacity:.55}.empty{padding:8px 0;color:var(--muted);font-size:13px}.warning{border-left:2px solid var(--amber);padding:4px 10px;color:var(--amber);margin:7px 0;font-size:12px}.error{color:var(--red)}
+    details{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}summary{cursor:pointer;color:var(--muted);font-size:13px}dl{display:grid;grid-template-columns:84px 1fr;gap:6px;font-size:12px}dt{color:var(--muted)}dd{margin:0;overflow-wrap:anywhere}.note{width:100%;resize:vertical;min-height:65px;margin:7px 0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px;color:var(--ink);font:inherit}.help{font-size:12px;color:var(--muted);margin:10px 0 0}.hidden{display:none!important}footer{margin:24px 0 4px;font-size:11px;color:var(--muted)}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px}@media(max-width:420px){body{padding:14px}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:7px}#adviceText{font-size:18px}}
+  </style>
+</head>
+<body>
+  <header><div><div class="eyebrow">OMNIBOB · HUMAN IN THE LOOP</div><h1>对局建议</h1><small id="mode">正在连接本地服务</small></div><span id="status" class="badge">连接中</span></header>
+  <div class="stats"><div class="stat">回合<b id="round">—</b></div><div class="stat">金币<b id="gold">—</b></div><div class="stat">酒馆<b id="tier">—</b></div><div class="stat">英雄<b id="hero">—</b></div></div>
+  <div id="adviceBox" class="advice idle"><div class="eyebrow">下一步建议</div><p id="adviceText">等待读取局面</p><div id="adviceDetails"></div><div id="message"></div></div>
+  <div class="actions"><button id="refresh" class="primary" type="button">刷新建议</button><span class="hotkey">⌃⌥Space</span><span id="latency" class="muted"></span></div>
+  <div id="nativeHotkey" role="status" style="display:block">浏览器模式：快捷键只在此页面获得焦点时有效。原生面板支持全局快捷键。</div>
+  <p class="help">你在游戏中操作，完成后按快捷键刷新。局面变化会让旧建议失效；工具只读取信息。</p>
+  <div id="replayControls" class="actions hidden" style="margin-top:12px"><button id="previous" type="button">← 上一步</button><span id="position" class="muted"></span><button id="next" type="button">下一步 →</button></div>
+  <div id="warnings" aria-live="polite"></div>
+  <section><div class="sectionHead"><h2>你的战场</h2><small id="boardCount"></small></div><div id="board" class="cards"></div></section>
+  <section><div class="sectionHead"><h2>手牌</h2><small id="handCount"></small></div><div id="hand" class="cards"></div></section>
+  <section><h2>商店</h2><div id="shop" class="cards"></div></section>
+  <section id="choiceSection" class="hidden"><h2>当前选择</h2><div id="choices" class="cards"></div></section>
+  <section id="powerSection" class="hidden"><h2>英雄技能</h2><div id="powers" class="cards"></div></section>
+  <details><summary>记录你的判断</summary><label for="note">实际操作或不同意见</label><textarea id="note" class="note" placeholder="例如：没有按建议升本，我希望这回合先保血。"></textarea><div class="actions"><button id="saveNote" type="button">保存标注</button><span id="noteResult" role="status" class="muted"></span></div></details>
+  <details><summary>来源与模型</summary><dl><dt>冻结模型</dt><dd id="model">—</dd><dt>状态来源</dt><dd id="source">—</dd><dt>读取位置</dt><dd id="offset">—</dd><dt>更新时刻</dt><dd id="updated">—</dd><dt>本次记录</dt><dd id="session">—</dd></dl></details>
+  <footer>建议不是操作回执。人工按键不会被当作游戏动作已成功。</footer>
+<script>
+'use strict';
+const el=id=>document.getElementById(id);
+const token=new URLSearchParams(location.hash.slice(1)).get('token')||'';
+let busy=false, lastState=null;
+const names={waiting:'等待读取',ready:'建议已更新',blocked:'需要核对',stale:'建议已过期',complete:'对局已结束',error:'读取失败'};
+function text(id,value){el(id).textContent=value==null?'—':String(value)}
+function entityName(e){return e?.name||e?.name_zh||e?.card_id||e?.card||'身份未知'}
+function zone(id,items,empty){
+  const root=el(id);root.replaceChildren();
+  if(!Array.isArray(items)||!items.length){const p=document.createElement('div');p.className='empty';p.textContent=empty;root.append(p);return;}
+  items.forEach((e,i)=>{const card=document.createElement('div');card.className='card'+(e.locked?' locked':'');
+    const slot=document.createElement('div');slot.className='slot';slot.textContent='第 '+(e.position||e.pos||i+1)+' 位'+(e.locked?' · 已锁定':'');
+    const name=document.createElement('div');name.className='name';name.textContent=entityName(e);
+    const numbers=document.createElement('div');numbers.className='numbers';const t=e.tags||e;
+    const atk=t.ATK??e.attack,hp=t.HEALTH??e.health,dmg=t.DAMAGE??0;
+    if(atk!=null&&hp!=null)numbers.textContent=`${atk} 攻 / ${Number(hp)-Number(dmg)} 血`;
+    else if(t.COST!=null)numbers.textContent=`费用 ${t.COST}`;
+    card.title=[e.card_id||e.card,e.entity_id!=null?'实体 '+e.entity_id:''].filter(Boolean).join(' · ');card.append(slot,name,numbers);
+    if(e.power_summary){const detail=document.createElement('small');detail.textContent=e.power_summary;card.append(detail)}
+    root.append(card);
+  });
+}
+function render(s){
+  lastState=s;const v=s.view||{},status=s.status||'waiting';text('status',names[status]||status);el('status').className='badge '+status;
+  text('mode',s.mode==='replay'?'示范局回放 · 不读取客户端':'实时只读 · 人工执行');
+  text('round',v.round);text('gold',v.gold);text('tier',v.tier??v.player?.PLAYER_TECH_LEVEL);text('hero',v.hero?entityName(Array.isArray(v.hero)?v.hero[0]:v.hero):null);
+  const advice=status==='ready'?s.advice:null;
+  el('adviceBox').className='advice'+(advice?'':' idle');
+  text('adviceText',advice?.text||(status==='stale'?'局面已变化，请刷新建议':status==='complete'?'本局已结束':status==='blocked'?'先核对当前局面':'等待可用局面'));
+  const d=advice?.details; text('adviceDetails',d==null?'':Array.isArray(d)?d.join('\n'):typeof d==='object'?JSON.stringify(d,null,2):d);
+  text('message',s.message||'');text('latency',advice?.inference_ms!=null?`${Number(advice.inference_ms).toFixed(0)} ms`:'');
+  const warnings=el('warnings');warnings.replaceChildren();(s.warnings||[]).forEach(w=>{const p=document.createElement('p');p.className='warning';p.textContent=String(w);warnings.append(p)});
+  zone('board',v.board,'尚无可见随从');zone('hand',v.hand,'尚无可见手牌');zone('shop',v.shop,'等待商店信息');zone('choices',v.choices,'等待选择');zone('powers',v.powers,'等待技能信息');
+  text('boardCount',Array.isArray(v.board)?v.board.length+' / 7':'');text('handCount',Array.isArray(v.hand)?v.hand.length+' / 10':'');
+  el('choiceSection').classList.toggle('hidden',!v.choices?.length);el('powerSection').classList.toggle('hidden',!v.powers?.length);
+  el('replayControls').classList.toggle('hidden',s.mode!=='replay');
+  const src=s.source||{};text('position',src.index!=null?`${src.index+1} / ${src.total??'?'}`:'');
+  el('previous').disabled=busy||src.index===0;el('next').disabled=busy||(src.total!=null&&src.index>=src.total-1);
+  text('model',s.model?.version?`${s.model.version} · ${(s.model.checkpoint_sha256||'').slice(0,12)}`:'未加载');text('source',src.path);text('offset',src.offset);text('updated',s.updated_at);text('session',s.session_path);
+}
+async function request(path,body){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),15000);
+ try{const response=await fetch(path,{method:body===undefined?'GET':'POST',headers:{'X-Omnibob-Token':token,'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),signal:controller.signal,cache:'no-store'});const result=await response.json();if(!response.ok)throw new Error(result.error||result.message||`HTTP ${response.status}`);return result;}finally{clearTimeout(timer)}
+}
+function connectionError(error){text('status','服务未连接');el('status').className='badge error';text('adviceText','当前建议不可用');el('adviceBox').className='advice idle';text('adviceDetails','');text('message',error.name==='AbortError'?'本地服务响应超时，请稍后刷新。':error.message);}
+async function poll(){if(busy)return;try{render(await request('/api/state'))}catch(error){connectionError(error)}}
+async function action(path,body={}){if(busy)return;busy=true;el('refresh').disabled=true;el('next').disabled=true;el('previous').disabled=true;
+ try{const result=await request(path,body);if(result.status&&result.view!==undefined)render(result);else render(await request('/api/state'));return result;}catch(error){connectionError(error)}finally{busy=false;el('refresh').disabled=false;if(lastState){const src=lastState.source||{};el('previous').disabled=src.index===0;el('next').disabled=src.total!=null&&src.index>=src.total-1}}
+}
+window.omniRefresh=()=>action('/api/refresh');
+window.setNativeHotkeyStatus=message=>{el('nativeHotkey').style.display=message?'block':'none';text('nativeHotkey',message||'')};
+el('refresh').addEventListener('click',window.omniRefresh);el('next').addEventListener('click',()=>action('/api/replay/next'));el('previous').addEventListener('click',()=>action('/api/replay/previous'));
+el('saveNote').addEventListener('click',async()=>{const content=el('note').value.trim();if(!content){text('noteResult','请先填写标注。');return;}el('saveNote').disabled=true;try{await request('/api/note',{text:content});el('note').value='';text('noteResult','已保存到本次记录。')}catch(error){text('noteResult','保存失败：'+error.message)}finally{el('saveNote').disabled=false}});
+document.addEventListener('keydown',event=>{if(event.repeat)return;if((event.ctrlKey&&event.altKey&&event.code==='Space')||(event.metaKey&&event.key==='Enter')){event.preventDefault();window.omniRefresh()}});
+poll();setInterval(poll,1000);
+</script>
+</body>
+</html>
