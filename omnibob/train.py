@@ -17,6 +17,7 @@ from .evaluate import emit
 from .model import EntityActorCritic, ModelConfig
 from .training_env import VectorGames
 from .opponents import DESCRIPTIONS, LEARNED_PROFILES
+from .run_control import RunControl, replace
 
 
 @dataclass
@@ -86,7 +87,7 @@ def atomic_checkpoint(path, state):
     torch.save(state, temporary)
     with temporary.open("rb") as stream:
         os.fsync(stream.fileno())
-    os.replace(temporary, path)
+    replace(temporary, path)
 
 
 def load_checkpoint(path):
@@ -108,10 +109,14 @@ def load_checkpoint(path):
 
 def train(output, config=None, model_config=None, updates=15, device="cpu", max_seconds=600,
           deadline=None, max_rss_gib=4, resume=None, initialize=None, checkpoint_every=5, rules=None,
-          max_truncated_episodes=0):
+          max_truncated_episodes=0, archive_every=None, control=None):
+    """``latest.pt`` is rewritten every ``checkpoint_every`` updates and hard-linked as
+    ``update-NNNNNN.pt`` every ``archive_every`` (default: the same). ``control`` is a control
+    file path or a RunControl (see run_control.py) for live low-power, pause and stop."""
     import taverngym as tg
     output = Path(output)
-    if updates < 1 or max_seconds <= 0 or max_rss_gib <= 0 or checkpoint_every < 1:
+    archive_every = checkpoint_every if archive_every is None else archive_every
+    if updates < 1 or max_seconds <= 0 or max_rss_gib <= 0 or checkpoint_every < 1 or archive_every < 1:
         raise ValueError("positive training budgets required")
     if resume and initialize:
         raise ValueError("resume and initialize are mutually exclusive")
@@ -148,6 +153,8 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
     from .repeat_guard import runtime_config as repeat_runtime_config
     repeat_runtime_config(config.learner_repeat_limit)
     torch.set_num_threads(config.cpu_threads)
+    if control is not None and not isinstance(control, RunControl):
+        control = RunControl(control, config.cpu_threads)
     torch.manual_seed(config.seed)
     rng = torch.Generator(device="cpu").manual_seed(config.seed+1)
     cfg = effective_config(prior["config"] if prior and rules is None else rules)
@@ -205,6 +212,8 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
                                         if reference is not None else None)
     identity["reference_regularizer"] = "KL(frozen initialization policy || current policy), legal actions only"
     identity["learner_runtime"] = repeat_runtime_config(config.learner_repeat_limit)
+    identity["checkpointing"] = {"latest_every_updates": checkpoint_every, "archive_every_updates": archive_every}
+    identity["control_file"] = str(control.path) if control is not None else None
     (output/"manifest.json").write_text(json.dumps(identity, indent=2)+"\n")
     environment_type, learner_options = VectorGames, {}
     if config.learner_repeat_limit:
@@ -227,14 +236,26 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
     def request_stop(signum, frame):
         requested_signal.append(signum)
 
-    for signum in (signal.SIGINT, signal.SIGTERM):
-        original_handlers[signum] = signal.signal(signum, request_stop)
+    # SIGBREAK is Ctrl+Break in a Windows console.
+    for signum in (signal.SIGINT, signal.SIGTERM, getattr(signal, "SIGBREAK", None)):
+        if signum is not None:
+            original_handlers[signum] = signal.signal(signum, request_stop)
 
-    def check_stop():
+    def check_budget():
         if requested_signal:
             raise InterruptedError(f"signal {requested_signal[-1]}")
         if time.time() >= stop_at:
             raise InterruptedError("time budget reached")
+
+    def check_stop():
+        check_budget()
+        if control is None:
+            return
+        if control.refresh() == "pause":
+            control.wait_while_paused(save, check_budget)
+        if control.mode == "stop":
+            raise InterruptedError("control stop")
+        control.throttle()
 
     def save(archive=False):
         atomic_checkpoint(output/"latest.pt", {
@@ -261,8 +282,9 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
     try:
         with (output/"metrics.jsonl").open("w") as metrics, (output/"games.jsonl").open("w") as games:
             while update < target_update:
-                check_stop()
                 iteration_start = time.perf_counter()
+                control_before = (control.throttled_seconds, control.paused_seconds) if control is not None else None
+                check_stop()
                 samples = {k: [] for k in ("features", "cards", "action_mask", "actions", "logp", "values", "rewards", "dones", "invalid_ends")}
                 if reference is not None:
                     samples["reference_logp"] = []
@@ -378,12 +400,21 @@ def train(output, config=None, model_config=None, updates=15, device="cpu", max_
                        **dict(zip(("actor_loss", "value_loss", "entropy", "approx_kl", "grad_norm", "clip_fraction", "reference_kl"), mean))}
                 if config.learner_repeat_limit:
                     row["learner_mask_stats_cumulative"] = dict(env.learner_mask_stats)
+                if control is not None:
+                    throttled = control.throttled_seconds-control_before[0]
+                    paused = control.paused_seconds-control_before[1]
+                    active = max(duration-throttled-paused, 1e-9)
+                    row.update(control_mode=control.mode, threads=control.active_threads,
+                               throttled_seconds=throttled, paused_seconds=paused, active_seconds=active,
+                               active_decisions_per_second=collected/active, control_error=control.error)
                 emit(metrics, row)
                 print(json.dumps({k: row[k] for k in ("update", "steps", "seconds", "completed_episodes", "completed_games", "mean_placement", "approx_kl")}), flush=True)
                 if max(resource["rss_bytes"], resource.get("mps_driver_bytes", 0)) > max_rss_gib*1024**3:
                     raise InterruptedError("RSS or MPS driver memory budget reached")
-                if update % checkpoint_every == 0:
+                if update % archive_every == 0:
                     save(archive=True)
+                elif update % checkpoint_every == 0:
+                    save()
     except InterruptedError as exc:
         stop_reason = str(exc)
     except BaseException as exc:
@@ -413,6 +444,9 @@ def main():
     p.add_argument("--max-rss-gib", type=float, default=4)
     p.add_argument("--max-truncated-episodes", type=int, default=0,
                    help="default stop; positive budget records/resets truncations and discards their rollout fragments")
+    p.add_argument("--checkpoint-every", type=int, default=5, help="rewrite latest.pt every N updates")
+    p.add_argument("--archive-every", type=int, help="keep update-NNNNNN.pt every N updates (default: --checkpoint-every)")
+    p.add_argument("--control", type=Path, help="JSON control file: normal, low, pause or stop (run_control.py)")
     p.add_argument("--resume", type=Path)
     p.add_argument("--initialize", type=Path)
     p.add_argument("--config", type=Path, help="JSON TrainConfig overrides (resume uses saved config)")
@@ -435,7 +469,9 @@ def main():
                    max_seconds=args.max_seconds, deadline=args.deadline, max_rss_gib=args.max_rss_gib,
                    resume=args.resume, initialize=args.initialize,
                    max_truncated_episodes=args.max_truncated_episodes,
-                   rules=json.loads(args.rules.read_text()) if args.rules else None)
+                   rules=json.loads(args.rules.read_text()) if args.rules else None,
+                   checkpoint_every=args.checkpoint_every, archive_every=args.archive_every,
+                   control=args.control)
     print(json.dumps(result, indent=2))
     return 1 if result["error"] else 0
 
