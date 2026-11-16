@@ -65,7 +65,8 @@ def source_manifest():
              if p.is_file() and p.suffix in (".py", ".rs", ".json", ".toml", ".sh")]
     paths += [ROOT/p for p in ("Cargo.lock", "Cargo.toml", "rust-toolchain.toml", "pyproject.toml")]
     paths += list(ROOT.glob("requirements-omnibob*.lock"))
-    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+    # Keys use "/" on every platform: manifests are compared and looked up across machines.
+    return {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted(paths)}
 
 
@@ -92,7 +93,7 @@ def source_snapshot(sources):
                 pass
         finally:
             temporary.unlink(missing_ok=True)
-    return {"path": str(destination.relative_to(ROOT)),
+    return {"path": destination.relative_to(ROOT).as_posix(),
             "sha256": hashlib.sha256(destination.read_bytes()).hexdigest(),
             "restore": "overlay onto the recorded git base; install local dependencies separately"}
 

@@ -106,6 +106,40 @@ def test_vector_save_restore_and_seed_partitions():
         GameEpisode(1_000_000_000, 0, {})
 
 
+def test_games_step_on_engine_stack_threads_with_the_same_results(monkeypatch):
+    import threading
+    from omnibob import training_env
+    sizes = []
+    real = threading.stack_size
+
+    def recording(size=None):
+        sizes.append(size)
+        return real() if size is None else real(size)
+
+    monkeypatch.setattr(training_env.threading, "stack_size", recording)
+    before = real()
+    one, two = VectorGames(4, 330000, {}, workers=1), VectorGames(4, 330000, {}, workers=3)
+    try:
+        assert sizes == [training_env.ENGINE_STACK, before]*2 and real() == before
+        assert len(one.pool._threads) == 1 and len(two.pool._threads) == 3
+        stepped = set()
+        for _ in range(40):
+            a, b = one.observe(), two.observe()
+            for name in a:
+                np.testing.assert_array_equal(a[name], b[name])
+            actions = a["action_mask"].argmax(-1)
+            first, second = one.step(actions), two.step(actions)
+            np.testing.assert_array_equal(first[0], second[0])
+            assert first[2] == second[2]
+        one.pool.submit(lambda: stepped.add(threading.current_thread().name)).result()
+        assert stepped == {"taverngym-game_0"}
+    finally:
+        one.close()
+        two.close()
+    with pytest.raises(ValueError, match="worker"):
+        VectorGames(2, 330000, {}, workers=0)
+
+
 def test_entity_model_masks_illegal_actions_and_uses_v2():
     torch.set_num_threads(2)
     env = VectorGames(2, 300000, {})

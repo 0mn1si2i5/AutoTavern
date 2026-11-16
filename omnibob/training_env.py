@@ -9,6 +9,7 @@ from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 from pathlib import Path
+import threading
 
 import numpy as np
 import taverngym as tg
@@ -125,6 +126,28 @@ class GameEpisode:
         return episode
 
 
+# Late warbands run long engine effect chains. The engine's own game threads get 64 MiB
+# (crates/taverngym/src/workers.rs); a Python thread gets 8 MiB on macOS and Linux but only the
+# executable's 2 MB on Windows, the main thread included, where a deep chain overflows instead
+# of reaching the engine's stack guard. Games therefore step on threads made with this stack.
+ENGINE_STACK = 64 << 20
+
+
+def engine_pool(workers):
+    """A thread pool whose ``workers`` threads all exist on return, each with ENGINE_STACK."""
+    previous = threading.stack_size(ENGINE_STACK)
+    try:
+        pool = ThreadPoolExecutor(max_workers=workers, thread_name_prefix="taverngym-game")
+        # A pool starts threads lazily; holding each one at a barrier makes every submit start a
+        # new thread while the stack size is set.
+        started = threading.Barrier(workers, timeout=60)
+        for future in [pool.submit(started.wait) for _ in range(workers)]:
+            future.result()
+    finally:
+        threading.stack_size(previous)
+    return pool
+
+
 class VectorGames:
     def __init__(self, n_games, seed, config, workers=1, state=None, opponents="scripted", scheduler="round_robin",
                  terminate_on_elimination=False, allow_truncated=False, opponent_checkpoint=None):
@@ -153,7 +176,9 @@ class VectorGames:
                 torch.set_num_threads(threads)
             if effective_config(self.learned_policy.config) != effective_config(config):
                 raise ValueError("frozen opponent rules differ from training rules")
-        self.pool = ThreadPoolExecutor(max_workers=workers) if workers > 1 else None
+        if workers < 1:
+            raise ValueError("at least one game worker required")
+        self.pool = engine_pool(workers)
         if state is None:
             self.episodes = [0] * n_games
             self.games = [self.fresh(i) for i in range(n_games)]
@@ -190,7 +215,7 @@ class VectorGames:
                     raise
                 return exc.record
 
-        records = list(self.pool.map(act, tasks)) if self.pool else [act(pair) for pair in tasks]
+        records = list(self.pool.map(act, tasks))
         rewards, dones = np.zeros(self.n_games, np.float32), np.zeros(self.n_games, bool)
         for i, record in enumerate(records):
             if record is not None:
@@ -208,5 +233,4 @@ class VectorGames:
                 "opponent_checkpoint_sha256": self.opponent_checkpoint_sha256}
 
     def close(self):
-        if self.pool:
-            self.pool.shutdown(wait=True)
+        self.pool.shutdown(wait=True)

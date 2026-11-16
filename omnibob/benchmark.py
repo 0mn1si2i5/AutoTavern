@@ -2,7 +2,6 @@
 import json
 import os
 import platform
-import resource
 import subprocess
 import time
 
@@ -12,11 +11,39 @@ import taverngym as tg
 from .compat import check_compatibility, provenance
 
 
+def _windows_memory():
+    """Working set and its peak (bytes) from GetProcessMemoryInfo."""
+    import ctypes
+    from ctypes import wintypes
+
+    class Counters(ctypes.Structure):
+        _fields_ = [("cb", wintypes.DWORD), ("PageFaultCount", wintypes.DWORD),
+                    ("PeakWorkingSetSize", ctypes.c_size_t), ("WorkingSetSize", ctypes.c_size_t),
+                    ("QuotaPeakPagedPoolUsage", ctypes.c_size_t), ("QuotaPagedPoolUsage", ctypes.c_size_t),
+                    ("QuotaPeakNonPagedPoolUsage", ctypes.c_size_t), ("QuotaNonPagedPoolUsage", ctypes.c_size_t),
+                    ("PagefileUsage", ctypes.c_size_t), ("PeakPagefileUsage", ctypes.c_size_t)]
+
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel32.GetCurrentProcess.restype = wintypes.HANDLE
+    query = kernel32.K32GetProcessMemoryInfo
+    query.argtypes = [wintypes.HANDLE, ctypes.POINTER(Counters), wintypes.DWORD]
+    query.restype = wintypes.BOOL
+    counters = Counters()
+    counters.cb = ctypes.sizeof(Counters)
+    if not query(kernel32.GetCurrentProcess(), ctypes.byref(counters), counters.cb):
+        raise ctypes.WinError(ctypes.get_last_error())
+    return int(counters.WorkingSetSize), int(counters.PeakWorkingSetSize)
+
+
 def memory(device=None):
-    rss = int(subprocess.check_output(["ps", "-o", "rss=", "-p", str(os.getpid())], text=True)) * 1024
-    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-    if platform.system() != "Darwin":
-        peak *= 1024
+    if platform.system() == "Windows":
+        rss, peak = _windows_memory()
+    else:
+        import resource  # POSIX only
+        rss = int(subprocess.check_output(["ps", "-o", "rss=", "-p", str(os.getpid())], text=True)) * 1024
+        peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        if platform.system() != "Darwin":
+            peak *= 1024
     result = {"rss_bytes": rss, "process_peak_rss_bytes": peak}
     if device == "mps":
         import torch
