@@ -14,7 +14,7 @@
 - `bash tools/setup-omnibob.sh --mps` 已复跑成功；上游引擎、Python 接口、Cargo.lock、pyproject 及 Rust 版本约束未修改。
 
 安装首次失败：rustup 安装与 maturin 自动工具链检查同时下载，出现 `.partial` 文件重命名失败。
-串行完成相同版本工具链安装后构建成功；保留 [初次失败日志](evidence/omnibob-v0.1/initial-build-failure.txt)。
+串行完成相同版本工具链安装后构建成功；保留 [初次失败日志](../evidence/omnibob-v0.1/initial-build-failure.txt)。
 初始 OmniBob smoke 也发现 card_info 不接受空索引 0、默认配置省略 experimental_mode 两个接口假设问题；
 均在评测前修正，初次日志仍在本地 `runs/setup/`，未作为成功样本。
 
@@ -33,14 +33,14 @@
 | TavernBench | 本机重评分已发布答案成功；没有调用模型 API，没有生成 OmniBob Bench 成绩 |
 | 文件检查 | `git diff --check`、shell 语法检查通过；上游核心目录无差异 |
 
-证据：[Python 日志](evidence/omnibob-v0.1/python-tests.txt)、[Rust 日志](evidence/omnibob-v0.1/rust-lib-tests.txt)、
-[已发布答案重评分](evidence/omnibob-v0.1/released-answer-scoring.txt)。
+证据：[Python 日志](../evidence/omnibob-v0.1/python-tests.txt)、[Rust 日志](../evidence/omnibob-v0.1/rust-lib-tests.txt)、
+[已发布答案重评分](../evidence/omnibob-v0.1/released-answer-scoring.txt)。
 测试不是对全部卡牌规则、真实客户端或竞技场的验收。
 
 ## 冻结基线结果
 
 每局一席候选对七个上游脚本机器人。同一种子在八席轮换，三种策略共享相同种子/座位计划。
-策略在两批之间**没有调参**；[evidence.json](evidence/omnibob-v0.1/evidence.json) 核验两批
+策略在两批之间**没有调参**；[evidence.json](../evidence/omnibob-v0.1/evidence.json) 核验两批
 `policies.py`、`observation.py`、合同文件的 SHA256 一致。
 后续版本请新建策略版本文件，保留 v0.1 实现和基线记录，不能覆盖后继续沿用同一个版本名。
 
@@ -64,14 +64,14 @@ OmniBob 49,660 次候选决策，平均 0.0321ms、P95 0.0672ms，策略对应�
 不代表论文成绩、强 Agent 对抗水平、竞技排名或真人强度。**final 种子域完全未运行。**
 
 原始记录与配置：
-[64 局/策略汇总](evidence/omnibob-v0.1/v0.1-dev-64/summary.json)、
-[256 局/策略汇总](evidence/omnibob-v0.1/v0.1-dev-256/summary.json)、
-[逐局记录](evidence/omnibob-v0.1/v0.1-dev-256/games.jsonl)、
-[源码/环境/配置清单](evidence/omnibob-v0.1/v0.1-dev-256/manifest.json)。
+[64 局/策略汇总](../evidence/omnibob-v0.1/v0.1-dev-64/summary.json)、
+[256 局/策略汇总](../evidence/omnibob-v0.1/v0.1-dev-256/summary.json)、
+[逐局记录](../evidence/omnibob-v0.1/v0.1-dev-256/games.jsonl)、
+[源码/环境/配置清单](../evidence/omnibob-v0.1/v0.1-dev-256/manifest.json)。
 
 ## CPU / MPS 实测
 
-[最终探针 JSON](evidence/omnibob-v0.1/performance.json) 含设备、依赖、配置与源码指纹。
+[最终探针 JSON](../evidence/omnibob-v0.1/performance.json) 含设备、依赖、配置与源码指纹。
 原生 CPU 连续 128 局机器人游戏：0.417 秒，约 **307 局/秒**。
 首次探针为 349 局/秒，说明短样本墙钟存在波动；未据此声称超过论文。
 

@@ -24,7 +24,7 @@
 三个对齐臂相对各自控制的点估计均改善，但各自区间都跨过零；不能据此声称稳定的因果收益。
 六个候选在纯启发式对手类别上都退步。这个模式支持优先检查训练对手分布的假设，但尚不能证明它就是原因。
 未选择候选、未启动独立验收；预留 final160000 未使用。已有权重、失败结论与原始逐局记录全部保留。
-紧凑证据见 [evidence/omnibob-training-alignment](evidence/omnibob-training-alignment/DEVELOPMENT_RESULTS.json)。
+紧凑证据见 [evidence/omnibob-training-alignment](../evidence/omnibob-training-alignment/DEVELOPMENT_RESULTS.json)。
 
 下一轮只改变训练对手分布，详见 [冻结学习对手实验](OMNIBOB_FROZEN_OPPONENTS.md)。
 

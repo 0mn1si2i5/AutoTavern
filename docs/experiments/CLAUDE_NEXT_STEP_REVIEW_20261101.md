@@ -40,7 +40,7 @@
 - 刷新可能触发成长效果，因此不能把这些刷新或金币支出全部直接当作损失。
 - 191帧离线重放一致。上述38帧中，最佳出售动作平均仅排第39.79位，出售动作softmax质量合计平均1.17%；这解释了greedy没有出售，不证明哪张牌该卖或一定应该卖。
 
-入口：`docs/OMNIBOB_V03_PRACTICE.md`、`runs/practice-v03-20261101T064354Z-attempt2/REVIEW.md`、`policy/decisions.jsonl`、`audit-live.json`。不要读取凭据文件。
+入口：`docs/experiments/OMNIBOB_V03_PRACTICE.md`、`runs/practice-v03-20261101T064354Z-attempt2/REVIEW.md`、`policy/decisions.jsonl`、`audit-live.json`。不要读取凭据文件。
 
 ## 4. 最近两轮结果：不要只看“测试通过”或“刷新减少”
 
@@ -91,7 +91,7 @@
 4. `tests/test_capacity_trade.py`、`test_capacity_selector.py`；新实验 `report.py`、`audit.py`，核对统计与实际运行。
 
 有必要再读：
-- `docs/OMNIBOB_LEARNING_DIAGNOSIS.md`、`OMNIBOB_HORIZON.md`、`OMNIBOB_ENV_BATCH.md`、`OMNIBOB_BUDGET32.md`、`OMNIBOB_INFERENCE_SAMPLING.md`。
+- `docs/experiments/OMNIBOB_LEARNING_DIAGNOSIS.md`、`OMNIBOB_HORIZON.md`、`OMNIBOB_ENV_BATCH.md`、`OMNIBOB_BUDGET32.md`、`OMNIBOB_INFERENCE_SAMPLING.md`。
 - 多轮继续PPO、扩大环境数、扩大更新预算、参数平均以及温度1采样并没有按各自门槛稳定晋级。固定候选后来通过独立正式确认成为v0.3，不能把所有训练工作概括为无效；也不要默认“继续多训一些”就是最佳方案。
 - 更早审核：`runs/claude-review-20261029T025334Z/CODEX_RECEIPT.md`。它是历史上下文，不代表现在的默认版本或实验状态。
 - 环境/动作布局：`docs/TAVERNGYM.md`、`docs/ARCHITECTURE.md`、`omnibob/observation_v2.py`、`omnibob/compat.py`、`crates/taverngym/src/actions.rs` 与 `obs.rs`。

@@ -164,7 +164,7 @@ final 偏移 70000 的每场景每策略 256 局，只比较原 v0.2 与不再�
 - 原发行包 1,924 文件、原 practice 23 文件全部通过原 SHA256 清单，原比赛压缩包哈希不变。
 - 本轮未修改 Rust 引擎，因此未重新编译或将旧 Rust 测试结果冒充本轮新结果。
 
-协议、结果、源码身份、复盘数据与测试输出保存在 [证据目录](evidence/omnibob-practice-followup/README.md)。
+协议、结果、源码身份、复盘数据与测试输出保存在 [证据目录](../evidence/omnibob-practice-followup/README.md)。
 
 ## 下一项最值得做的实验
 

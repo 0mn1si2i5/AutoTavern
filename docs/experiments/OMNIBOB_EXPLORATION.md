@@ -13,8 +13,8 @@
 - 冻结权重导出、版本/规则/卡表检查、可验证重放与独立HTML复盘。
 - 官方竞技协议适配、匿名预检、回环HTTP故障恢复测试；人工执行日志工具。
 
-[安装和运行](OMNIBOB_TRAINING.md) · [实验配方](OMNIBOB_EXPERIMENT_RECIPES.md) ·
-[与论文的差别](OMNIBOB_REPRODUCTION_V02.md) · [竞技准备和未验证项](OMNIBOB_ARENA.md)
+[安装和运行](../OMNIBOB_TRAINING.md) · [实验配方](../OMNIBOB_EXPERIMENT_RECIPES.md) ·
+[与论文的差别](../OMNIBOB_REPRODUCTION_V02.md) · [竞技准备和未验证项](../OMNIBOB_ARENA.md)
 
 ## 冻结后的最终结果
 

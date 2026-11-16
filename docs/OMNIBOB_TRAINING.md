@@ -1,7 +1,7 @@
 # OmniBob v0.2：本机训练与竞技协议准备
 
 当前检出以 `fb61201` 为基础，应用 rizling.top 公开的 observe2 补丁，TavernGym **1.1.0**。
-v0.1 的策略、观测类及合同继续冻结；[v0.1 使用说明](OMNIBOB.md)记录迁移前的环境。
+v0.1 的策略、观测类及合同继续冻结；[v0.1 使用说明](experiments/OMNIBOB.md)记录迁移前的环境。
 这里的模型和训练代码是独立实现，不是作者发布的 TavernAgent。
 
 ## 安装与快速使用
@@ -246,4 +246,4 @@ HEAD 返回 405 不代表 GET 不可用。网络错误要记录，不能据缓�
 更多有界训练命令、三种子配方和复现边界见[实验配方](OMNIBOB_EXPERIMENT_RECIPES.md)；
 论文缺失材料与本机主动简化见[v0.2复现范围](OMNIBOB_REPRODUCTION_V02.md)。
 
-对多次恢复的同源分支，可显式传入 `omnibob.average --initialization <共同起点>`，逐级验证所有父文件和SHA256，不改写立即父记录。详见 [200更新平均实验](OMNIBOB_AVERAGE200.md)。
+对多次恢复的同源分支，可显式传入 `omnibob.average --initialization <共同起点>`，逐级验证所有父文件和SHA256，不改写立即父记录。详见 [200更新平均实验](experiments/OMNIBOB_AVERAGE200.md)。

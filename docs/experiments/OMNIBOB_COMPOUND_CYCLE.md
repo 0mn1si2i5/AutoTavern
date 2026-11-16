@@ -163,7 +163,7 @@ manifest 记录实际源码覆盖包、完整规则与环境指纹、权重摘�
 - 原反例、开发退步案例、最初未实现模块时的失败测试输出也保留；没有删除阴性结果。
 - 未修改引擎或训练权重，未提交或推送代码，未参赛。所有实验进程结束。
 
-证据索引：[本轮材料](evidence/omnibob-compound-cycle/README.md)。完整逐局文件位于
+证据索引：[本轮材料](../evidence/omnibob-compound-cycle/README.md)。完整逐局文件位于
 `runs/compound-cycle-20261028/`，源码覆盖包指针在各运行 manifest 中。
 本次 dev 偏移 41000 和 final 偏移 110000 已使用，不应再作为未来选模的全新验证集。
 

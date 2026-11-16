@@ -36,11 +36,11 @@
 按 Ctrl + Option + Space 更新本地模型建议，由人执行；自动点击、拖动和代打入口已移除。
 [启动、示范局回放与输入限制](tools/real_client/README.md)。
 
-**OmniBob fork:** [本机安装、训练与运行](docs/OMNIBOB_TRAINING.md) · [冻结 v0.1 基线](docs/OMNIBOB.md) ·
-[v0.2复现范围](docs/OMNIBOB_REPRODUCTION_V02.md) · [夜间实验结果](docs/OMNIBOB_EXPLORATION.md) ·
-[竞技场协议核验](docs/OMNIBOB_ARENA.md) · [首场 practice 复盘与当前优先级](docs/OMNIBOB_PRACTICE_REVIEW.md) ·
-[复合循环单变量实验](docs/OMNIBOB_COMPOUND_CYCLE.md) · [腾位替换实验](docs/OMNIBOB_END_TRADE.md) · [有界 PPO 续训](docs/OMNIBOB_PPO_CONTINUATION.md) ·
-[训练与部署掩码对齐](docs/OMNIBOB_TRAINING_ALIGNMENT.md) · [冻结学习对手实验](docs/OMNIBOB_FROZEN_OPPONENTS.md) · [续训预算对照](docs/OMNIBOB_PPO_BUDGET.md).
+**OmniBob fork:** [本机安装、训练与运行](docs/OMNIBOB_TRAINING.md) · [冻结 v0.1 基线](docs/experiments/OMNIBOB.md) ·
+[v0.2复现范围](docs/OMNIBOB_REPRODUCTION_V02.md) · [夜间实验结果](docs/experiments/OMNIBOB_EXPLORATION.md) ·
+[竞技场协议核验](docs/OMNIBOB_ARENA.md) · [首场 practice 复盘与当前优先级](docs/experiments/OMNIBOB_PRACTICE_REVIEW.md) ·
+[复合循环单变量实验](docs/experiments/OMNIBOB_COMPOUND_CYCLE.md) · [腾位替换实验](docs/experiments/OMNIBOB_END_TRADE.md) · [有界 PPO 续训](docs/experiments/OMNIBOB_PPO_CONTINUATION.md) ·
+[训练与部署掩码对齐](docs/experiments/OMNIBOB_TRAINING_ALIGNMENT.md) · [冻结学习对手实验](docs/experiments/OMNIBOB_FROZEN_OPPONENTS.md) · [续训预算对照](docs/experiments/OMNIBOB_PPO_BUDGET.md) · [全部实验记录](docs/experiments/README.md).
 
 AutoTavern brings the decisions of Battlegrounds into a reproducible environment for AI
 research: simulate complete games, connect a learning algorithm, or evaluate a model's
@@ -214,6 +214,6 @@ are excluded. This API is suitable for remote players; `view`, `debug` and
 `BattlegroundsEnv(observation_version=2)` selects v2 for the Gym-style wrapper;
 its `player_view()` method returns the complete visible dictionary. Default v1 remains compatible.
 
-OmniBob 当前本地迭代：[固定移位预算与截断诊断](docs/OMNIBOB_MOVE_BUDGET.md)。
+OmniBob 当前本地迭代：[固定移位预算与截断诊断](docs/experiments/OMNIBOB_MOVE_BUDGET.md)。
 
-续训分支等权平均与当前对照：[说明](docs/OMNIBOB_AVERAGE200.md)。
+续训分支等权平均与当前对照：[说明](docs/experiments/OMNIBOB_AVERAGE200.md)。

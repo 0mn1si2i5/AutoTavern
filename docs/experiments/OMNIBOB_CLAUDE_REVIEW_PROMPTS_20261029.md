@@ -58,7 +58,7 @@ SHA256=3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787
    runs/iteration-current/control.json
    runs/iteration-current/USER_AUTHORIZATION_20261029_0850.json（仅理解历史授权）
    runs/iteration-current/AUTONOMOUS_CLOSEOUT_20261029.json
-   docs/OMNIBOB_AUTONOMOUS_20261029.md
+   docs/experiments/OMNIBOB_AUTONOMOUS_20261029.md
 
 2. 当前实现与复现边界：
    README.md
@@ -70,19 +70,19 @@ SHA256=3e0efb0636a2d7abd2b51c1dfea1757e254193630d0e4309cd3942ab6b26f787
    runs/releases/omnibob-v0.2-20261028/START_HERE.md
 
 3. 首场practice及动作循环：
-   docs/OMNIBOB_PRACTICE_REVIEW.md
-   docs/OMNIBOB_COMPOUND_CYCLE.md
+   docs/experiments/OMNIBOB_PRACTICE_REVIEW.md
+   docs/experiments/OMNIBOB_COMPOUND_CYCLE.md
    runs/practice-20261028-103720/SUMMARY.md
    runs/practice-20261028-103720/policy/decisions.jsonl
    先使用摘要和己方可见决策，不读取原始HTTP认证头或凭据记录。
 
 4. 最新研究过程：
-   docs/OMNIBOB_LEARNING_DIAGNOSIS.md
-   docs/OMNIBOB_HORIZON.md
-   docs/OMNIBOB_ENV_BATCH.md
-   docs/OMNIBOB_BUDGET32.md
-   docs/OMNIBOB_INFERENCE_SAMPLING.md
-   docs/OMNIBOB_ITERATION.md（历史线索，须与当前control核对）
+   docs/experiments/OMNIBOB_LEARNING_DIAGNOSIS.md
+   docs/experiments/OMNIBOB_HORIZON.md
+   docs/experiments/OMNIBOB_ENV_BATCH.md
+   docs/experiments/OMNIBOB_BUDGET32.md
+   docs/experiments/OMNIBOB_INFERENCE_SAMPLING.md
+   docs/experiments/OMNIBOB_ITERATION.md（历史线索，须与当前control核对）
 
 5. 一个容易遗漏的历史证据：
    runs/releases/omnibob-v0.2-20261028/SAMPLING_DIAGNOSTIC.md
