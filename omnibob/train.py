@@ -85,7 +85,7 @@ def atomic_checkpoint(path, state):
     path = Path(path)
     temporary = path.with_suffix(path.suffix+".tmp")
     torch.save(state, temporary)
-    with temporary.open("rb") as stream:
+    with temporary.open("r+b") as stream:  # Windows flushes only handles opened for writing
         os.fsync(stream.fileno())
     replace(temporary, path)
 

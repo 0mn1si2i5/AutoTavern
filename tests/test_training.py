@@ -192,6 +192,8 @@ def test_visible_v2_prefix_and_invalid_inputs():
         ObservationV2(obs.features, invalid, obs.action_mask)
 
 
+@pytest.mark.skipif(sys.platform == "win32", reason="terminate() kills outright on Windows; "
+                    "the graceful stop there is the control file (test_run_control.py)")
 def test_training_sigterm_preserves_loadable_checkpoint(tmp_path):
     output = tmp_path/"signal-run"
     log = tmp_path/"signal.log"

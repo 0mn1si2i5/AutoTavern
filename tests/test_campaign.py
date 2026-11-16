@@ -1,5 +1,6 @@
 import json
 import os
+from pathlib import Path
 import signal
 import subprocess
 import sys
@@ -59,7 +60,7 @@ def test_stop_mode_ends_the_run_and_run_again_finishes_it(tmp_path):
     assert run_control.read(directory/"control.json")["mode"] == "normal"
     assert [p.name for p in campaign.segment_dirs(directory)] == ["0001", "0002"]
     manifest = json.loads((directory/"segments/0002/manifest.json").read_text())
-    assert manifest["resume"].endswith("0001/latest.pt")
+    assert Path(manifest["resume"]).parts[-2:] == ("0001", "latest.pt")
     assert json.loads((directory/"DONE.json").read_text())["updates"] == 400
     status = json.loads(cli("status", directory, "--json").stdout)
     assert status["done"] and status["updates"] == 400 and not status["running"]
@@ -81,7 +82,8 @@ def test_a_hard_kill_resumes_from_the_last_saved_checkpoint(tmp_path):
     assert saved >= 2
     finished = cli("run", directory)
     assert finished.returncode == 0, finished.stdout+finished.stderr
-    assert json.loads((directory/"segments/0002/manifest.json").read_text())["resume"].endswith("0001/latest.pt")
+    resumed = json.loads((directory/"segments/0002/manifest.json").read_text())["resume"]
+    assert Path(resumed).parts[-2:] == ("0001", "latest.pt")
     assert json.loads((directory/"DONE.json").read_text())["updates"] == 400
 
 
