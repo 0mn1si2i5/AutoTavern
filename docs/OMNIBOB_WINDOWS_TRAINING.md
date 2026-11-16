@@ -8,8 +8,8 @@
 - 训练参数：`configs\long-stage-v03.json`。与 v0.4 的三个训练种子相同：32 局并行，每次更新 512 步，学习率 3e-5，参考 KL 系数 0.03，混合对手，按轮打乱行动顺序。只换了种子（161000000），PyTorch 线程数设为 2。
 - 规则：`configs\arena-v2.json`，与 v0.3 训练时相同。
 - 长度：19,000 次更新，每次 16,384 个决策，共约 3.1 亿个决策。
-- 速度参考：Mac M3 Pro 上每次更新 35 到 40 秒，按这个速度要 8 到 9 天。Windows 上的实际速度和剩余天数看状态输出。
-- CPU 占用：一个训练进程大约只用 1 个核。对局模拟大部分是 Python 代码，多开对局线程不会更快（Mac 上实测 4 个线程与 1 个线程速度相同、结果相同），所以配置里保持 1 个。
+- 速度参考：Ryzen 7 7800X3D 上实测，PyTorch 用 1、2、4、8 个线程时每次更新分别约 53、42、35、26 秒，全程分别约 11.6、9.1、7.7、5.6 天。8 个线程时训练占用约 4.5 个核。Mac M3 Pro 上 2 个线程每次更新 25 到 40 秒。实际速度和剩余天数看状态输出。
+- 线程数可以在运行中改（见第四节），它只影响速度和浮点舍入，不改变训练参数。对局模拟大部分是 Python 代码，多开对局线程不会更快（Mac 上实测 4 个对局线程与 1 个速度相同、结果相同），所以配置里对局线程保持 1 个。
 - 这次不改模型结构、规则和奖励，只把训练时间拉长。参考 KL 约束和较低的学习率可能限制长训练的收益，这次先不动，让训练长度是唯一变化的条件。
 
 ## 二、安装（只做一次）
@@ -36,7 +36,7 @@
 
    哈希应为 `305763ab2608805ef3ebbb1b456e7edb93399e56ab9c518021427d8d9b5eafe8`。解压后应有 `runs\releases\omnibob-v0.3-20261101\policy\policy.pt`。
 
-5. 运行 `tools\windows\check.cmd`。这是训练、续跑、暂停、低功耗和运行锁的测试，应全部通过；其中模拟断电的一项只在 macOS 和 Linux 上运行，在 Windows 上显示为跳过。
+5. 运行 `tools\windows\check.cmd`。这是训练、续跑、暂停、低功耗和运行锁的测试，应全部通过；其中模拟断电和 SIGTERM 的两项只在 macOS 和 Linux 上运行，在 Windows 上显示为跳过（25 passed, 2 skipped）。
 
 ## 三、开始训练
 
@@ -61,7 +61,21 @@
 .venv\Scripts\python.exe -m omnibob.campaign mode runs\long-stage-v03 normal --threads 4
 ```
 
-计算比例可设 0.05 到 1。也可以用 `train-run.cmd --priority idle` 启动，让训练只用系统空闲的 CPU。
+计算比例可设 0.05 到 1。线程数设一次就记在 `control.json` 里，之后的 `train-normal.cmd` 和续跑都沿用。也可以用 `train-run.cmd --priority idle` 启动，让训练只用系统空闲的 CPU。
+
+这些 `.cmd` 结尾有 `pause` 或 `timeout`，是给人双击用的。在脚本或代理里执行时直接调用 Python，命令会立即返回：
+
+```bat
+set PYTHONUTF8=1
+.venv\Scripts\python.exe -m omnibob.campaign status runs\long-stage-v03
+.venv\Scripts\python.exe -m omnibob.campaign mode runs\long-stage-v03 low
+```
+
+`campaign run` 要运行好几天，不能放在会超时或随会话结束的命令里，包括 SSH 会话。要让它在自己的窗口里运行：
+
+```bat
+start "OmniBob training" cmd /k tools\windows\train-run.cmd
+```
 
 一般用法：玩游戏或做重活时 pause 或 low，不用电脑时 normal。
 
@@ -69,6 +83,7 @@
 
 - 检查点：`latest.pt` 每 10 次更新覆盖一次（约 6 分钟），每 250 次更新另存一份 `update-NNNNNN.pt`。每份约 17 MB，全程另存约 76 份，共 1.3 GB 左右。
 - 在训练窗口按 Ctrl+C：训练进程保存检查点后退出。cmd 可能接着问“终止批处理操作吗(Y/N)”，选哪个都可以。
+- stop 和 Ctrl+C 发生在一次更新中途时，这次更新已经收集的对局数据不用于学习，续跑后从当时的对局状态开始下一次更新，损失不到一次更新的时间。pause 是原地等待，恢复后接着算，没有损失。
 - 直接关窗口、重启、断电、蓝屏：来不及保存，最多损失最近 10 次更新。重新运行 `train-run.cmd` 即从最新检查点继续，并新开一段（`segments\0002`）。
 - 每段最长 24 小时，到时自动保存并开始下一段，不需要人处理。
 - 训练运行时 Windows 不会因为空闲进入睡眠，显示器仍会按设置关闭。手动让电脑睡眠只会让训练暂停，唤醒后继续。pause 模式下也不会自动睡眠；想让电脑睡眠，先 stop。
