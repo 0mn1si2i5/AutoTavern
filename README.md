@@ -27,6 +27,8 @@
 
 ## Overview
 
+**项目状态：2026-11-17 起冻结**，暂停开发和训练。[冻结说明：原因、文件位置和恢复顺序](docs/OMNIBOB_FROZEN.md)。
+
 **当前本地默认：OmniBob v0.3**（2026-11-01）。固定候选通过21,888局正式确认；
 冻结v0.2仍可一条命令回退。[运行、回退及验证记录](docs/OMNIBOB_LOCAL_RELEASE.md)。
 `python -m omnibob play --output runs/my-game` 使用已激活的本地模型；

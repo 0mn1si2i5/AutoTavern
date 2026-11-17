@@ -4,6 +4,7 @@
 
 现行说明在上一级目录：
 
+- [项目冻结说明（2026-11-17）](../OMNIBOB_FROZEN.md)
 - [本机安装、训练与运行](../OMNIBOB_TRAINING.md)
 - [Windows 长时间训练](../OMNIBOB_WINDOWS_TRAINING.md)
 - [本地 v0.3 发行](../OMNIBOB_LOCAL_RELEASE.md)
